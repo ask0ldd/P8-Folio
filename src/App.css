@@ -21,8 +21,10 @@
 }
 
 .hero {
+  position: relative;
   height: 100vh;
   width: 100%;
+  overflow: hidden;
   background: linear-gradient(
       0deg,
       rgba(58, 86, 118, 0.2),
@@ -30,6 +32,21 @@
     ),
     linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%),
     linear-gradient(254.12deg, #4e686c 0%, #5f7973 100%);
+}
+
+.statue {
+  height: 85%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.ellipse {
+  height: 85%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translateX(100px);
 }
 
 .works {
@@ -46,15 +63,19 @@
 
 @keyframes logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: translateX(100px) rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: translateX(100px) rotate(360deg);
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+
+  .ellipse {
     animation: logo-spin infinite 20s linear;
   }
 }
