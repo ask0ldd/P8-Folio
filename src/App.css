@@ -35,6 +35,7 @@
     ),
     linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%),
     linear-gradient(254.12deg, #4e686c 0%, #5f7973 100%);
+  padding: 0 4rem;
   /*padding: 0 64px;*/
 }
 
@@ -159,24 +160,30 @@
 }*/
 
 .caseStudies {
-  height: 100vh;
   width: 100%;
   background: url("/statuenwoods4.png"),
     linear-gradient(0deg, rgba(58, 86, 118, 0.2), rgba(58, 86, 118, 0.2)),
     linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%),
     linear-gradient(254.12deg, #4e686c 0%, #5f7973 100%);
   background-blend-mode: hard-light;
+  padding: 0 4rem;
+}
+
+.caseStudiesBody {
   display: flex;
+  width: 100%;
+  max-width: 1568px;
+  margin: 0 auto;
   flex-direction: column;
   row-gap: 3rem;
-  padding-top: 4rem;
+  padding: 4rem 0;
   align-items: flex-end;
 }
 
 .caseStudies .caseContainer {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 60%;
   height: 348px;
   background: linear-gradient(
       105.56deg,
@@ -206,7 +213,6 @@
   padding: 1.8rem 2rem;
   /*border: 12px solid #86979a;*/
   border: 9px solid #8a7c58;
-  margin-right: 9rem;
   border-radius: 20px;
 }
 
