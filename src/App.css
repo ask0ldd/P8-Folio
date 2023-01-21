@@ -77,12 +77,26 @@
   padding: 16px 80px;
   gap: 6px;
   background: #dfe4ec;
+  /*background: linear-gradient(
+      105.56deg,
+      rgba(255, 255, 255, 0) 6.12%,
+      rgba(255, 255, 255, 0.7) 50.59%,
+      rgba(255, 255, 255, 0) 93.25%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(142, 163, 194, 0.6) 100%
+    ),
+    #d1d8e3;*/
   font-family: "Oswald";
   font-weight: 400;
   font-size: 24px;
-  color: #485a56;
-  border-radius: 0;
-  border: 6px solid #86979a;
+  /*color: #485a56;*/
+  color: #80724e;
+  border-radius: 10px;
+  /*border: 6px solid #86979a;*/
+  border: 6px solid #8a7c58;
   box-shadow: rgba(50, 50, 93, 0.35) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.4) 0px 30px 60px -30px;
   margin-top: 72px;
@@ -137,7 +151,7 @@
 .caseStudies {
   height: 100vh;
   width: 100%;
-  background: url("/statuenwoods.png"),
+  background: url("/statuenwoods4.png"),
     linear-gradient(0deg, rgba(58, 86, 118, 0.2), rgba(58, 86, 118, 0.2)),
     linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%),
     linear-gradient(254.12deg, #4e686c 0%, #5f7973 100%);
@@ -150,7 +164,9 @@
 }
 
 .caseStudies .caseContainer {
-  width: 40%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
   height: 348px;
   background: linear-gradient(
       105.56deg,
@@ -178,12 +194,24 @@
   font-weight: 700;
   font-size: 32px;
   padding: 1.8rem 2rem;
-  border: 12px solid #86979a;
+  /*border: 12px solid #86979a;*/
+  border: 12px solid #8a7c58;
   margin-right: 9rem;
+  border-radius: 20px;
+}
+
+.digit {
+  position: absolute;
+  right: 2rem;
+  top: 4rem;
+  font-family: "Playfair Display";
+  font-weight: 700;
+  font-size: 168px;
+  opacity: 0.3;
 }
 
 .caseStudies ul {
-  margin-top: 2rem;
+  margin-top: 2.8rem;
 }
 
 .caseStudies ul li {
@@ -200,6 +228,11 @@
 .technoButtonsContainer {
   display: flex;
   column-gap: 2rem;
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: auto;
 }
 
 .technoButton {
@@ -208,9 +241,12 @@
   background: #eff2f6;
   box-shadow: 0px 2px 4px #a4b7d5, 0px 8px 16px #b3bbc7;
   border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes logo-spin {
+@keyframes ellipse-spin {
   from {
     transform: translateX(100px) rotate(0deg);
   }
@@ -220,12 +256,8 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-
   .ellipse {
-    animation: logo-spin infinite 20s linear;
+    animation: ellipse-spin infinite 20s linear;
   }
 }
 

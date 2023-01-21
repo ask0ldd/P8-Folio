@@ -26,14 +26,21 @@ function App() {
       </section>
       <section className='caseStudies'>
         <div className="caseContainer">
+          <span className='digit'>I</span>
           ARCHITECT PORTFOLIO / FRONTEND
           <ul>
             <li>Coding the responsive front-end of an already designed portfolio.</li>
             <li>Implementing the front-end of the back-office allowing to add new pictures.</li>
             <li>Everything had to be done in pure Javascript, with the use of no library.</li>
           </ul>
+          <div className='technoButtonsContainer'>
+            <div className='technoButton'>Javascript ES6</div>
+            <div className='technoButton'>HTML + SCSS</div>
+            <div className='technoButton'>Figma</div>
+          </div>
         </div>
         <div className="caseContainer">
+          <span className='digit'>II</span>
           BOOKS RATING WEBSITE / BACKEND
           <ul>
             <li>Coding the responsive front-end of an already designed portfolio.</li>
