@@ -138,15 +138,25 @@
 
 .works {
   width: 100%;
-  padding: 6px 0 0 0;
+  padding: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 6px;
 }
 
 .works img {
+  width: 33%;
+  min-width: 400px;
+  flex: 1 1 33%;
+}
+
+/*.works img {
   width: 100%;
   margin: 0;
   outline: solid 2px #272a2f;
   outline-offset: -2px;
-}
+}*/
 
 .caseStudies {
   height: 100vh;
@@ -195,7 +205,7 @@
   font-size: 32px;
   padding: 1.8rem 2rem;
   /*border: 12px solid #86979a;*/
-  border: 12px solid #8a7c58;
+  border: 9px solid #8a7c58;
   margin-right: 9rem;
   border-radius: 20px;
 }

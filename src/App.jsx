@@ -22,7 +22,11 @@ function App() {
         </div>
       </section>
       <section className='works'>
-        <img src='/works.jpg'/>
+        <img src='/works/work1.jpg' defer/><img src='/works/work2.jpg' defer/><img src='/works/work3.jpg' defer/>
+        <img src='/works/work4.jpg' defer/><img src='/works/work5.jpg' defer/><img src='/works/work6.jpg' defer/>
+        <img src='/works/work7.jpg' defer/><img src='/works/work8.jpg' defer/><img src='/works/work9.jpg' defer/>
+        <img src='/works/work10.jpg' defer/><img src='/works/work11.jpg' defer/><img src='/works/work12.jpg' defer/>
+        <img src='/works/work13.jpg' defer/><img src='/works/work14.jpg' defer/><img src='/works/work15.jpg' defer/>
       </section>
       <section className='caseStudies'>
         <div className="caseContainer">
