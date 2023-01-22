@@ -14,6 +14,10 @@ nav {
   margin: 0 auto;*/
 }
 
+nav a:any-link {
+  color: #dfe4ec;
+}
+
 nav ul {
   display: flex;
   column-gap: 60px;

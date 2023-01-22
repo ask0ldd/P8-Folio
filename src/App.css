@@ -210,7 +210,7 @@
   font-family: "Oswald";
   font-weight: 700;
   font-size: 32px;
-  padding: 1.8rem 2rem;
+  padding: 2.5rem 2rem 2rem 2rem;
   /*border: 12px solid #86979a;*/
   border: 9px solid #8a7c58;
   border-radius: 20px;
@@ -226,8 +226,52 @@
   opacity: 0.3;
 }
 
+.viewCaseButton {
+  position: absolute;
+  width: 108px;
+  height: 108px;
+  background: radial-gradient(
+      48.61% 48.61% at 14.81% 8.33%,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      104.63% 104.63% at 60.65% 10.19%,
+      #5b7c83 0%,
+      rgba(91, 124, 131, 0) 100%
+    ),
+    #484e59;
+  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.45),
+    inset -2px -4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 54px;
+  border: 6px solid #8a7c58;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewCaseButtonGlass {
+  position: absolute;
+  width: 108px;
+  height: 108px;
+  border-radius: 54px;
+  bottom: 2rem;
+  right: 2rem;
+  background: radial-gradient(
+    62.96% 62.96% at 19.44% 7.87%,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.viewCaseButton img {
+  margin-left: 6px;
+}
+
 .caseStudies ul {
-  margin-top: 2.8rem;
+  margin-top: 2rem;
 }
 
 .caseStudies ul li {
@@ -241,7 +285,7 @@
   opacity: 0.9;
 }
 
-.technoButtonsContainer {
+.tagContainer {
   display: flex;
   column-gap: 2rem;
   font-family: "Montserrat";
@@ -249,17 +293,6 @@
   font-weight: 700;
   font-size: 20px;
   margin-top: auto;
-}
-
-.technoButton {
-  width: 200px;
-  height: 60px;
-  background: #eff2f6;
-  box-shadow: 0px 2px 4px #a4b7d5, 0px 8px 16px #b3bbc7;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 @keyframes ellipse-spin {

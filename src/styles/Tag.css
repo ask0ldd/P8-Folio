@@ -1,0 +1,10 @@
+.tag {
+  width: 200px;
+  height: 60px;
+  background: #eff2f6;
+  box-shadow: 0px 2px 4px #a4b7d5, 0px 8px 16px #b3bbc7;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
