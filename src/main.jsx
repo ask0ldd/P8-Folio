@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
+/*import App from './App'*/
 import CustomRouter from './components/CustomRouter';
 import './index.css'
 

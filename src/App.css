@@ -1,24 +1,7 @@
 #root {
-  /*max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;*/
   width: 100%;
   color: #dfe4ec;
-  /*text-align: left;*/
   background-color: #272a2f;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
 .hero {
@@ -272,17 +255,17 @@
 
 .caseStudies ul {
   margin-top: 2rem;
-}
-
-.caseStudies ul li {
-  list-style-type: disc;
-  list-style-position: inside;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 200%;
   opacity: 0.9;
+}
+
+.caseStudies ul li {
+  list-style-type: disc;
+  list-style-position: inside;
 }
 
 .tagContainer {

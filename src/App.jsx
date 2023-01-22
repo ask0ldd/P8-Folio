@@ -44,7 +44,7 @@ function App() {
             </ul>
             <div className='tagContainer'>
               <Tag text="Javascript ES6" />
-              <Tag text="HTML + SCSS" />
+              <Tag text="HTML + SASS" />
               <Tag text="Figma" />
             </div>
           </div>

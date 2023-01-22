@@ -12,7 +12,39 @@ function Case(props) {
             <div className='summaryContainer'>
                 <img src="/bluel/bluel1.jpg" className='mainSiteCapture'/>
                 <div className='halfSummaryContainer'>
-                  <CaseTitle title="details of the assignment"/>
+                  <CaseTitle title="DETAILS OF THE BRIEF"/>
+                  <ul>
+                    <li>Coding the responsive front-end of an already designed portfolio.</li>
+                    <li>Implementing the back-office which allows to add new pictures.</li>
+                    <li>Implementing the login form & deling with  the sessions persistence.</li>
+                    <li>All this had to be done in pure Javascript, with the use of no library.</li>
+                  </ul>
+                  <div className="greenTagsContainer">
+                    <div className='greenTag'>Javascript ES6</div>
+                    <div className='greenTag'>HTML + SASS</div>
+                    <div className='greenTag'>Figma</div>
+                  </div>
+                  <div className='genericCode'></div>
+                </div>
+            </div>
+        </section>
+        <section className='summaryBody'>
+            <div className='summaryContainer'>
+                <img src="/bluel/bluel1.jpg" className='mainSiteCapture'/>
+                <div className='halfSummaryContainer'>
+                  <CaseTitle title="DETAILS OF THE BRIEF"/>
+                  <ul>
+                    <li>Coding the responsive front-end of an already designed portfolio.</li>
+                    <li>Implementing the back-office which allows to add new pictures.</li>
+                    <li>Implementing the login form & deling with  the sessions persistence.</li>
+                    <li>All this had to be done in pure Javascript, with the use of no library.</li>
+                  </ul>
+                  <div className="greenTagsContainer">
+                    <div className='greenTag'>Javascript ES6</div>
+                    <div className='greenTag'>HTML + SASS</div>
+                    <div className='greenTag'>Figma</div>
+                  </div>
+                  <div className='genericCode'></div>
                 </div>
             </div>
         </section>

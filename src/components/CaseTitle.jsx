@@ -6,4 +6,4 @@ return(
 )
 }
 
-export default Tag
+export default CaseTitle
