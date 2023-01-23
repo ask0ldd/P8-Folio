@@ -11,6 +11,7 @@
     linear-gradient(0deg, rgba(58, 86, 118, 0.2), rgba(58, 86, 118, 0.2)),
     linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%),
     #c7d1ce;
+  background-repeat: no-repeat;
 
   padding-bottom: 6rem;
   padding-top: 0.7rem;
@@ -23,7 +24,6 @@
   width: 100%;
   max-width: 1568px;
   margin: 0 auto;
-  overflow: hidden;
   row-gap: 2.5rem;
 }
 
@@ -43,6 +43,7 @@
   display: flex;
   gap: 3rem;
   padding: 3rem;
+  overflow: hidden;
 }
 
 .halfSummaryContainer {
@@ -64,12 +65,20 @@
   overflow: hidden;
   object-fit: cover;
   object-position: 0 0;
-  transform: translateY(200px);
+  /*animation-duration: 0.4s;
+  animation-name: mainSiteCapture;
+  animation-iteration-count: 1;*/
+  transform: translateX(-800px);
+  animation: 0.4s ease-out forwards mainSiteCapture;
 }
 
-.mainSiteCapture:hover {
-  transform: translateY(0px);
-  transition: transform 0.4s ease-in;
+@keyframes mainSiteCapture {
+  from {
+    transform: translateX(-800px);
+  }
+  to {
+    transform: translateX(0px);
+  }
 }
 
 .halfSummaryContainer ul {
@@ -81,6 +90,20 @@
   line-height: 200%;
   opacity: 0.9;
   color: #99a3a6;
+  max-height: 0;
+  animation: 0.4s ease-out 0.6s forwards caseUl;
+  overflow: hidden;
+}
+
+@keyframes caseUl {
+  from {
+    max-height: 0;
+    /*opacity: 0;*/
+  }
+  to {
+    max-height: 200px;
+    /*opacity: 0.9;*/
+  }
 }
 
 .halfSummaryContainer ul li {
@@ -95,6 +118,15 @@
   flex-direction: row;
   gap: 1rem;
   margin-top: 1.7rem;
+}
+
+@keyframes greenTagsContainer {
+  from {
+    transform: translateX(800px);
+  }
+  to {
+    transform: translateX(0px);
+  }
 }
 
 .greenTag {
@@ -112,6 +144,8 @@
   font-size: 16px;
   line-height: 200%;
   color: #9ba7ab;
+  transform: translateX(800px);
+  animation: 0.4s ease-out 0.75s forwards greenTagsContainer;
 }
 
 .genericCode {
@@ -125,4 +159,55 @@
   border-radius: 20px;
   border: 6px solid #8a7c58;
   margin-top: auto;
+  transform: translateX(800px);
+  animation: 0.4s ease-out 0.3s forwards genericCode;
+}
+
+@keyframes genericCode {
+  from {
+    transform: translateX(800px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+.codeBody {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1568px;
+  margin: 0 auto;
+  row-gap: 2.5rem;
+}
+
+.codeContainer {
+  width: 70%;
+  box-shadow: 0px 4px 8px rgba(21, 21, 20, 0.1),
+    0px 4px 8px rgba(21, 22, 22, 0.3), 0px 8px 16px rgba(22, 23, 23, 0.47);
+  backdrop-filter: blur(8px);
+  /*border-radius: 20px;*/
+  border: 9px solid #8a7c58;
+  overflow: hidden;
+  height: 80vh;
+}
+
+.codeContainer::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Track */
+.codeContainer::-webkit-scrollbar-track {
+  background: #212526;
+}
+
+/* Handle */
+.codeContainer::-webkit-scrollbar-thumb {
+  background: #4f5d62;
+}
+
+/* Handle on hover */
+.codeContainer::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

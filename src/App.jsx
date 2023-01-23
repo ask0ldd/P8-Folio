@@ -3,9 +3,14 @@ import { NavLink } from 'react-router-dom'
 import './App.css'
 import NavBar from './components/NavBar'
 import Tag from './components/Tag'
+import { useLayoutEffect } from 'react'
 
 function App() {
   const [count, setCount] = useState(0)
+  
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0)
+  });
 
   return (
     <div className="App">
