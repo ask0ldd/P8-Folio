@@ -15,9 +15,9 @@ function App() {
   return (
     <div className="App">
       <section className='hero'>
-        <img className='ellipse' src='/ellipse0.svg'/>
-        <img className='statue' src='/statue.png'/>
-        <img className='buste' src='/buste.png'/>
+        <img className='ellipse' alt="ellipse" src='/ellipse0.svg'/>
+        <img className='statue' alt="statue" src='/statue.png'/>
+        <img className='buste' alt="buste" src='/buste.png'/>
         <div className='heroContainer'>
           <NavBar items={[['ENG / FR', '/#'], ['Design Work','/#works'], ['Dev Case Studies','/#caseStudies'], ['Contact Me','/#works']]} />
           <p className='fonction'>UI Design & Front End Dev. Paris. France.</p>
@@ -29,17 +29,17 @@ function App() {
         </div>
       </section>
       <section className='works' id="works">
-        <img src='/works/work1.jpg' defer/><img src='/works/work2.jpg' defer/><img src='/works/work3.jpg' defer/>
-        <img src='/works/work4.jpg' defer/><img src='/works/work5.jpg' defer/><img src='/works/work6.jpg' defer/>
-        <img src='/works/work7.jpg' defer/><img src='/works/work8.jpg' defer/><img src='/works/work9.jpg' defer/>
-        <img src='/works/work10.jpg' defer/><img src='/works/work11.jpg' defer/><img src='/works/work12.jpg' defer/>
-        <img src='/works/work13.jpg' defer/><img src='/works/work14.jpg' defer/><img src='/works/work15.jpg' defer/>
+        <img src='/works/work1.webp' alt="travel app design" defer/><img src='/works/work2.webp' alt="travel landing page design" defer/><img src='/works/work3.webp' alt="fintech app design" defer/>
+        <img src='/works/work4.webp' alt="eilish landing page design" defer/><img src='/works/work5.webp' alt="lol app design" defer/><img src='/works/work6.webp' alt="chiesa landing page design" defer/>
+        <img src='/works/work7.webp' alt="library app design" defer/><img src='/works/work8.webp' alt="nike landing page design" defer/><img src='/works/work9.webp' alt="classical music app design" defer/>
+        <img src='/works/work10.webp' alt="fintech app design" defer/><img src='/works/work11.webp' alt="accessories landing page design" defer/><img src='/works/work12.webp' alt="remote app design" defer/>
+        <img src='/works/work13.webp' alt="movie booking app design" defer/><img src='/works/work14.webp' alt="real estate app design" defer/><img src='/works/work15.webp' alt="banking app design" defer/>
       </section>
       <section id="caseStudies" className='caseStudies'>
         <div className='caseStudiesBody'>
           <div className="caseContainer">
-          <button className='viewCaseButton'><img src="/icons/arrow.svg"/></button>
-          <NavLink to="/case/1"><button className='viewCaseButtonGlass'></button></NavLink>
+          <button className='viewCaseButton'><img alt="arrow" src="/icons/arrow.svg"/></button>
+          <NavLink aria-label='Look at Sophie Bluel case study' to="/case/1"><button className='viewCaseButtonGlass'></button></NavLink>
             <span className='digit'>I</span>
             ARCHITECT PORTFOLIO / FRONTEND
             <ul>
@@ -54,8 +54,8 @@ function App() {
             </div>
           </div>
           <div className="caseContainer">
-            <button className='viewCaseButton'><img src="/icons/arrow.svg"/></button>
-            <NavLink to="/case/2"><button className='viewCaseButtonGlass'></button></NavLink>
+            <button className='viewCaseButton'><img alt="arrow" src="/icons/arrow.svg"/></button>
+            <NavLink aria-label='Look at Casa case study' to="/case/2"><button className='viewCaseButtonGlass'></button></NavLink>
             <span className='digit'>II</span>
             BOOKS RATING WEBSITE / BACKEND
             <ul>
