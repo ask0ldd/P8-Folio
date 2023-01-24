@@ -4,13 +4,7 @@
   background-color: #272a2f;
 }
 
-.hero {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
+.App {
   background: linear-gradient(
       0deg,
       rgba(58, 86, 118, 0.2),
@@ -18,6 +12,15 @@
     ),
     linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%),
     linear-gradient(254.12deg, #4e686c 0%, #5f7973 100%);
+}
+
+.sectionHero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
   padding: 0 4rem;
   /*padding: 0 64px;*/
 }
@@ -100,6 +103,17 @@
   position: absolute;
   right: 0;
   bottom: 0;
+  transform: translateX(800px) translateY(800px);
+  animation: 0.4s ease-out forwards statue;
+}
+
+@keyframes statue {
+  from {
+    transform: translateX(800px) translateY(800px);
+  }
+  to {
+    transform: translateX(0px) translateY(0px);
+  }
 }
 
 .buste {
@@ -118,18 +132,30 @@
   right: 0;
   bottom: 0;
   transform: translateX(100px);
+  opacity: 1;
+  /*transition: 5s ease-out forwards ellipse-opacity;*/
 }
 
-.works {
+@keyframes ellipse-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.sectionWorks {
   width: 100%;
   padding: 6px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   gap: 6px;
+  background-color: #272a2f;
 }
 
-.works img {
+.sectionWorks img {
   width: 33%;
   min-width: 400px;
   flex: 1 1 33%;
@@ -142,7 +168,7 @@
   outline-offset: -2px;
 }*/
 
-.caseStudies {
+.sectionCaseStudies {
   width: 100%;
   background: url("/statuenwoods4.png"),
     linear-gradient(0deg, rgba(58, 86, 118, 0.2), rgba(58, 86, 118, 0.2)),
@@ -163,7 +189,7 @@
   align-items: flex-end;
 }
 
-.caseStudies .caseContainer {
+.sectionCaseStudies .caseContainer {
   display: flex;
   flex-direction: column;
   width: 60%;
@@ -255,7 +281,7 @@
   margin-left: 6px;
 }
 
-.caseStudies ul {
+.sectionCaseStudies ul {
   margin-top: 2rem;
   font-family: "Montserrat";
   font-style: normal;
@@ -265,7 +291,7 @@
   opacity: 0.9;
 }
 
-.caseStudies ul li {
+.sectionCaseStudies ul li {
   list-style-type: disc;
   list-style-position: inside;
 }
@@ -301,4 +327,11 @@
 
 .read-the-docs {
   color: #888;
+}
+
+@media screen and (max-width: 1000px) {
+  .statue,
+  .ellipse {
+    display: none;
+  }
 }

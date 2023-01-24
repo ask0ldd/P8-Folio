@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export function useFetch(url) {
+export function useHTMLFetch(url) {
 
     const [fetchedData, setFetchedData] = useState()
     const [isLoading, setLoading] = useState(true)
@@ -31,5 +31,5 @@ export function useFetch(url) {
 
     }, [url]) // url to avoid infinite loop triggered by useState uses.
 
-return [isLoading, fetchedData, isError]
+return [isLoading, fetchedData, setFetchedData, isError]
 }

@@ -14,12 +14,12 @@ function App() {
 
   return (
     <div className="App">
-      <section className='hero'>
+      <NavBar items={[['ENG / FR', '/#'], ['Design Work','/#works'], ['Dev Case Studies','/#caseStudies'], ['Contact Me','/#works']]} />
+      <section className='sectionHero'>
         <img className='ellipse' alt="ellipse" src='/ellipse0.svg'/>
         <img className='statue' alt="statue" src='/statue.png'/>
         <img className='buste' alt="buste" src='/buste.png'/>
         <div className='heroContainer'>
-          <NavBar items={[['ENG / FR', '/#'], ['Design Work','/#works'], ['Dev Case Studies','/#caseStudies'], ['Contact Me','/#works']]} />
           <p className='fonction'>UI Design & Front End Dev. Paris. France.</p>
           <p className='identite'>Cédric ASkldd</p>
           <p className='text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue velit integer viverra dignissim proin quam vitae suspendisse. 
@@ -28,14 +28,14 @@ function App() {
           <blockquote>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue velit integer viverra dignissim proin.” ― Arthur Schopenhauer</blockquote>
         </div>
       </section>
-      <section className='works' id="works">
+      <section className='sectionWorks' id="works">
         <img src='/works/work1.webp' alt="travel app design" defer/><img src='/works/work2.webp' alt="travel landing page design" defer/><img src='/works/work3.webp' alt="fintech app design" defer/>
         <img src='/works/work4.webp' alt="eilish landing page design" defer/><img src='/works/work5.webp' alt="lol app design" defer/><img src='/works/work6.webp' alt="chiesa landing page design" defer/>
         <img src='/works/work7.webp' alt="library app design" defer/><img src='/works/work8.webp' alt="nike landing page design" defer/><img src='/works/work9.webp' alt="classical music app design" defer/>
         <img src='/works/work10.webp' alt="fintech app design" defer/><img src='/works/work11.webp' alt="accessories landing page design" defer/><img src='/works/work12.webp' alt="remote app design" defer/>
         <img src='/works/work13.webp' alt="movie booking app design" defer/><img src='/works/work14.webp' alt="real estate app design" defer/><img src='/works/work15.webp' alt="banking app design" defer/>
       </section>
-      <section id="caseStudies" className='caseStudies'>
+      <section id="caseStudies" className='sectionCaseStudies'>
         <div className='caseStudiesBody'>
           <div className="caseContainer">
           <button className='viewCaseButton'><img alt="arrow" src="/icons/arrow.svg"/></button>

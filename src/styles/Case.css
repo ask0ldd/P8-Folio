@@ -1,3 +1,9 @@
+/*#root {
+  width: 100%;
+  color: #dfe4ec;
+  background-color: #272a2f;
+}*/
+
 .case {
   display: flex;
   flex-direction: column;
@@ -5,36 +11,62 @@
     linear-gradient(0deg, rgba(58, 86, 118, 0.2), rgba(58, 86, 118, 0.2)),
     linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%),
     linear-gradient(254.12deg, #4e686c 0%, #5f7973 100%);*/
-
   background: url("/statuenwoods4.png"),
-    linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%),
     linear-gradient(0deg, rgba(58, 86, 118, 0.2), rgba(58, 86, 118, 0.2)),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%),
-    #c7d1ce;
+    linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%),
+    linear-gradient(254.12deg, #4e686c 0%, #5f7973 100%);
+  background-blend-mode: hard-light;
   background-repeat: no-repeat;
 
   padding-bottom: 6rem;
   padding-top: 0.7rem;
 }
 
-.summaryBody {
+.sectionSummary {
   position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1568px;
+  /*max-width: 1568px;*/
   margin: 0 auto;
   row-gap: 2.5rem;
+  padding: 0 4rem;
 }
 
 .summaryContainer {
   width: 100%;
+  max-width: 1568px;
+  margin: 0 auto;
   height: 800px;
   background: linear-gradient(
-    180deg,
-    rgba(30, 35, 36, 0.8) 0%,
-    rgba(30, 35, 36, 0.68) 100%
-  );
+      0deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1)
+    ),
+    linear-gradient(
+      105.56deg,
+      rgba(255, 255, 255, 0) 6.12%,
+      rgba(255, 255, 255, 0.3) 50.59%,
+      rgba(255, 255, 255, 0) 93.25%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(142, 163, 194, 0.3) 100%
+    ),
+    #d1d8e3;
+  /*background: linear-gradient(
+      105.56deg,
+      rgba(255, 255, 255, 0) 6.12%,
+      rgba(255, 255, 255, 0.8) 50.59%,
+      rgba(255, 255, 255, 0) 93.25%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(142, 163, 194, 0.6) 100%
+    ),
+    #d1d8e3;*/
   box-shadow: 0px 4px 8px rgba(21, 21, 20, 0.1),
     0px 4px 8px rgba(21, 22, 22, 0.3), 0px 8px 16px rgba(22, 23, 23, 0.47);
   backdrop-filter: blur(8px);
@@ -61,7 +93,6 @@
     drop-shadow(0px 4px 8px rgba(21, 22, 22, 0.3))
     drop-shadow(0px 8px 16px rgba(22, 23, 23, 0.47));
   border-radius: 20px;
-  border: 6px solid #8a7c58;
   overflow: hidden;
   object-fit: cover;
   object-position: 0 0;
@@ -84,15 +115,17 @@
 .halfSummaryContainer ul {
   margin-top: 2rem;
   font-family: "Montserrat";
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 200%;
-  opacity: 0.9;
-  color: #99a3a6;
+  color: #5a5f6a;
   max-height: 0;
   animation: 0.4s ease-out 0.6s forwards caseUl;
   overflow: hidden;
+}
+
+.halfSummaryContainer ul b {
+  color: #1a3d48;
 }
 
 @keyframes caseUl {
@@ -101,7 +134,7 @@
     /*opacity: 0;*/
   }
   to {
-    max-height: 200px;
+    max-height: 200px; /* fit-content */
     /*opacity: 0.9;*/
   }
 }
@@ -132,8 +165,8 @@
 .greenTag {
   width: 33%;
   height: 100%;
-  background: #4f5d62;
-  box-shadow: 0px 8px 16px rgba(22, 23, 23, 0.47);
+  background: #eff2f6;
+  box-shadow: 0px 2px 4px #a4b7d5, 0px 8px 16px #b3bbc7;
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -143,7 +176,7 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 200%;
-  color: #9ba7ab;
+  color: #5a5f6a;
   transform: translateX(800px);
   animation: 0.4s ease-out 0.75s forwards greenTagsContainer;
 }
@@ -157,7 +190,7 @@
   box-shadow: 0px 4px 8px rgba(21, 21, 20, 0.1),
     0px 4px 8px rgba(21, 22, 22, 0.3), 0px 8px 16px rgba(22, 23, 23, 0.47);
   border-radius: 20px;
-  border: 6px solid #8a7c58;
+  border: 3px solid #ffffff;
   margin-top: auto;
   transform: translateX(800px);
   animation: 0.4s ease-out 0.3s forwards genericCode;
@@ -172,25 +205,34 @@
   }
 }
 
-.codeBody {
-  position: relative;
-  display: flex;
-  flex-direction: column;
+.sectionCode {
+  /*position: relative;*/
+  width: 100%;
+  /*max-width: 1568px;*/
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+.codenMenuContainer {
   width: 100%;
   max-width: 1568px;
   margin: 0 auto;
-  row-gap: 2.5rem;
+  display: flex;
+  flex-direction: row;
 }
 
 .codeContainer {
-  width: 70%;
+  width: 50%;
   box-shadow: 0px 4px 8px rgba(21, 21, 20, 0.1),
     0px 4px 8px rgba(21, 22, 22, 0.3), 0px 8px 16px rgba(22, 23, 23, 0.47);
-  backdrop-filter: blur(8px);
+  /*backdrop-filter: blur(8px);*/
   /*border-radius: 20px;*/
   border: 9px solid #8a7c58;
   overflow: hidden;
   height: 80vh;
+  z-index: 2;
+  border-radius: 20px 0 0 20px;
+  padding: 0;
 }
 
 .codeContainer::-webkit-scrollbar {
@@ -210,4 +252,82 @@
 /* Handle on hover */
 .codeContainer::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.menuCodeContainer {
+  /*background: linear-gradient(
+      105.56deg,
+      rgba(255, 255, 255, 0) 6.12%,
+      rgba(255, 255, 255, 0.6) 50.59%,
+      rgba(255, 255, 255, 0) 93.25%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(142, 163, 194, 0.6) 100%
+    ),
+    #d1d8e3;*/
+  background: linear-gradient(
+      256.31deg,
+      rgba(255, 255, 255, 0) 12.67%,
+      rgba(255, 255, 255, 0.1) 42.14%,
+      rgba(255, 255, 255, 0) 81.59%
+    ),
+    #5e757c;
+  width: 20%;
+  height: fit-content;
+  box-shadow: 0px 4px 8px rgba(21, 21, 20, 0.1),
+    0px 4px 8px rgba(21, 22, 22, 0.3), 0px 8px 16px rgba(22, 23, 23, 0.47);
+  border: 6px solid #3b4244;
+  border-radius: 0 20px 20px 0;
+  margin-top: 3rem;
+  overflow: hidden;
+}
+
+.menuCodeContainer button {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-right: 2rem;
+  justify-content: right;
+  color: #ffffff;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 16px;
+  border: 0;
+  border-top: 1px solid #3b4244;
+  border-bottom: 1px solid #3b4244;
+  background: none;
+}
+
+.menuCodeContainer .active {
+  background: linear-gradient(
+      105.56deg,
+      rgba(255, 255, 255, 0) 6.12%,
+      rgba(255, 255, 255, 0.6) 50.59%,
+      rgba(255, 255, 255, 0) 93.25%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(142, 163, 194, 0.6) 100%
+    ),
+    #d1d8e3;
+  color: #3b4244;
+}
+
+@media screen and (max-width: 1000px) {
+  .summaryContainer {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .mainSiteCapture {
+    width: 100%;
+  }
+
+  .halfSummaryContainer {
+    width: 100%;
+  }
 }
