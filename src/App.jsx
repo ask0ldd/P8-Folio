@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import './App.css'
-import NavBar from './components/NavBar'
+import Header from './components/Header'
 import Tag from './components/Tag'
 import { useLayoutEffect } from 'react'
 
@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar items={[['ENG / FR', '/#'], ['Design Work','/#works'], ['Dev Case Studies','/#caseStudies'], ['Contact Me','/#works']]} />
+      <Header items={[['ENG / FR', '/#'], ['Design Work','/#works'], ['Dev Case Studies','/#caseStudies']]} />
       <section className='sectionHero'>
         <img className='ellipse' alt="ellipse" src='/ellipse0.svg'/>
         <img className='statue' alt="statue" src='/statue.png'/>
@@ -31,9 +31,9 @@ function App() {
       <section className='sectionWorks' id="works">
         <img src='/works/work1.webp' alt="travel app design" defer/><img src='/works/work2.webp' alt="travel landing page design" defer/><img src='/works/work3.webp' alt="fintech app design" defer/>
         <img src='/works/work4.webp' alt="eilish landing page design" defer/><img src='/works/work5.webp' alt="lol app design" defer/><img src='/works/work6.webp' alt="chiesa landing page design" defer/>
-        <img src='/works/work7.webp' alt="library app design" defer/><img src='/works/work8.webp' alt="nike landing page design" defer/><img src='/works/work9.webp' alt="classical music app design" defer/>
-        <img src='/works/work10.webp' alt="fintech app design" defer/><img src='/works/work11.webp' alt="accessories landing page design" defer/><img src='/works/work12.webp' alt="remote app design" defer/>
-        <img src='/works/work13.webp' alt="movie booking app design" defer/><img src='/works/work14.webp' alt="real estate app design" defer/><img src='/works/work15.webp' alt="banking app design" defer/>
+        <img className="optionalWork" src='/works/work7.webp' alt="library app design" defer/><img className="optionalWork" src='/works/work8.webp' alt="nike landing page design" defer/><img className="optionalWork" src='/works/work9.webp' alt="classical music app design" defer/>
+        <img className="optionalWork" src='/works/work10.webp' alt="fintech app design" defer/><img className="optionalWork" src='/works/work11.webp' alt="accessories landing page design" defer/><img className="optionalWork" src='/works/work12.webp' alt="remote app design" defer/>
+        <img className="optionalWork" src='/works/work13.webp' alt="movie booking app design" defer/><img className="optionalWork" src='/works/work14.webp' alt="real estate app design" defer/><img className="optionalWork" src='/works/work15.webp' alt="banking app design" defer/>
       </section>
       <section id="caseStudies" className='sectionCaseStudies'>
         <div className='caseStudiesBody'>

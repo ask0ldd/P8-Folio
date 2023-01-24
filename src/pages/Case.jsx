@@ -1,6 +1,6 @@
 import '../App.css'
 import '../styles/Case.css'
-import NavBar from '../components/NavBar'
+import Header from '../components/Header'
 import CaseTitle from '../components/CaseTitle'
 import { useEffect, useState } from 'react'
 import { useHTMLFetch } from '../hooks/FetchHTMLHook'
@@ -31,8 +31,8 @@ function Case(props) {
 
   return (
     <div className="case">
+      <Header items={[['ENG / FR', '/#'], ['Design Work','/#works'], ['Dev Case Studies','/#caseStudies'], ['Contact Me','/#works']]} />
         <section className='sectionSummary'>
-        <NavBar items={[['ENG / FR', '#'], ['Design Work','../#works'], ['Dev Case Studies','../#caseStudies'], ['Contact Me','../#works']]} />
             <div className='summaryContainer'>
                 <img src="/bluel/bluel1.jpg" className='mainSiteCapture'/>
                 <div className='halfSummaryContainer'>

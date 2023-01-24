@@ -18,10 +18,10 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  /*height: 900px;*/
   width: 100%;
   overflow: hidden;
-  padding: 0 4rem;
+  padding: 0 4rem 4rem 4rem;
   /*padding: 0 64px;*/
 }
 
@@ -87,12 +87,13 @@
   box-shadow: rgba(50, 50, 93, 0.35) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.4) 0px 30px 60px -30px;
   margin-top: 72px;
+  cursor: pointer;
 }
 
 .heroContainer blockquote {
   font-weight: 400;
   font-size: 16px;
-  line-height: 100%;
+  line-height: 200%;
   color: #dfe4ec;
   opacity: 0.7;
   margin-top: 130px;
@@ -100,6 +101,7 @@
 
 .statue {
   height: 85%;
+  /*width: 32%;*/
   position: absolute;
   right: 0;
   bottom: 0;
@@ -128,6 +130,7 @@
 
 .ellipse {
   height: 85%;
+  /*width: 43%;*/
   position: absolute;
   right: 0;
   bottom: 0;
@@ -329,9 +332,118 @@
   color: #888;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1600px) {
+  .sectionCaseStudies .caseContainer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .buste {
+    display: none;
+  }
+
+  .heroContainer .identite {
+    font-size: 96px;
+  }
+
+  .heroContainer .recentWork {
+    margin-top: 3rem;
+  }
+
+  .heroContainer blockquote {
+    margin-top: 3rem;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
   .statue,
   .ellipse {
+    display: none;
+  }
+
+  .buste {
+    height: 50%;
+    position: absolute;
+    left: auto;
+    margin: 0;
+    right: 0;
+    bottom: 10%;
+    display: block;
+  }
+
+  .heroContainer .text {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .heroContainer .fonction {
+    font-size: 24px;
+    margin-top: 64px;
+    line-height: 160%;
+  }
+
+  .heroContainer .identite {
+    font-size: 96px;
+    margin-top: 48px;
+    margin-left: -5px;
+  }
+
+  .heroContainer .text {
+    font-size: 1rem;
+    width: 60%;
+  }
+
+  .heroContainer .recentWork {
+    margin-top: 3rem;
+  }
+
+  .heroContainer blockquote {
+    margin-top: 3rem;
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .sectionHero {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .heroContainer .fonction {
+    font-size: 20px;
+  }
+
+  .heroContainer .identite {
+    font-size: 72px;
+    margin-top: 48px;
+    margin-left: -5px;
+  }
+
+  .heroContainer blockquote {
+    font-size: 14px;
+    margin-top: 3rem;
+    width: 100%;
+  }
+
+  /*.heroContainer .recentWork {
+    margin-top: 3rem;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }*/
+
+  .buste {
+    height: 40%;
+    bottom: 30%;
+  }
+
+  .optionalWork {
     display: none;
   }
 }

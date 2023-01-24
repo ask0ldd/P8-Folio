@@ -19,3 +19,17 @@
   align-items: center;
   justify-content: center;
 }
+
+@media screen and (max-width: 1000px) {
+  .tag {
+    width: 160px;
+    height: 48px;
+    font-size: 1rem;
+    background: #eff2f6;
+    box-shadow: 0px 2px 4px #a4b7d5, 0px 8px 16px #b3bbc7;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

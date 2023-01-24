@@ -1,0 +1,25 @@
+header {
+  width: 100%;
+  padding: 0 4rem;
+}
+
+.headerBody {
+  width: 100%;
+  max-width: 1568px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.socialItems {
+  height: 3.5rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+@media screen and (max-width: 700px) {
+  header {
+    padding: 0 2rem;
+  }
+}

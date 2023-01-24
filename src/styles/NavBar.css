@@ -8,9 +8,6 @@ nav {
   height: 3.5rem;
   display: flex;
   align-items: flex-end;
-  width: 100%;
-  max-width: 1568px;
-  margin: 0 auto;
 }
 
 nav a:any-link {
@@ -23,4 +20,20 @@ nav ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  nav ul {
+    column-gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  nav ul {
+    column-gap: 1.5rem;
+  }
+
+  nav {
+    font-size: 14px;
+  }
 }
