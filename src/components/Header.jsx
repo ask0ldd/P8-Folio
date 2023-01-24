@@ -6,7 +6,7 @@ return(
     <header>
         <div className='headerBody'>
             <NavBar items={props.items}/>
-            <div className='socialItems'>github linkedin</div>
+            <ul className='socialItems'><li>github</li><li>linkedin</li></ul>
         </div>
     </header>
 )

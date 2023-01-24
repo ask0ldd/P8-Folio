@@ -28,7 +28,7 @@
   flex-direction: column;
   width: 100%;
   /*max-width: 1568px;*/
-  margin: 0 auto;
+  margin: 3rem auto;
   row-gap: 2.5rem;
   padding: 0 4rem;
 }
@@ -37,7 +37,6 @@
   width: 100%;
   max-width: 1568px;
   margin: 0 auto;
-  height: 800px;
   background: linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.1),
@@ -80,7 +79,6 @@
 
 .halfSummaryContainer {
   width: 50%;
-  height: 100%;
   /*overflow: hidden;*/
   display: flex;
   flex-direction: column;
@@ -88,7 +86,7 @@
 
 .mainSiteCapture {
   width: 50%;
-  height: 100%;
+  max-height: 667px;
   filter: drop-shadow(0px 4px 8px rgba(21, 21, 20, 0.1))
     drop-shadow(0px 4px 8px rgba(21, 22, 22, 0.3))
     drop-shadow(0px 8px 16px rgba(22, 23, 23, 0.47));
@@ -112,8 +110,13 @@
   }
 }
 
+.bulletPointsContainer {
+  min-height: 168px;
+  width: 100%;
+}
+
 .halfSummaryContainer ul {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   font-family: "Montserrat";
   font-weight: 500;
   font-size: 16px;
@@ -129,13 +132,19 @@
 }
 
 @keyframes caseUl {
-  from {
+  0% {
     max-height: 0;
     /*opacity: 0;*/
   }
-  to {
-    max-height: 200px; /* fit-content */
+  99% {
+    max-height: 200px;
+    overflow: visible;
+    /* fit-content */
     /*opacity: 0.9;*/
+  }
+  100% {
+    max-height: fit-content;
+    overflow: visible;
   }
 }
 
@@ -150,7 +159,7 @@
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  margin-top: 1.7rem;
+  margin-top: 2rem;
 }
 
 @keyframes greenTagsContainer {
@@ -164,7 +173,7 @@
 
 .greenTag {
   width: 33%;
-  height: 100%;
+  height: 3rem;
   background: #eff2f6;
   box-shadow: 0px 2px 4px #a4b7d5, 0px 8px 16px #b3bbc7;
   border-radius: 6px;
@@ -182,25 +191,26 @@
 }
 
 .genericCode {
-  height: 50%;
+  height: 314px;
   width: 100%;
-  margin-top: 3rem;
   background-image: url("/bluel/code.jpg");
   background-size: cover;
   box-shadow: 0px 4px 8px rgba(21, 21, 20, 0.1),
     0px 4px 8px rgba(21, 22, 22, 0.3), 0px 8px 16px rgba(22, 23, 23, 0.47);
   border-radius: 20px;
   border: 3px solid #ffffff;
-  margin-top: auto;
   transform: translateX(800px);
   animation: 0.4s ease-out 0.3s forwards genericCode;
+  margin-top: 2.2rem;
+  /*align-self: flex-end;
+  justify-self: flex-end;*/
 }
 
 @keyframes genericCode {
-  from {
+  0% {
     transform: translateX(800px);
   }
-  to {
+  100% {
     transform: translateX(0px);
   }
 }
@@ -210,7 +220,7 @@
   width: 100%;
   /*max-width: 1568px;*/
   margin: 0 auto;
-  padding: 0 4rem;
+  padding-bottom: 3rem;
 }
 
 .codenMenuContainer {
