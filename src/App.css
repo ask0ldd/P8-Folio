@@ -105,8 +105,8 @@
   position: absolute;
   right: 0;
   bottom: 0;
-  transform: translateX(800px) translateY(800px);
-  animation: 0.4s ease-out forwards statue;
+  /*transform: translateX(800px) translateY(800px);
+  animation: 0.4s ease-out forwards statue;*/
 }
 
 @keyframes statue {
