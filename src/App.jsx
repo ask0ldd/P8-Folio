@@ -38,8 +38,8 @@ function App() {
       <section id="caseStudies" className='sectionCaseStudies'>
         <div className='caseStudiesBody'>
           <div className="caseContainer">
-          <button className='viewCaseButton'><img alt="arrow" src="/icons/arrow.svg"/></button>
-          <NavLink aria-label='Look at Sophie Bluel case study' to="/case/1"><button className='viewCaseButtonGlass'></button></NavLink>
+          <button className='viewCaseButton' title="go to case 1 backup"><img alt="arrow" src="/icons/arrow.svg"/></button>
+          <NavLink aria-label='Look at Sophie Bluel case study' to="/case/1"><button className='viewCaseButtonGlass' title="go to case 1"></button></NavLink>
             <span className='digit'>I</span>
             <span className='caseTitle'>ARCHITECT PORTFOLIO / FRONTEND</span>
             <ul>
@@ -54,8 +54,8 @@ function App() {
             </div>
           </div>
           <div className="caseContainer">
-            <button className='viewCaseButton'><img alt="arrow" src="/icons/arrow.svg"/></button>
-            <NavLink aria-label='Look at Casa case study' to="/case/2"><button className='viewCaseButtonGlass'></button></NavLink>
+            <button className='viewCaseButton' title="go to case 2 backup"><img alt="arrow" src="/icons/arrow.svg"/></button>
+            <NavLink aria-label='Look at Casa case study' to="/case/2"><button className='viewCaseButtonGlass' title="go to case 2"></button></NavLink>
             <span className='digit'>II</span>
             <span className='caseTitle'>BOOKS RATING WEBSITE / BACKEND</span>
             <ul>
