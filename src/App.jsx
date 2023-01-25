@@ -14,6 +14,12 @@ function App() {
     dropButton.addEventListener('click', ()=>{
       //document.querySelector('.sectionResume').style.height = "fit-content";
       document.querySelector('.sectionResume').classList.add("sectionResumeFull");
+      document.querySelectorAll('.jobResume').forEach(el => {
+        el.style.animation="0.4s ease-out 0.2s forwards jobresume"
+      })
+      document.querySelectorAll('.yearResume').forEach((el, i) => {
+        el.style.animation="0.4s ease-out "+(0.6)+"s forwards yearresume"
+      })
     })  
   });
 
@@ -41,21 +47,21 @@ function App() {
               <div className='yearResume'>2022</div>
               <div className='jobResume'>
                 Web Developer RNCP 5 title (bac+2 eq.)<br/>
-                <span>OC Paris</span>
+                <span>OC / Paris</span>
               </div>
             </li>
             <li>
               <div className='yearResume'>2007</div>
               <div className='jobResume'>
                 Basic Media Certification<br/>
-                <span>MiddleSex University UK</span>
+                <span>MiddleSex University / UK</span>
               </div>
             </li>
             <li>
               <div className='yearResume'>2000</div>
               <div className='jobResume'>
                 Classe préparatoire aux Grande Ecoles<br/>
-                <span>Lycée Saint Louis Paris</span>
+                <span>Lycée Saint Louis / Paris</span>
               </div>
             </li>
           </ul>

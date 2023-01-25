@@ -165,16 +165,16 @@
   border-bottom: 3px solid #272a2f;
   overflow: hidden;
   max-height: 6rem;
-  transition: max-height 0.6s ease-in;
+  transition: max-height 0.6s ease-in-out;
 }
 
 .sectionResumeFull {
-  max-height: 100vh;
+  max-height: 960px;
 }
 
 .dropResume {
   width: 400px;
-  height: 4rem;
+  height: 3.5rem;
   background: #567070;
   box-shadow: inset 0px -8px 16px rgba(62, 85, 85, 0.54);
   border-radius: 0px 0px 40px 40px;
@@ -185,6 +185,9 @@
   color: #e5e5e5;
   text-shadow: 0px 4px 8px #3b5353;
   margin: 0 auto;
+  flex-shrink: 0;
+  padding-bottom: 4px;
+  outline: 2px solid #749393;
 }
 
 .resumeContainer {
@@ -209,7 +212,7 @@
 .resumeContainer ul {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem 3rem;
   width: 50%;
 }
 
@@ -223,7 +226,7 @@
   );
   color: #ebf5f5;
   padding: 1rem 2rem;
-  gap: 2rem;
+  gap: 3rem;
   align-items: center;
   overflow: hidden;
 }
@@ -236,10 +239,32 @@
   line-height: 160%;
   color: #ffffff;
   text-shadow: 0px 2px 4px #3a5f6a, 0px 4px 8px #516c75;
+  transform: translateX(-170px);
 }
+
+@keyframes yearresume {
+  from {
+    transform: translateX(-170px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
 .jobResume {
   line-height: 160%;
   margin-top: 4px;
+  transform: translateY(-100px);
+  /*animation: 0.4s ease-out forwards jobresume;*/
+}
+
+@keyframes jobresume {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0px);
+  }
 }
 
 .resumeContainer ul span {
