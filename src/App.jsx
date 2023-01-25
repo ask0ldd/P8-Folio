@@ -10,6 +10,11 @@ function App() {
   
   useLayoutEffect(() => {
     window.scrollTo(0, 0)
+    const dropButton = document.querySelector('.dropResume')
+    dropButton.addEventListener('click', ()=>{
+      //document.querySelector('.sectionResume').style.height = "fit-content";
+      document.querySelector('.sectionResume').classList.add("sectionResumeFull");
+    })  
   });
 
   return (
@@ -26,6 +31,65 @@ function App() {
           Ullamcorper dictum eget non pretium molestie eu. Tortor odio sit a convallis nam. Amet, quisque quis ridiculus dolor ipsum, donec id.</p>
           <a href="#works"><button className='recentWork'>Recent Work</button></a>
           <blockquote>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue velit integer viverra dignissim proin.” ― Arthur Schopenhauer</blockquote>
+        </div>
+      </section>
+      <section className='sectionResume'>
+        <button className='dropResume' title="drop the resume">RESUME</button>
+        <div className='resumeContainer'>
+          <ul>
+            <li>
+              <div className='yearResume'>2022</div>
+              <div className='jobResume'>
+                Web Developer RNCP 5 title (bac+2 eq.)<br/>
+                <span>OC Paris</span>
+              </div>
+            </li>
+            <li>
+              <div className='yearResume'>2007</div>
+              <div className='jobResume'>
+                Basic Media Certification<br/>
+                <span>MiddleSex University UK</span>
+              </div>
+            </li>
+            <li>
+              <div className='yearResume'>2000</div>
+              <div className='jobResume'>
+                Classe préparatoire aux Grande Ecoles<br/>
+                <span>Lycée Saint Louis Paris</span>
+              </div>
+            </li>
+          </ul>
+          <div className='separatorResume'></div>
+          <ul>
+            <li>
+              <div className='yearResume'>2015</div>
+              <div className='jobResume'>
+                UI Designer - Freelancing<br/>
+                <span>Fitness Boutique, Hybrid Factor & Big Block</span>
+              </div>
+            </li>
+            <li>
+            <div className='yearResume'>2007</div>
+              <div className='jobResume'>
+                Composer / Musician<br/>
+                <span>Sony DE, Universal LATAM & BMG Warner</span>
+              </div>
+            </li>
+            <li>
+              <div className='yearResume'>2004</div>
+                <div className='jobResume'>
+                Adjoint au Secrétaire Général<br/>
+                <span>Mairie de Paris</span>
+              </div>
+            </li>
+            <li>
+              <div className='yearResume'>2002</div>
+                <div className='jobResume'>
+                Technicien en Ingénierie des données<br/>
+                <span>UUNET, EDF & Adecco</span>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
       <section className='sectionWorks' id="works">

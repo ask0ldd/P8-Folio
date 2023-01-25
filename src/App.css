@@ -148,6 +148,112 @@
   }
 }
 
+.sectionResume {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 4rem 0rem 4rem;
+  background: linear-gradient(
+      180deg,
+      rgba(61, 81, 87, 0) 0%,
+      rgba(61, 81, 87, 0.648) 100%
+    ),
+    #628282;
+  border-top: 9px solid #272a2f;
+  border-bottom: 3px solid #272a2f;
+  overflow: hidden;
+  max-height: 6rem;
+  transition: max-height 0.6s ease-in;
+}
+
+.sectionResumeFull {
+  max-height: 100vh;
+}
+
+.dropResume {
+  width: 400px;
+  height: 4rem;
+  background: #567070;
+  box-shadow: inset 0px -8px 16px rgba(62, 85, 85, 0.54);
+  border-radius: 0px 0px 40px 40px;
+  border: 0;
+  font-family: "Oswald";
+  font-weight: 700;
+  font-size: 32px;
+  color: #e5e5e5;
+  text-shadow: 0px 4px 8px #3b5353;
+  margin: 0 auto;
+}
+
+.resumeContainer {
+  width: 100%;
+  background: #e5e5e6;
+  box-shadow: 0px 4px 8px rgba(58, 67, 68, 0.6),
+    0px 8px 16px rgba(59, 73, 75, 0.6), 0px 16px 32px rgba(62, 84, 89, 0.8);
+  border-radius: 20px;
+  padding: 4rem 0;
+  /*border: 9px solid #8a7c58;*/
+  max-width: 1568px;
+  margin: 3rem auto 5rem auto;
+  display: flex;
+  flex-direction: row;
+  /*justify-content: space-between;*/
+  color: #5a5f6a;
+  font-weight: 600;
+  font-size: 20px;
+  /*overflow: hidden;*/
+}
+
+.resumeContainer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 50%;
+}
+
+.resumeContainer ul li {
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(
+    89.89deg,
+    #648f9d 0.08%,
+    rgba(94, 117, 124, 0.72) 99.91%
+  );
+  color: #ebf5f5;
+  padding: 1rem 2rem;
+  gap: 2rem;
+  align-items: center;
+  overflow: hidden;
+}
+
+.yearResume {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 160%;
+  color: #ffffff;
+  text-shadow: 0px 2px 4px #3a5f6a, 0px 4px 8px #516c75;
+}
+.jobResume {
+  line-height: 160%;
+  margin-top: 4px;
+}
+
+.resumeContainer ul span {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 16px;
+  display: block;
+  margin-top: 8px;
+}
+
+.separatorResume {
+  width: 2rem;
+}
+
 .sectionWorks {
   width: 100%;
   padding: 6px;
