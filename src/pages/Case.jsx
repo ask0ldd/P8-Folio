@@ -2,6 +2,7 @@ import '../App.css'
 import '../styles/Case.css'
 import Header from '../components/Header'
 import CaseTitle from '../components/CaseTitle'
+import MenuCodeCase from '../components/MenuCodeCase'
 import { useEffect, useState } from 'react'
 import { useHTMLFetch } from '../hooks/FetchHTMLHook'
 
@@ -13,21 +14,6 @@ function Case(props) {
 
   const [activeCode, setActiveCode] = useState(0)
   const [isLoading, fetchedData, setFetchedData, isfetchError] = useHTMLFetch(window.location.origin+'/code/codeapi.html')
-
-  const codeArray = ['api', 'gallery', 'log']
-  const codeContainer = document.querySelector('.codeContainer')
-
-  const test = async (id) => {
-    try{
-      const response = await fetch(window.location.origin+'/code/code'+codeArray[id]+'.html')
-      const data = await response.text()
-      setFetchedData(data)
-      setActiveCode(id)
-      codeContainer.scrollTo(0, 0)
-    }catch(error){
-        console.error(error)
-    }
-  }
 
   return (
     <div className="case">
@@ -59,12 +45,8 @@ function Case(props) {
           <div className='codenMenuContainer'>
             <div style={{overflowY: "scroll"}} className='codeContainer' dangerouslySetInnerHTML={{__html: fetchedData}}>
             </div>
-            <div className="menuCodeContainer">
-              <button className='active' onClick={() => test(0)}>API Wrapper</button>
-              <button onClick={() => test(1)}>Gallery</button>
-              <button>Gallery Management</button>
-              <button onClick={() => test(2)}>Login</button>
-            </div>
+            {/* createRef instead */}
+            <MenuCodeCase codeArray={['api', 'gallery', 'log']} codeContainer={document.querySelector('.codeContainer')} setFetched={setFetchedData} setActiveCode={setActiveCode}/>
           </div>
         </section>
     </div>

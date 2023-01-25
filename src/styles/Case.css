@@ -264,69 +264,6 @@
   background: #555;
 }
 
-.menuCodeContainer {
-  /*background: linear-gradient(
-      105.56deg,
-      rgba(255, 255, 255, 0) 6.12%,
-      rgba(255, 255, 255, 0.6) 50.59%,
-      rgba(255, 255, 255, 0) 93.25%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(142, 163, 194, 0.6) 100%
-    ),
-    #d1d8e3;*/
-  background: linear-gradient(
-      256.31deg,
-      rgba(255, 255, 255, 0) 12.67%,
-      rgba(255, 255, 255, 0.1) 42.14%,
-      rgba(255, 255, 255, 0) 81.59%
-    ),
-    #5e757c;
-  width: 20%;
-  height: fit-content;
-  box-shadow: 0px 4px 8px rgba(21, 21, 20, 0.1),
-    0px 4px 8px rgba(21, 22, 22, 0.3), 0px 8px 16px rgba(22, 23, 23, 0.47);
-  border: 6px solid #3b4244;
-  border-radius: 0 20px 20px 0;
-  margin-top: 3rem;
-  overflow: hidden;
-}
-
-.menuCodeContainer button {
-  height: 60px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  padding-right: 2rem;
-  justify-content: right;
-  color: #ffffff;
-  font-family: "Montserrat";
-  font-weight: 600;
-  font-size: 16px;
-  border: 0;
-  border-top: 1px solid #3b4244;
-  border-bottom: 1px solid #3b4244;
-  background: none;
-}
-
-.menuCodeContainer .active {
-  background: linear-gradient(
-      105.56deg,
-      rgba(255, 255, 255, 0) 6.12%,
-      rgba(255, 255, 255, 0.6) 50.59%,
-      rgba(255, 255, 255, 0) 93.25%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(142, 163, 194, 0.6) 100%
-    ),
-    #d1d8e3;
-  color: #3b4244;
-}
-
 @media screen and (max-width: 1000px) {
   .summaryContainer {
     flex-direction: column;
