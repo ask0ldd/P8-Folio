@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 const CustomRouter = () => {
     return (
-        <Router>
+        <Router basename="/P8-Folio/">
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/case/:id" element={<Case />}/>
