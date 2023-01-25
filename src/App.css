@@ -219,13 +219,17 @@
     0px 4px 8px rgba(21, 22, 22, 0.3), 0px 8px 16px rgba(22, 23, 23, 0.47);
   backdrop-filter: blur(8px);
   color: #484e59;
-  font-family: "Oswald";
-  font-weight: 700;
-  font-size: 32px;
-  padding: 2.5rem 2rem 2rem 2rem;
+  padding: 1.6rem 2rem 2rem 2rem;
   /*border: 12px solid #86979a;*/
   border: 9px solid #8a7c58;
   border-radius: 20px;
+}
+
+.caseTitle {
+  font-family: "Oswald";
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 160%;
 }
 
 .digit {
@@ -285,7 +289,7 @@
 }
 
 .sectionCaseStudies ul {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
@@ -406,6 +410,13 @@
   }
 }
 
+@media screen and (max-width: 900px) {
+  .viewCaseButton,
+  .viewCaseButtonGlass {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 700px) {
   .sectionHero {
     padding-left: 2rem;
@@ -444,6 +455,40 @@
   }
 
   .optionalWork {
+    display: none;
+  }
+
+  .tagContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .tagContainer div {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .buste {
+    display: none;
+  }
+
+  .heroContainer .identite {
+    font-size: 48px;
+    margin-top: 36px;
+  }
+
+  .heroContainer .text {
+    width: 100%;
+    margin-top: 48px;
+  }
+
+  .sectionCaseStudies {
+    padding: 0 1.5rem;
+  }
+
+  .digit {
     display: none;
   }
 }

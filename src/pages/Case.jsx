@@ -45,7 +45,7 @@ function Case(props) {
           <div className='codenMenuContainer'>
             <div style={{overflowY: "scroll"}} className='codeContainer' dangerouslySetInnerHTML={{__html: fetchedData}}>
             </div>
-            {/* createRef instead */}
+            {/* createRef with a state instead + create compo menu + code */}
             <MenuCodeCase codeArray={['api', 'gallery', 'log']} codeContainer={document.querySelector('.codeContainer')} setFetched={setFetchedData} setActiveCode={setActiveCode}/>
           </div>
         </section>

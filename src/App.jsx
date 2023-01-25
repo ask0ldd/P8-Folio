@@ -41,7 +41,7 @@ function App() {
           <button className='viewCaseButton'><img alt="arrow" src="/icons/arrow.svg"/></button>
           <NavLink aria-label='Look at Sophie Bluel case study' to="/case/1"><button className='viewCaseButtonGlass'></button></NavLink>
             <span className='digit'>I</span>
-            ARCHITECT PORTFOLIO / FRONTEND
+            <span className='caseTitle'>ARCHITECT PORTFOLIO / FRONTEND</span>
             <ul>
               <li>Coding the responsive front-end of an already designed portfolio.</li>
               <li>Implementing the front-end of the back-office allowing to add new pictures.</li>
@@ -57,7 +57,7 @@ function App() {
             <button className='viewCaseButton'><img alt="arrow" src="/icons/arrow.svg"/></button>
             <NavLink aria-label='Look at Casa case study' to="/case/2"><button className='viewCaseButtonGlass'></button></NavLink>
             <span className='digit'>II</span>
-            BOOKS RATING WEBSITE / BACKEND
+            <span className='caseTitle'>BOOKS RATING WEBSITE / BACKEND</span>
             <ul>
               <li>Coding the responsive front-end of an already designed portfolio.</li>
               <li>Implementing the front-end of the back-office allowing to add new pictures.</li>

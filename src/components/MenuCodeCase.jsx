@@ -6,6 +6,7 @@ const MenuCodeCase = (props) => {
 
     const codeArray = ['api', 'gallery', 'log']
     const codeContainer = document.querySelector('.codeContainer')
+    const menuCodeContainer = document.querySelector('.menuCodeContainer')
 
     const test = async (id) => {
         try{
@@ -14,6 +15,10 @@ const MenuCodeCase = (props) => {
             props.setFetched(data)
             props.setActiveCode(id)
             props.codeContainer.scrollTo(0, 0)
+            for (const child of menuCodeContainer.children) {
+                child.className=""
+            }
+            menuCodeContainer.children[id].className="active"
         }catch(error){
             console.error(error)
         }
