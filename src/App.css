@@ -169,7 +169,7 @@
 }
 
 .sectionResumeFull {
-  max-height: 960px;
+  max-height: 200vh;
 }
 
 .dropResume {
@@ -492,6 +492,21 @@
   }
 }
 
+@media screen and (max-width: 1250px) {
+  .separatorResume {
+    display: none;
+  }
+
+  .resumeContainer {
+    flex-direction: column;
+    row-gap: 6rem;
+  }
+
+  .resumeContainer ul {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .statue,
   .ellipse {
@@ -545,6 +560,21 @@
   .viewCaseButton,
   .viewCaseButtonGlass {
     display: none;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .yearResume {
+    font-size: 32px;
+  }
+
+  .jobResume {
+    font-size: 16px;
+  }
+
+  .dropResume {
+    width: 160px;
+    border-radius: 0 0 20px 20px;
   }
 }
 
@@ -621,5 +651,15 @@
 
   .digit {
     display: none;
+  }
+
+  .resumeContainer {
+    margin: 0;
+    border-radius: 0;
+    background: none;
+  }
+
+  .sectionResume {
+    padding: 0;
   }
 }

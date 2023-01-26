@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import '../styles/MenuCodeCase.css'
 
 
@@ -30,6 +31,7 @@ const MenuCodeCase = (props) => {
             <button onClick={() => test(1)}>Gallery</button>
             <button>Gallery Management</button>
             <button onClick={() => test(2)}>Login</button>
+            <NavLink><button onClick={() => test(2)}>Github</button></NavLink>
         </div>)
 }
 
