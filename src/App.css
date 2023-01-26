@@ -657,6 +657,13 @@
     margin: 0;
     border-radius: 0;
     background: none;
+    box-shadow: none;
+    padding: 1rem;
+  }
+
+  .resumeContainer li {
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
   }
 
   .sectionResume {
