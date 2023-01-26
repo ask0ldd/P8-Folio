@@ -13,14 +13,23 @@ header {
 }
 
 .socialItems {
-  height: 3.5rem;
+  height: 4rem;
   display: flex;
   align-items: flex-end;
-  column-gap: 2rem;
+  column-gap: 3rem;
+}
+
+.socialItems img {
+  width: 24px;
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 700px) {
   header {
     padding: 0 2rem;
+  }
+
+  .socialItems {
+    column-gap: 1.5rem;
   }
 }

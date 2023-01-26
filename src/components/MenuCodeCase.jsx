@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import '../styles/MenuCodeCase.css'
 
 
@@ -29,9 +29,9 @@ const MenuCodeCase = (props) => {
     return(<div className="menuCodeContainer">
             <button className='active' onClick={() => test(0)}>API Wrapper</button>
             <button onClick={() => test(1)}>Gallery</button>
-            <button>Gallery Management</button>
-            <button onClick={() => test(2)}>Login</button>
-            <NavLink><button onClick={() => test(2)}>Github</button></NavLink>
+            <button onClick={() => test(2)}>Gallery Management</button>
+            <button>Login</button>
+            <a href={props.githubLink}><button>Github</button></a>
         </div>)
 }
 

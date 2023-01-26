@@ -90,7 +90,7 @@
   /*filter: drop-shadow(0px 4px 8px rgba(21, 21, 20, 0.1))
     drop-shadow(0px 4px 8px rgba(21, 22, 22, 0.3))
     drop-shadow(0px 8px 16px rgba(22, 23, 23, 0.47));*/
-  box-shadow: 0px 2px 4px #a4b7d5, 0px 8px 16px #b3bbc7;
+  box-shadow: 0px 2px 4px #94a6c2, 0px 8px 16px #858d9b;
   border-radius: 20px;
   overflow: hidden;
   object-fit: cover;
@@ -194,11 +194,11 @@
 .genericCode {
   height: 314px;
   width: 100%;
-  background-image: url("/bluel/bluel2.jpg");
+  background-image: url("/bluel/code.jpg");
   background-size: cover;
   /*box-shadow: 0px 4px 8px rgba(21, 21, 20, 0.1),
     0px 4px 8px rgba(21, 22, 22, 0.3), 0px 8px 16px rgba(22, 23, 23, 0.47);*/
-  box-shadow: 0px 2px 4px #a4b7d5, 0px 8px 16px #b3bbc7;
+  box-shadow: 0px 2px 4px #94a6c2, 0px 8px 16px #858d9b;
   border-radius: 20px;
   border: 3px solid #ffffff;
   transform: translateX(800px);

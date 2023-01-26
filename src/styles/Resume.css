@@ -1,0 +1,157 @@
+.resumeContainer {
+  width: 100%;
+  background: #e5e5e6;
+  box-shadow: 0px 4px 8px rgba(58, 67, 68, 0.6),
+    0px 8px 16px rgba(59, 73, 75, 0.6), 0px 16px 32px rgba(62, 84, 89, 0.8);
+  border-radius: 20px;
+  padding: 2.5rem 0 4rem 0;
+  border: 9px solid #8a7c58;
+  max-width: 1568px;
+  margin: 3rem auto 5rem auto;
+  display: flex;
+  flex-direction: row;
+  /*justify-content: space-between;*/
+  color: #5a5f6a;
+  font-weight: 600;
+  font-size: 20px;
+  /*overflow: hidden;*/
+}
+
+.resumeContainer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem 3rem;
+  width: 50%;
+}
+
+.titleLines {
+  display: flex;
+  flex-direction: row;
+  color: #343b47;
+  padding: 1rem 0;
+  gap: 3rem 0;
+  align-items: center;
+  overflow: hidden;
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  opacity: 0.9;
+  margin-left: -4px;
+}
+
+.resumeLines {
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(
+    89.89deg,
+    #648f9d 0.08%,
+    rgba(94, 117, 124, 0.72) 99.91%
+  );
+  color: #ebf5f5;
+  padding: 1rem 0;
+  gap: 3rem 0;
+  align-items: center;
+  overflow: hidden;
+}
+
+.yearResume {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 160%;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  text-shadow: 0px 2px 4px #466c77, 0px 4px 8px #65808a;
+  transform: translateX(-170px);
+  flex-shrink: 0;
+}
+
+@keyframes yearresume {
+  from {
+    transform: translateX(-170px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+.jobResume {
+  line-height: 160%;
+  margin-top: 4px;
+  transform: translateY(-100px);
+  padding-right: 2ch;
+  /*animation: 0.4s ease-out forwards jobresume;*/
+}
+
+@keyframes jobresume {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+.resumeContainer ul span {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 16px;
+  display: block;
+  margin-top: 8px;
+}
+
+.separatorResume {
+  width: 2rem;
+}
+
+@media screen and (max-width: 1250px) {
+  .separatorResume {
+    display: none;
+  }
+
+  .resumeContainer {
+    flex-direction: column;
+    row-gap: 6rem;
+  }
+
+  .resumeContainer ul {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .yearResume {
+    font-size: 32px;
+    width: 160px;
+  }
+
+  .jobResume {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .yearResume {
+    width: 140px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .resumeContainer {
+    margin: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    padding: 1rem;
+    border: 0;
+  }
+
+  .resumeContainer li {
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+}

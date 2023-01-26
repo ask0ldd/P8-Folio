@@ -5,12 +5,18 @@ import CaseTitle from '../components/CaseTitle'
 import MenuCodeCase from '../components/MenuCodeCase'
 import { useEffect, useState } from 'react'
 import { useHTMLFetch } from '../hooks/FetchHTMLHook'
+import { useParams } from 'react-router-dom'
 
 function Case(props) {
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, []);
+
+  const { id } = useParams();
+
+  const links = [["/bluel/bluel1.jpg" , "/bluel/bluel1.jpg"],["/grimoire/grimoire1.jpg" , "/grimoire/grimoire2.jpg"]]
+  const githubs = ["https://github.com/ask0ldd/P3-OC-JS-Frontend", "https://github.com/ask0ldd/P7-Node-Express-Mongo"]
 
   const [activeCode, setActiveCode] = useState(0)
   const [isLoading, fetchedData, setFetchedData, isfetchError] = useHTMLFetch(window.location.origin+'/code/codeapi.html')
@@ -20,7 +26,7 @@ function Case(props) {
       <Header items={[['ENG / FR', '/#'], ['Design Work','/#works'], ['Dev Case Studies','/#caseStudies'], ['Contact Me','/#works']]} />
         <section className='sectionSummary'>
             <div className='summaryContainer'>
-                <img src="/bluel/bluel1.jpg" className='mainSiteCapture'/>
+                <img src={links[id-1][0]} className='mainSiteCapture'/>
                 <div className='halfSummaryContainer'>
                   <CaseTitle title="BRIEF KEYPOINTS"/>
                   <div className='bulletPointsContainer'>
@@ -46,7 +52,7 @@ function Case(props) {
             <div style={{overflowY: "scroll"}} className='codeContainer' dangerouslySetInnerHTML={{__html: fetchedData}}>
             </div>
             {/* createRef with a state instead + create compo menu + code */}
-            <MenuCodeCase codeArray={['api', 'gallery', 'log']} codeContainer={document.querySelector('.codeContainer')} setFetched={setFetchedData} setActiveCode={setActiveCode}/>
+            <MenuCodeCase codeArray={['api', 'gallery', 'log']} githubLink={githubs[id-1]} codeContainer={document.querySelector('.codeContainer')} setFetched={setFetchedData} setActiveCode={setActiveCode}/>
           </div>
         </section>
     </div>
