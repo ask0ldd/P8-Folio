@@ -4,6 +4,7 @@ import './App.css'
 import Header from './components/Header'
 import Tag from './components/Tag'
 import Resume from './components/Resume'
+import Gallery from './components/Gallery'
 import { useLayoutEffect } from 'react'
 
 function App() {
@@ -44,13 +45,7 @@ function App() {
         <button className='dropResume' title="drop the resume">RESUME</button>
         <Resume/>
       </section>
-      <section className='sectionWorks' id="works">
-        <img src='/works/work1.webp' alt="travel app design" defer/><img src='/works/work2.webp' alt="travel landing page design" defer/><img src='/works/work3.webp' alt="fintech app design" defer/>
-        <img src='/works/work4.webp' alt="eilish landing page design" defer/><img src='/works/work5.webp' alt="lol app design" defer/><img src='/works/work6.webp' alt="chiesa landing page design" defer/>
-        <img className="optionalWork" src='/works/work7.webp' alt="library app design" defer/><img className="optionalWork" src='/works/work8.webp' alt="nike landing page design" defer/><img className="optionalWork" src='/works/work9.webp' alt="classical music app design" defer/>
-        <img className="optionalWork" src='/works/work10.webp' alt="fintech app design" defer/><img className="optionalWork" src='/works/work11.webp' alt="accessories landing page design" defer/><img className="optionalWork" src='/works/work12.webp' alt="remote app design" defer/>
-        <img className="optionalWork" src='/works/work13.webp' alt="movie booking app design" defer/><img className="optionalWork" src='/works/work14.webp' alt="real estate app design" defer/><img className="optionalWork" src='/works/work15.webp' alt="banking app design" defer/>
-      </section>
+      <Gallery />
       <section id="caseStudies" className='sectionCaseStudies'>
         <div className='caseStudiesBody'>
           <div className="caseContainer">
@@ -68,7 +63,7 @@ function App() {
               <Tag text="HTML + SASS" />
               <Tag text="Figma" />
             </div>
-            <div className='textViewCaseButton'>Check out this project</div>
+            <Link aria-label='Look at Casa case study' to="/case/2"><div className='textViewCaseButton'>Check out this project</div></Link>
           </div>
           <div className="caseContainer">
             <button className='viewCaseButton' title="go to case 2 backup"><img alt="arrow" src="/icons/arrow.svg"/></button>
@@ -85,7 +80,7 @@ function App() {
               <Tag text="Express" />
               <Tag text="MongoDB" />
             </div>
-            <div className='textViewCaseButton'>Check out this project</div>
+            <Link aria-label='Look at Casa case study' to="/case/2"><div className='textViewCaseButton'>Check out this project</div></Link>
           </div>
         </div>
       </section>

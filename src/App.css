@@ -191,29 +191,6 @@
   outline: 2px solid #749393;
 }
 
-.sectionWorks {
-  width: 100%;
-  padding: 6px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 6px;
-  background-color: #272a2f;
-}
-
-.sectionWorks img {
-  width: 33%;
-  min-width: 400px;
-  flex: 1 1 33%;
-}
-
-/*.works img {
-  width: 100%;
-  margin: 0;
-  outline: solid 2px #272a2f;
-  outline-offset: -2px;
-}*/
-
 .sectionCaseStudies {
   width: 100%;
   background: url("/statuenwoods4.png"),
@@ -574,11 +551,6 @@
   .heroContainer .text {
     width: 100%;
     margin-top: 48px;
-  }
-
-  .sectionWorks img {
-    min-width: auto;
-    width: 100%;
   }
 
   .sectionCaseStudies {

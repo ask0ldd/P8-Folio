@@ -6,7 +6,7 @@ return(
     <ul>
       <li className='titleLines'>
         <div className='yearResume'></div>
-        <div className='titleColor'>Education</div>
+        <div className='titleColor'>EDUCATION</div>
       </li>
       <li className='resumeLines'>
         <div className='yearResume'>2022</div>
@@ -34,7 +34,7 @@ return(
     <ul>
       <li className='titleLines'>
         <div className='yearResume titleColor'></div>
-        <div className='titleColor'>Experience</div>
+        <div className='titleColor'>EXPERIENCE</div>
       </li>
       <li className='resumeLines'>
         <div className='yearResume'>2015</div>

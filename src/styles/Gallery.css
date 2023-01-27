@@ -1,0 +1,28 @@
+.sectionWorks {
+  width: 100%;
+  padding: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 6px;
+  background-color: #272a2f;
+}
+
+.sectionWorks img {
+  width: 33%;
+  min-width: 400px;
+  flex: 1 1 33%;
+}
+
+@media screen and (max-width: 700px) {
+  .optionalWork {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .sectionWorks img {
+    min-width: auto;
+    width: 100%;
+  }
+}
