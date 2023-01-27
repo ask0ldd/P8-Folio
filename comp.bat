@@ -1,0 +1,1 @@
+cwebp buste.png -o buste.webp
