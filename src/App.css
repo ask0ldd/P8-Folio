@@ -429,21 +429,6 @@
   }
 }
 
-@media screen and (max-width: 1250px) {
-  .separatorResume {
-    display: none;
-  }
-
-  .resumeContainer {
-    flex-direction: column;
-    row-gap: 6rem;
-  }
-
-  .resumeContainer ul {
-    width: 100%;
-  }
-}
-
 @media screen and (max-width: 1200px) {
   .statue,
   .ellipse {
@@ -589,6 +574,11 @@
   .heroContainer .text {
     width: 100%;
     margin-top: 48px;
+  }
+
+  .sectionWorks img {
+    min-width: auto;
+    width: 100%;
   }
 
   .sectionCaseStudies {

@@ -6,7 +6,11 @@ return(
     <header>
         <div className='headerBody'>
             <NavBar items={props.items}/>
-            <ul className='socialItems'><li><img src="/icons/dribbble.svg"/></li><li><img src="/icons/github.svg"/></li><li><img src="/icons/linkedin.svg"/></li></ul>
+            <ul className='socialItems'>
+                <li><img src="/icons/dribbble.svg"/></li>
+                <li><a href='https://github.com/ask0ldd'><img src="/icons/github.svg"/></a></li>
+                <li><img src="/icons/linkedin.svg"/></li>
+            </ul>
         </div>
     </header>
 )

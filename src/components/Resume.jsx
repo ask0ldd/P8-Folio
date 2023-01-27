@@ -15,7 +15,7 @@ return(
           <span>OC / Paris</span>
         </div>
       </li>
-      <li className='resumeLines'>
+      <li className='resumeLines odd'>
         <div className='yearResume'>2007</div>
         <div className='jobResume'>
           Basic Media Certification<br/>
@@ -43,7 +43,7 @@ return(
           <span>Fitness Boutique, Hybrid Factor & Big Block</span>
         </div>
       </li>
-      <li className='resumeLines'>
+      <li className='resumeLines odd'>
       <div className='yearResume'>2007</div>
         <div className='jobResume'>
           Composer / Musician<br/>
@@ -57,7 +57,7 @@ return(
           <span>Mairie de Paris</span>
         </div>
       </li>
-      <li className='resumeLines'>
+      <li className='resumeLines odd'>
         <div className='yearResume'>2002</div>
           <div className='jobResume'>
           Technicien en Ingénierie des données<br/>
