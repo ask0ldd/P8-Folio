@@ -15,7 +15,8 @@ function Case(props) {
 
   const { id } = useParams();
 
-  const links = [["/bluel/bluel1.jpg" , "/bluel/bluel1.jpg"],["/grimoire/grimoire1.jpg" , "/grimoire/grimoire2.jpg"]]
+  //const links = [["/P8-Folio/bluel/bluel1.webp" , "/P8-Folio/bluel/bluel1.webp"],["/P8-Folio/grimoire/grimoire1.webp" , "/P8-Folio/grimoire/grimoire2.webp"]]
+  const links = [["/bluel/bluel1.webp" , "/bluel/bluel1.webp"],["/grimoire/grimoire1.webp" , "/grimoire/grimoire2.webp"]]
   const githubs = ["https://github.com/ask0ldd/P3-OC-JS-Frontend", "https://github.com/ask0ldd/P7-Node-Express-Mongo"]
 
   const [activeCode, setActiveCode] = useState(0)

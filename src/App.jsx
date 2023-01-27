@@ -1,11 +1,16 @@
-import { useState } from 'react'
+import { useState, useLayoutEffect } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import './App.css'
+
 import Header from './components/Header'
 import Tag from './components/Tag'
 import Resume from './components/Resume'
 import Gallery from './components/Gallery'
-import { useLayoutEffect } from 'react'
+
+import arrow from '/icons/arrow.svg'
+import ellipse from '/ellipse0.svg'
+import statue from '/statue.webp'
+import buste from '/buste.webp'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,9 +34,9 @@ function App() {
     <div className="App">
       <Header items={[['ENG / FR', '/#'], ['Design Work','/P8-Folio/#works'], ['Dev Case Studies','/P8-Folio/#caseStudies']]} />
       <section className='sectionHero'>
-        <img className='ellipse' alt="ellipse" src='/ellipse0.svg'/>
-        <img className='statue' alt="statue" src='/statue.png'/>
-        <img className='buste' alt="buste" src='/buste.png'/>
+        <img className='ellipse' alt="ellipse" src={ellipse}/>
+        <img className='statue' alt="statue" src={statue}/>
+        <img className='buste' alt="buste" src={buste}/>
         <div className='heroContainer'>
           <p className='fonction'>UI Design & Front End Dev. Paris. France.</p>
           <p className='identite'>Cédric ASkldd</p>
@@ -49,7 +54,7 @@ function App() {
       <section id="caseStudies" className='sectionCaseStudies'>
         <div className='caseStudiesBody'>
           <div className="caseContainer">
-          <button className='viewCaseButton' title="go to case 1 backup"><img alt="arrow" src="/icons/arrow.svg"/></button>
+          <button className='viewCaseButton' title="go to case 1 backup"><img alt="arrow" src={arrow}/></button>
           <Link aria-label='Look at Sophie Bluel case study' to="/case/1"><button className='viewCaseButtonGlass' title="go to case 1"></button></Link>
             <span className='digit'>I</span>
             <span className='caseTitle'>ARCHITECT PORTFOLIO / FRONTEND</span>
@@ -66,7 +71,7 @@ function App() {
             <Link aria-label='Look at Casa case study' to="/case/2"><div className='textViewCaseButton'>Check out this project</div></Link>
           </div>
           <div className="caseContainer">
-            <button className='viewCaseButton' title="go to case 2 backup"><img alt="arrow" src="/icons/arrow.svg"/></button>
+            <button className='viewCaseButton' title="go to case 2 backup"><img alt="arrow" src={arrow}/></button>
             <Link aria-label='Look at Casa case study' to="/case/2"><button className='viewCaseButtonGlass' title="go to case 2"></button></Link>
             <span className='digit'>II</span>
             <span className='caseTitle'>BOOKS RATING WEBSITE / BACKEND</span>

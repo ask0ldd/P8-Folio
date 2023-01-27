@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+*.bat
+cwebp.exe
+
 public/works/old
 deploy.sh
 

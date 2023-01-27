@@ -11,6 +11,7 @@ const CustomRouter = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/case/:id" element={<Case />}/>
+                <Route path='*' element={<Home />} />
                 {/*
                 <Route path='*' element={<Page404 />} />
                 <Route path="/" element={<Home />} />
