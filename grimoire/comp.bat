@@ -1,1 +1,0 @@
-cwebp grimoire3.jpg -o grimoire3.webp

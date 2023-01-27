@@ -1,1 +1,0 @@
-cwebp bluel2.jpg -o bluel2.webp
