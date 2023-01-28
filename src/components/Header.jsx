@@ -10,9 +10,9 @@ return(
         <div className='headerBody'>
             <NavBar items={props.items}/>
             <ul className='socialItems'>
-                <li><img src={dribbble}/></li>
-                <li><a href='https://github.com/ask0ldd'><img src={github}/></a></li>
-                <li><img src={linkedin}/></li>
+                <li><a title="dribbble link" href='https://dribbble.com/C_DeSoriac'><img src={dribbble} alt="dribbble icon"/></a></li>
+                <li><a title="github link" href='https://github.com/ask0ldd'><img src={github} alt="github icon"/></a></li>
+                <li><img src={linkedin} alt="linkedin icon"/></li>
             </ul>
         </div>
     </header>

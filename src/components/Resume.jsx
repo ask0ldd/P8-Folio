@@ -9,7 +9,7 @@ return(
         <div className='titleColor'>EDUCATION</div>
       </li>
       <li className='resumeLines'>
-        <div className='yearResume'>2022</div>
+        <div className='yearResume oddShadows'>2022</div>
         <div className='jobResume'>
           Web Developer RNCP 5 title (bac+2 eq.)<br/>
           <span>OC / Paris</span>
@@ -23,7 +23,7 @@ return(
         </div>
       </li>
       <li className='resumeLines'>
-        <div className='yearResume'>2000</div>
+        <div className='yearResume oddShadows'>2000</div>
         <div className='jobResume'>
           Classe préparatoire aux Grande Ecoles<br/>
           <span>Lycée Saint Louis / Paris</span>
@@ -37,7 +37,7 @@ return(
         <div className='titleColor'>EXPERIENCE</div>
       </li>
       <li className='resumeLines'>
-        <div className='yearResume'>2015</div>
+        <div className='yearResume oddShadows'>2015</div>
         <div className='jobResume'>
           UI Designer - Freelancing<br/>
           <span>Fitness Boutique, Hybrid Factor & Big Block</span>
@@ -51,7 +51,7 @@ return(
         </div>
       </li>
       <li className='resumeLines'>
-        <div className='yearResume'>2004</div>
+        <div className='yearResume oddShadows'>2004</div>
           <div className='jobResume'>
           Adjoint au Secrétaire Général<br/>
           <span>Mairie de Paris</span>

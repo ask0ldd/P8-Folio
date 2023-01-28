@@ -79,6 +79,10 @@
   flex-shrink: 0;
 }
 
+.oddShadows {
+  text-shadow: 0px 2px 4px #1d363e, 0px 4px 8px #33474e;
+}
+
 @keyframes yearresume {
   from {
     transform: translateX(-170px);

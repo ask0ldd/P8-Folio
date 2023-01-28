@@ -15,12 +15,15 @@ function Case(props) {
 
   const { id } = useParams();
 
-  //const links = [["/P8-Folio/bluel/bluel1.webp" , "/P8-Folio/bluel/bluel1.webp"],["/P8-Folio/grimoire/grimoire1.webp" , "/P8-Folio/grimoire/grimoire2.webp"]]
-  const links = [["/bluel/bluel1.webp" , "/bluel/bluel1.webp"],["/grimoire/grimoire1.webp" , "/grimoire/grimoire2.webp"]]
+  // const links = [["/P8-Folio/bluel/bluel1.webp" , "/P8-Folio/bluel/bluel1.webp"],["/P8-Folio/grimoire/grimoire1.webp" , "/P8-Folio/grimoire/grimoire2.webp"]]
+  // console.log(window.location.origin)
+  let add
+  add = window.location.origin === "https://ask0ldd.github.io" ? "/P8-Folio" : ""
+  const links = [[add + "/bluel/bluel1.webp" , add + "/bluel/bluel1.webp"],[add + "/grimoire/grimoire1.webp" , add + "/grimoire/grimoire2.webp"]]
   const githubs = ["https://github.com/ask0ldd/P3-OC-JS-Frontend", "https://github.com/ask0ldd/P7-Node-Express-Mongo"]
 
   const [activeCode, setActiveCode] = useState(0)
-  const [isLoading, fetchedData, setFetchedData, isfetchError] = useHTMLFetch(window.location.origin+'/code/codeapi.html')
+  const [isLoading, fetchedData, setFetchedData, isfetchError] = useHTMLFetch(window.location.origin + add + '/code/codeapi.html')
 
   return (
     <div className="case">

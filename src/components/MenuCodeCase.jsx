@@ -4,6 +4,8 @@ import '../styles/MenuCodeCase.css'
 
 const MenuCodeCase = (props) => {
 
+    let add
+    add = window.location.origin === "https://ask0ldd.github.io" ? "/P8-Folio" : ""
 
     const codeArray = ['api', 'gallery', 'log']
     const codeContainer = document.querySelector('.codeContainer')
@@ -11,7 +13,7 @@ const MenuCodeCase = (props) => {
 
     const test = async (id) => {
         try{
-            const response = await fetch(window.location.origin+'/code/code'+props.codeArray[id]+'.html')
+            const response = await fetch(window.location.origin + add + '/code/code'+props.codeArray[id]+'.html')
             const data = await response.text()
             props.setFetched(data)
             props.setActiveCode(id)
