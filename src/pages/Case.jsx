@@ -51,11 +51,27 @@ function Case(props) {
       </section>
 
       <section style={{ marginTop: "4rem" }} className='sectionCode'>
-        <div className='codenMenuContainer'>
+        <div className='codenDescContainer'>
           <div style={{ overflowY: "scroll" }} className='codeContainer' dangerouslySetInnerHTML={{ __html: fetchedData }}>
           </div>
-          {/* createRef with a state instead + create component menu + code */}
-          <MenuCodeCase codeArray={['api', 'gallery', 'log']} githubLink={githubs[id - 1]} codeContainer={document.querySelector('.codeContainer')} setFetched={setFetchedData} setActiveCode={setActiveCode} />
+          <div className='descContainer' >
+            <div className='description'>
+              <div className='descTitleContainer'>
+                <span className='descTitle'>API WRAPPER</span>
+                <div className='arrowsContainer'>
+                  <button className='arrowLeft'></button>
+                  <div className='arrowsContainer_lightsep'></div>
+                  <div className='arrowsContainer_darksep'></div>
+                  <button className='arrowRight'></button>
+                </div>
+              </div>
+              <div className='descBody'>Lorem ipsum dolor sit amet consectetur. Feugiat morbi id at venenatis aliquam congue cursus. Tellus nunc in ultricies risus hendrerit. Amet erat libero sit diam. Accumsan pellentesque diam cras semper diam enim sit. Ante malesuada a ut bibendum habitant lacus dictum quis turpis. Mattis et nascetur congue in et. Odio malesuada dolor at nunc amet odio.</div>
+            </div>
+            <div className='descTagsContainer'>
+              <div className='descTags'>fetch</div><div className='descTags'>tokens</div><div className='descTags'>async / await</div><div className='descTags'>cookies</div>
+              <div className='descTags'>request headers</div><div className='descTags'>formData</div><div className='descTags'>cookies</div><div className='descTags'>fetch</div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
@@ -64,3 +80,7 @@ function Case(props) {
 }
 
 export default Case
+
+/*
+  <MenuCodeCase codeArray={['api', 'gallery', 'log']} githubLink={githubs[id - 1]} codeContainer={document.querySelector('.codeContainer')} setFetched={setFetchedData} setActiveCode={setActiveCode} />
+*/
