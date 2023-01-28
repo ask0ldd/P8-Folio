@@ -11,14 +11,12 @@
     linear-gradient(0deg, rgba(58, 86, 118, 0.2), rgba(58, 86, 118, 0.2)),
     linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%),
     linear-gradient(254.12deg, #4e686c 0%, #5f7973 100%);*/
-  background: url("/statuenwoods4.png"),
+  background: url("/statuenwoods4.webp"),
     linear-gradient(0deg, rgba(58, 86, 118, 0.2), rgba(58, 86, 118, 0.2)),
     linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%),
     linear-gradient(254.12deg, #4e686c 0%, #5f7973 100%);
   background-blend-mode: hard-light;
   background-repeat: no-repeat;
-
-  padding-bottom: 6rem;
   padding-top: 0.7rem;
 }
 
@@ -38,69 +36,37 @@
   max-width: 1568px;
   margin: 0 auto;
   background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0.1)
-    ),
-    linear-gradient(
-      105.56deg,
-      rgba(255, 255, 255, 0) 6.12%,
-      rgba(255, 255, 255, 0.3) 50.59%,
-      rgba(255, 255, 255, 0) 93.25%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(142, 163, 194, 0.3) 100%
-    ),
-    #d1d8e3;
-  /*background: linear-gradient(
-      105.56deg,
-      rgba(255, 255, 255, 0) 6.12%,
-      rgba(255, 255, 255, 0.8) 50.59%,
-      rgba(255, 255, 255, 0) 93.25%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(142, 163, 194, 0.6) 100%
-    ),
-    #d1d8e3;*/
+    180deg,
+    rgba(30, 35, 36, 0.8) 0%,
+    rgba(30, 35, 36, 0.68) 100%
+  );
   box-shadow: 0px 4px 8px rgba(21, 21, 20, 0.1),
     0px 4px 8px rgba(21, 22, 22, 0.3), 0px 8px 16px rgba(22, 23, 23, 0.47);
   backdrop-filter: blur(8px);
   border-radius: 20px;
-  border: 9px solid #8a7c58;
+  border: 6px solid #ffffff;
   display: flex;
   gap: 3rem;
   padding: 3rem;
   overflow: hidden;
+  /**/
+  /*height: 780px;*/
 }
 
 .halfSummaryContainer {
   width: 50%;
-  /*overflow: hidden;*/
   display: flex;
   flex-direction: column;
 }
 
-/*.mainCaptureContainer {
-  width: 50%;
-  max-height: 100%;
-  background-color: red;
-  flex-grow: 0;
-  box-shadow: 0px 2px 4px #94a6c2, 0px 8px 16px #858d9b;
-  border-radius: 20px;
-  overflow: hidden;
-  padding: 0;
-}*/
-
 .mainSiteCapture {
+  /*max-height: 100%;*/
+  min-height: 550px;
+  background-size: cover;
   width: 50%;
-  max-height: 667px;
-  box-shadow: 0px 2px 4px #94a6c2, 0px 8px 16px #858d9b;
-  border-radius: 20px;
-  /*overflow: hidden;*/
+  box-shadow: 0px 4px 8px rgba(21, 21, 20, 0.1),
+    0px 4px 8px rgba(21, 22, 22, 0.3), 0px 8px 16px rgba(22, 23, 23, 0.47);
+  border-radius: 10px;
   object-fit: cover;
   object-position: 0 0;
   transform: translateX(-800px);
@@ -127,14 +93,14 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 200%;
-  color: #5a5f6a;
+  color: #8d979a;
   max-height: 0;
   animation: 0.4s ease-out 0.6s forwards caseUl;
   overflow: hidden;
 }
 
 .bulletPointsContainer ul b {
-  color: #1a3d48;
+  color: #578b96;
 }
 
 @keyframes caseUl {
@@ -180,8 +146,13 @@
 .greenTag {
   width: 33%;
   height: 3rem;
-  background: #eff2f6;
-  box-shadow: 0px 2px 4px #a4b7d5, 0px 8px 16px #b3bbc7;
+  background: linear-gradient(
+      89.89deg,
+      rgba(70, 76, 87, 0.6) 0.08%,
+      rgba(34, 70, 75, 0.432) 99.91%
+    ),
+    #505e63;
+  box-shadow: 0px 8px 16px rgba(22, 23, 23, 0.47);
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -191,7 +162,7 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 200%;
-  color: #5a5f6a;
+  color: #859498;
   transform: translateX(800px);
   animation: 0.4s ease-out 0.75s forwards greenTagsContainer;
 }
@@ -199,16 +170,16 @@
 .genericCode {
   height: 314px;
   width: 100%;
-  background-image: url("/bluel/code.jpg");
+  background-image: url("/diagcode.webp");
   background-size: cover;
-  /*box-shadow: 0px 4px 8px rgba(21, 21, 20, 0.1),
-    0px 4px 8px rgba(21, 22, 22, 0.3), 0px 8px 16px rgba(22, 23, 23, 0.47);*/
-  box-shadow: 0px 2px 4px #94a6c2, 0px 8px 16px #858d9b;
-  border-radius: 20px;
-  border: 3px solid #ffffff;
+  box-shadow: 0px 4px 8px rgba(21, 21, 20, 0.1),
+    0px 4px 8px rgba(21, 22, 22, 0.3), 0px 8px 16px rgba(22, 23, 23, 0.47);
+  border-radius: 10px;
+  border: 3px solid #809fa9;
   transform: translateX(800px);
   animation: 0.4s ease-out 0.3s forwards genericCode;
   margin-top: 2.2rem;
+  position: relative;
   /*align-self: flex-end;
   justify-self: flex-end;*/
 }
@@ -222,12 +193,37 @@
   }
 }
 
+.genericCode button {
+  background: linear-gradient(
+      89.89deg,
+      rgba(70, 76, 87, 0.6) 0.08%,
+      rgba(34, 70, 75, 0.432) 99.91%
+    ),
+    #4f5d62;
+  box-shadow: 0px 8px 16px rgba(22, 23, 23, 0.47);
+  border-radius: 6px;
+  padding: 0 4ch;
+  height: 50px;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  border: 0;
+  font-family: "Oswald";
+  font-weight: 400;
+  font-size: 20px;
+  color: #edeff0;
+}
+
 .sectionCode {
   /*position: relative;*/
   width: 100%;
   /*max-width: 1568px;*/
+  background: url("/darkstatuewoods.webp"),
+    linear-gradient(180deg, #29373b 0%, #202a2c 100%);
+  background-blend-mode: hard-light;
+  background-repeat: no-repeat;
   margin: 0 auto;
-  padding: 0 4rem 3rem 4rem;
+  padding: 6rem 4rem 3rem 4rem;
 }
 
 .codenMenuContainer {
@@ -239,32 +235,33 @@
 }
 
 .codeContainer {
-  width: 80%;
-  box-shadow: 0px 4px 8px rgba(21, 21, 20, 0.1),
-    0px 4px 8px rgba(21, 22, 22, 0.3), 0px 8px 16px rgba(22, 23, 23, 0.47);
-  /*backdrop-filter: blur(8px);*/
-  /*border-radius: 20px;*/
-  border: 9px solid #8a7c58;
+  width: 60%;
+  border: 6px solid #ffffff;
+  box-shadow: 0px 2px 4px #0f181b, 0px 8px 16px rgba(22, 23, 23, 0.47);
   overflow: hidden;
   height: 80vh;
   z-index: 2;
   border-radius: 20px 0 0 20px;
+  /*border-radius: 20px;*/
   padding: 0.8rem;
   background-color: rgb(29, 31, 33);
 }
 
 .codeContainer::-webkit-scrollbar {
   width: 0.5rem;
+  height: 90%;
 }
 
 /* Track */
 .codeContainer::-webkit-scrollbar-track {
   background: #212526;
+  height: 90%;
 }
 
 /* Handle */
 .codeContainer::-webkit-scrollbar-thumb {
   background: #4f5d62;
+  /*border-radius: 20px;*/
 }
 
 /* Handle on hover */
