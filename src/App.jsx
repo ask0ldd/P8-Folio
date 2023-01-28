@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header items={[['ENG / FR', '/#'], ['Design Work','/P8-Folio/#works'], ['Dev Case Studies','/P8-Folio/#caseStudies']]} />
+      <Header mode='fullmenu' items={[['ENG / FR', '/#'], ['Design Work','/P8-Folio/#works'], ['Dev Case Studies','/P8-Folio/#caseStudies']]} />
       <section className='sectionHero'>
         <img className='ellipse' alt="ellipse" src={ellipse}/>
         <img className='statue' alt="statue" src={statue}/>

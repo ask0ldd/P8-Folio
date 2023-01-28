@@ -24,7 +24,7 @@ function Case(props) {
 
   return (
     <div className="case">
-      <Header items={[['ENG / FR', '/#'], ['Design Work', '/#works'], ['Dev Case Studies', '/#caseStudies'], ['Contact Me', '/#works']]} />
+      <Header mode='backonly' items={[['ENG / FR', '/#'], ['Design Work', '/#works'], ['Dev Case Studies', '/#caseStudies'], ['Contact Me', '/#works']]} />
       <section className='sectionSummary'>
         <div className='summaryContainer'>
           <div role="img" aria-label="Sophie Bluel website capture screen" style={{backgroundImage:`url(${links[id - 1][0]})`}} className='mainSiteCapture' />
