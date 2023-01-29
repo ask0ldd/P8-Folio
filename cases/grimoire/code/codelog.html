@@ -1,0 +1,69 @@
+<pre>
+<code id="htmlViewer" style="color:rgb(197, 200, 198); font-weight:400;background-color:rgb(29, 31, 33);background:rgb(29, 31, 33);display:block;padding: .5em;"><span style="color:rgb(178, 148, 187); font-weight:400;">class</span> <span class="hljs-title class_">Auth</span> {
+    <span style="color:rgb(150, 152, 150); font-weight:400;">//--------------</span>
+    <span style="color:rgb(150, 152, 150); font-weight:400;">/*
+    AUTH : Helper related to the auth processes
+    */</span>
+    <span style="color:rgb(150, 152, 150); font-weight:400;">//--------------</span>
+
+    <span style="color:rgb(178, 148, 187); font-weight:400;">static</span> <span class="hljs-title function_">showError</span>(<span style="color:rgb(222, 147, 95); font-weight:400;">withError</span>)
+    {
+        <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> errorBox = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;.login__errorbox&#x27;</span>)
+        errorBox.<span style="color:rgb(197, 200, 198); font-weight:400;">style</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">display</span> = <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;block&quot;</span>
+        errorBox.<span style="color:rgb(197, 200, 198); font-weight:400;">innerHTML</span>=withError
+    }
+
+    <span style="color:rgb(150, 152, 150); font-weight:400;">// *** CHECK IF THE AUTH TOKEN IS ALIVE</span>
+    <span style="color:rgb(178, 148, 187); font-weight:400;">static</span> <span class="hljs-title function_">isTokenAlive</span>(<span style="color:rgb(222, 147, 95); font-weight:400;"></span>)
+    {
+        <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> cookie = <span class="hljs-variable language_">document</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">cookie</span>
+        <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> cookie.<span class="hljs-title function_">search</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;token&quot;</span>)===-<span style="color:rgb(222, 147, 95); font-weight:400;">1</span> ? <span style="color:rgb(222, 147, 95); font-weight:400;">false</span> : <span style="color:rgb(222, 147, 95); font-weight:400;">true</span>
+    }
+
+    <span style="color:rgb(150, 152, 150); font-weight:400;">// *** GET THE VALUE OF THE AUTH TOKEN</span>
+    <span style="color:rgb(178, 148, 187); font-weight:400;">static</span> <span class="hljs-title function_">getToken</span>(<span style="color:rgb(222, 147, 95); font-weight:400;"></span>)
+    {   
+        <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> token = <span class="hljs-variable language_">document</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">cookie</span>.<span class="hljs-title function_">split</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;; &#x27;</span>).<span class="hljs-title function_">find</span>(<span style="color:rgb(197, 200, 198); font-weight:400;">(<span style="color:rgb(222, 147, 95); font-weight:400;">cookie</span>) =&gt;</span> cookie.<span class="hljs-title function_">startsWith</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;token=&#x27;</span>))?.<span class="hljs-title function_">split</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;=&#x27;</span>)[<span style="color:rgb(222, 147, 95); font-weight:400;">1</span>]
+        <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> token !== <span style="color:rgb(222, 147, 95); font-weight:400;">undefined</span> ? token : <span style="color:rgb(222, 147, 95); font-weight:400;">false</span>
+    }
+
+    <span style="color:rgb(178, 148, 187); font-weight:400;">static</span> <span class="hljs-title function_">logout</span>(<span style="color:rgb(222, 147, 95); font-weight:400;"></span>)
+    {
+        <span class="hljs-variable language_">document</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">cookie</span> = <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;token=; Max-Age=0;&quot;</span>
+        <span class="hljs-variable language_">document</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">cookie</span> = <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;id=; Max-Age=0;&quot;</span>
+        <span class="hljs-variable language_">window</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">location</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">href</span> = <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;index.html&quot;</span>
+    }
+
+    <span style="color:rgb(150, 152, 150); font-weight:400;">// *** PROCESS THE LOGIN FORM</span>
+    <span style="color:rgb(178, 148, 187); font-weight:400;">static</span> <span style="color:rgb(178, 148, 187); font-weight:400;">async</span> <span class="hljs-title function_">processLogForm</span>(<span style="color:rgb(222, 147, 95); font-weight:400;">e</span>)
+    {
+        e.<span class="hljs-title function_">preventDefault</span>()
+
+        <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> formData = <span style="color:rgb(178, 148, 187); font-weight:400;">new</span> <span class="hljs-title class_">FormData</span>(loginForm)
+        <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> email = formData.<span class="hljs-title function_">get</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;email&quot;</span>)
+        <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> password = formData.<span class="hljs-title function_">get</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;password&quot;</span>)
+
+        <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> logs = {<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;email&quot;</span>: email, <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;password&quot;</span>: password}
+
+        <span style="color:rgb(178, 148, 187); font-weight:400;">if</span>(password === <span style="color:rgb(222, 147, 95); font-weight:400;">undefined</span>) <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">showError</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Password missing.&quot;</span>)
+        <span style="color:rgb(178, 148, 187); font-weight:400;">if</span>(password.<span style="color:rgb(197, 200, 198); font-weight:400;">length</span>&lt;<span style="color:rgb(222, 147, 95); font-weight:400;">6</span>) <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">showError</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Wrong password.&quot;</span>)
+        <span style="color:rgb(178, 148, 187); font-weight:400;">if</span>(email.<span style="color:rgb(197, 200, 198); font-weight:400;">length</span>&gt;<span style="color:rgb(222, 147, 95); font-weight:400;">64</span>) <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">showError</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Wrong email.&quot;</span>)
+
+        <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> response = <span style="color:rgb(178, 148, 187); font-weight:400;">await</span> <span class="hljs-title class_">APIWrapper</span>.<span class="hljs-title function_">attemptLog</span>(logs)
+
+        <span style="color:rgb(178, 148, 187); font-weight:400;">if</span>(response.<span style="color:rgb(197, 200, 198); font-weight:400;">error</span>) {<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">showError</span>(response.<span style="color:rgb(197, 200, 198); font-weight:400;">error</span>)}
+    }
+
+    <span style="color:rgb(150, 152, 150); font-weight:400;">// *** SWITCH THE INDEX PAGE TO ADMIN MODE WHEN THE AUTH TOKEN IS ALIVE</span>
+    <span style="color:rgb(178, 148, 187); font-weight:400;">static</span> <span class="hljs-title function_">adminMode</span>(<span style="color:rgb(222, 147, 95); font-weight:400;"></span>)
+    {
+        editAnchors.<span class="hljs-title function_">forEach</span>(<span style="color:rgb(197, 200, 198); font-weight:400;"><span style="color:rgb(222, 147, 95); font-weight:400;">el</span> =&gt;</span> 
+            {
+                el.<span style="color:rgb(197, 200, 198); font-weight:400;">style</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">display</span> = <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;block&quot;</span>
+            })
+        editTopBar.<span style="color:rgb(197, 200, 198); font-weight:400;">classList</span>.<span class="hljs-title function_">toggle</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;editionmode__topbar--on&#x27;</span>)
+        header.<span style="color:rgb(197, 200, 198); font-weight:400;">classList</span>.<span class="hljs-title function_">toggle</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;header__padding--notopBar&#x27;</span>)
+        <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;#button__login&#x27;</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">style</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">display</span> = <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;none&quot;</span>
+        <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;#button__logout&#x27;</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">style</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">display</span> = <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;block&quot;</span>
+    }
+}</code></pre>
