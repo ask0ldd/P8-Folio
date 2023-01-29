@@ -161,16 +161,29 @@
       rgba(61, 81, 87, 0.648) 100%
     ),
     #628282;
-  /*background-blend-mode: multiply;*/
   border-top: 9px solid #272a2f;
   border-bottom: 3px solid #272a2f;
   overflow: hidden;
   max-height: 6rem;
-  transition: max-height 0.6s ease-in-out;
+  /*transition: max-height 0.6s ease-in-out;*/
+  /*animation: 0.6s ease-out forwards dropResume;*/
 }
 
 .sectionResumeFull {
-  max-height: 200vh;
+  /*max-height: 200vh;*/
+  animation: 0.8s ease-out forwards dropResume;
+}
+
+@keyframes dropResume {
+  0% {
+    max-height: 6rem;
+  }
+  99% {
+    max-height: 200vh;
+  }
+  100% {
+    max-height: fit-content;
+  }
 }
 
 .dropResume {
@@ -563,5 +576,6 @@
 
   .sectionResume {
     padding: 0;
+    max-height: 5rem;
   }
 }

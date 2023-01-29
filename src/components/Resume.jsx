@@ -5,7 +5,7 @@ return(
     <div className='resumeContainer'>
     <ul>
       <li className='titleLines'>
-        <div className='yearResume'></div>
+        <div className='titleBlank'></div>
         <div className='titleColor'>EDUCATION</div>
       </li>
       <li className='resumeLines'>
@@ -33,7 +33,7 @@ return(
     <div className='separatorResume'></div>
     <ul>
       <li className='titleLines'>
-        <div className='yearResume titleColor'></div>
+        <div className='titleBlank'></div>
         <div className='titleColor'>EXPERIENCE</div>
       </li>
       <li className='resumeLines'>

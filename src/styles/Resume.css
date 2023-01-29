@@ -64,7 +64,8 @@
   );
 }
 
-.yearResume {
+.yearResume,
+.titleBlank {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
@@ -137,7 +138,8 @@
 }
 
 @media screen and (max-width: 750px) {
-  .yearResume {
+  .yearResume,
+  .titleBlank {
     font-size: 32px;
     width: 160px;
   }
@@ -148,7 +150,8 @@
 }
 
 @media screen and (max-width: 650px) {
-  .yearResume {
+  .yearResume,
+  .titleBlank {
     width: 140px;
   }
 }
@@ -159,12 +162,34 @@
     border-radius: 0;
     background: none;
     box-shadow: none;
-    padding: 1rem;
+    padding: 2rem 1rem 3rem 1rem;
     border: 0;
+    row-gap: 3rem;
+  }
+
+  .resumeContainer ul {
+    gap: 1.25rem 0rem;
   }
 
   .resumeContainer li {
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    border-radius: 6px;
+  }
+
+  .titleLines {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 1.5rem 0;
+    background-color: #fff;
+    font-size: 24px;
+  }
+
+  .titleBlank {
+    display: none;
+  }
+
+  .separatorResume {
+    display: none;
   }
 }
