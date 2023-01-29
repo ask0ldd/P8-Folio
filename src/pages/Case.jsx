@@ -30,7 +30,7 @@ function Case(props) {
     <div className="case">
       <Header mode='backonly' items={[['ENG / FR', '/#'], ['Design Work', '/#works'], ['Dev Case Studies', '/#caseStudies'], ['Contact Me', '/#works']]} />
       <section className='sectionSummary'>
-        <CaseDescription captureUrl={links[id - 1][0]} />
+      {JSONObject && <CaseDescription summaryTags={JSONObject.tags} captureUrl={links[id - 1][0]} />}
       </section>
       <section style={{ marginTop: "4rem" }} className='sectionCode'>
         <div className='codenDescContainer'>

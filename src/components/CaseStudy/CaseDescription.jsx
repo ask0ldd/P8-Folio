@@ -16,9 +16,10 @@ return(
         </ul>
     </div>
     <div className="greenTagsContainer">
-        <div className='greenTag'>Javascript ES6</div>
+{/*         <div className='greenTag'>Javascript ES6</div>
         <div className='greenTag'>HTML + SASS</div>
-        <div className='greenTag'>Figma</div>
+        <div className='greenTag'>Figma</div> */}
+        {props.summaryTags.map(tag => (<div className='greenTag'>{tag}</div>))}
     </div>
     <div className='genericCode'>
         <button>Github</button>
