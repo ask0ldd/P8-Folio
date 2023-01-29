@@ -1,7 +1,7 @@
 {
     "id": 1,
     "title":"ARCHITECT PORTFOLIO / FRONTEND",
-    "screenshot":"/bluel/bluel1.webp",
+    "screenshot":"/cases/bluel/bluel1.webp",
     "bulletpoints": ["Coding the responsive front-end of an already designed portfolio.", 
     "Implementing the back-office which allows to add new pictures.", 
     "Implementing the login form & dealing with the sessions persistence.",
@@ -12,7 +12,7 @@
     "github" : "https://github.com/ask0ldd/P3-OC-JS-Frontend",
     "highlights" : [{
         "title" : "API WRAPPER",
-        "file" : "",
+        "file" : "/cases/bluel/code/codeapi.html",
         "description" : "Lorem ipsum dolor sit amet consectetur. Feugiat morbi id at venenatis aliquam congue cursus. Tellus nunc in ultricies risus hendrerit. Amet erat libero sit diam. Accumsan pellentesque diam cras semper diam enim sit. Ante malesuada a ut bibendum habitant lacus dictum quis turpis. Mattis et nascetur congue in et. Odio malesuada dolor at nunc amet odio.",
         "tags" : ["fetch",
         "tokens",
@@ -22,8 +22,19 @@
         "formData"]
     },
     {
-        "title" : "API WRAPPER",
-        "file" : "",
+        "title" : "GALLERY",
+        "file" : "/cases/bluel/code/codegallery.html",
+        "description" : "Lorem ipsum dolor sit amet consectetur. Feugiat morbi id at venenatis aliquam congue cursus. Tellus nunc in ultricies risus hendrerit. Amet erat libero sit diam. Accumsan pellentesque diam cras semper diam enim sit. Ante malesuada a ut bibendum habitant lacus dictum quis turpis. Mattis et nascetur congue in et. Odio malesuada dolor at nunc amet odio.",
+        "tags" : ["fetch",
+        "tokens",
+        "async / await",
+        "cookies",
+        "request headers",
+        "formData"]
+    },
+    {
+        "title" : "LOG",
+        "file" : "/cases/bluel/code/codelog.html",
         "description" : "Lorem ipsum dolor sit amet consectetur. Feugiat morbi id at venenatis aliquam congue cursus. Tellus nunc in ultricies risus hendrerit. Amet erat libero sit diam. Accumsan pellentesque diam cras semper diam enim sit. Ante malesuada a ut bibendum habitant lacus dictum quis turpis. Mattis et nascetur congue in et. Odio malesuada dolor at nunc amet odio.",
         "tags" : ["fetch",
         "tokens",

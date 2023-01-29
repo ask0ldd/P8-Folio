@@ -1,0 +1,110 @@
+<pre>
+<code id="htmlViewer" style="color:rgb(197, 200, 198); font-weight:400;background-color:rgb(29, 31, 33);background:rgb(29, 31, 33);display:block;padding: .5em;"><span style="color:rgb(178, 148, 187); font-weight:400;">class</span> <span class="hljs-title class_">Gallery</span> {
+
+    <span style="color:rgb(150, 152, 150); font-weight:400;">//--------------</span>
+    <span style="color:rgb(150, 152, 150); font-weight:400;">/*
+    GALLERY : Handle the Gallery on the index page
+    */</span>
+    <span style="color:rgb(150, 152, 150); font-weight:400;">//--------------</span>
+
+    #selectedCategory
+    #categories
+
+    <span style="color:rgb(178, 148, 187); font-weight:400;">constructor</span>(gallerySelector, filtersSelector) 
+    {
+        <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.galleryContainer = document.querySelector(gallerySelector)
+        <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.filtersContainer = document.querySelector(filtersSelector)
+        <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.#categories = []
+        <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.#selectedCategory = <span style="color:rgb(222, 147, 95); font-weight:400;">0</span>
+    }
+
+    <span style="color:rgb(150, 152, 150); font-weight:400;">// *** REMOVE GALLERY AND/OR FILTERS OUT OF THE DOM</span>
+    clear(container)
+    {
+        switch(container) {
+            case <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;gallery&quot;</span>:
+                <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.galleryContainer.innerHTML = <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;&quot;</span>
+            <span style="color:rgb(178, 148, 187); font-weight:400;">break</span>;
+            case <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;filters&quot;</span>:
+                <span style="color:rgb(178, 148, 187); font-weight:400;">while</span> (<span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.filtersContainer.lastElementChild) 
+                {
+                    <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.filtersContainer.removeChild(<span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.filtersContainer.lastElementChild); <span style="color:rgb(150, 152, 150); font-weight:400;">// [i] No innerHTML = &quot;&quot; to kill all addeventlistener attached to those childs</span>
+                }
+            <span style="color:rgb(178, 148, 187); font-weight:400;">break</span>;
+            default:
+                <span style="color:rgb(178, 148, 187); font-weight:400;">while</span> (<span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.filtersContainer.lastElementChild) 
+                {
+                    <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.filtersContainer.removeChild(<span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.filtersContainer.lastElementChild);
+                }
+                <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.galleryContainer.innerHTML = <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;&quot;</span>
+        }
+    }
+
+    <span style="color:rgb(150, 152, 150); font-weight:400;">// *** INSERT A FILTER &gt; DOM</span>
+    #addFilter(filterName, filterId)
+    {
+        <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> button = document.createElement(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;div&quot;</span>)
+        button.textContent = filterName
+        button.addEventListener(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;click&quot;</span>, () =&gt; 
+        {
+            <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.displayGallery_filtered(filterId)
+        })
+        button.classList.add(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;filter&quot;</span>)
+        <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.selectedCategory === filterId ? button.classList.add(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;filter--selected&quot;</span>) : button.classList.add(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;filter--unselected&quot;</span>)
+        <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.filtersContainer.append(button)
+    }
+
+    <span style="color:rgb(150, 152, 150); font-weight:400;">// *** INSERT ALL FILTER BUTTONS WITHOUT DUPLICATES &gt; DOM / MARK THE SELECTED ONE</span>
+    updateFilters(works, selectedCategory = <span style="color:rgb(222, 147, 95); font-weight:400;">0</span>)
+    {
+        <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.selectedCategory = selectedCategory
+        <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.clear(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;filters&quot;</span>)
+        <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.#addFilter(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Tous&quot;</span>, <span style="color:rgb(222, 147, 95); font-weight:400;">0</span>)
+        APIWrapper.parseCategories(works).forEach(el =&gt; <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.#addFilter(el.name, el.id)) <span style="color:rgb(150, 152, 150); font-weight:400;">// extrait de works pas de second call a l&#x27;api</span>
+    }
+
+    <span style="color:rgb(150, 152, 150); font-weight:400;">// *** ERROR &gt; GALLERY</span>
+    #displayGalleryErrorMsg(error){
+        <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.clear()
+        <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> p = document.createElement(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;p&quot;</span>)
+        <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> blankCell = document.createElement(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;p&quot;</span>)
+        p.classList.add(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;gallery__errormsg&quot;</span>)
+        p.innerHTML = error ? `${error}&lt;br&gt;&lt;br&gt;` : <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Network Error. The Gallery can&#x27;t be displayed.&quot;</span>
+        <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.galleryContainer.append(blankCell)
+        <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.galleryContainer.append(p)
+    }
+
+    <span style="color:rgb(150, 152, 150); font-weight:400;">// *** INSERT A PICTURE + TITLE &gt; DOM</span>
+    #addToGallery(work)
+    {
+        <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> figure = document.createElement(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;figure&quot;</span>)
+        figure.innerHTML = `&lt;img src=<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;<span style="color:rgb(181, 189, 104); font-weight:400;">${work.imageUrl}</span>&quot;</span> alt=<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;<span style="color:rgb(181, 189, 104); font-weight:400;">${work.title}</span>&quot;</span> crossorigin=<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;anonymous&quot;</span>&gt;&lt;figcaption&gt;${work.title}&lt;/figcaption&gt;` <span style="color:rgb(150, 152, 150); font-weight:400;">// crossorigin=ano : CORS</span>
+        <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.galleryContainer.append(figure)
+    }
+
+    <span style="color:rgb(150, 152, 150); font-weight:400;">// *** INSERT A GROUP OF SELECTED WORKS &gt; GALLERY</span>
+    updateGallery(works, selectedCategory = <span style="color:rgb(222, 147, 95); font-weight:400;">0</span>)
+    {
+        <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.selectedCategory = selectedCategory
+        <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.clear(<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;gallery&quot;</span>)
+
+        <span style="color:rgb(150, 152, 150); font-weight:400;">// filtering works / 0 = no filter</span>
+        works.forEach( el =&gt; {
+            <span style="color:rgb(178, 148, 187); font-weight:400;">if</span>((el.category.id === <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.selectedCategory)||(<span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.selectedCategory === <span style="color:rgb(222, 147, 95); font-weight:400;">0</span>)) {<span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.#addToGallery(el)}
+        })
+    }
+
+    async displayGallery_filtered(selectedCategory = <span style="color:rgb(222, 147, 95); font-weight:400;">0</span>)
+    {
+        <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> allWorks = await APIWrapper.getWorks()
+        <span style="color:rgb(178, 148, 187); font-weight:400;">if</span>(!allWorks.error)
+        {
+            <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.updateGallery(allWorks, selectedCategory)
+            <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.updateFilters(allWorks, selectedCategory)
+        }
+        <span style="color:rgb(178, 148, 187); font-weight:400;">else</span>
+        {
+            <span style="color:rgb(178, 148, 187); font-weight:400;">this</span>.#displayGalleryErrorMsg()
+        }
+    }
+   }</code></pre>

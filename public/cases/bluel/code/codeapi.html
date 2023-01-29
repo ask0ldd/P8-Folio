@@ -1,0 +1,141 @@
+<pre>
+<code id="htmlViewer" style="color:rgb(197, 200, 198); font-weight:500; background-color:rgb(29, 31, 33);background:rgb(29, 31, 33);display:block;padding: .5em;"><span style="color:rgb(178, 148, 187); font-weight:400;">class</span> <span class="hljs-title class_">APIWrapper</span> {
+   <span style="color:rgb(150, 152, 150); font-weight:400;">// *** NEW WORK &gt; DB</span>
+   <span style="color:rgb(178, 148, 187); font-weight:400;">static</span> <span style="color:rgb(178, 148, 187); font-weight:400;">async</span> <span class="hljs-title function_">pushWork</span>(<span style="color:rgb(222, 147, 95); font-weight:400;">formData</span>)
+   {
+       <span style="color:rgb(178, 148, 187); font-weight:400;">try</span>
+       {
+           <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> token = <span class="hljs-title class_">Auth</span>.<span class="hljs-title function_">getToken</span>()
+           <span style="color:rgb(178, 148, 187); font-weight:400;">if</span>(token === <span style="color:rgb(222, 147, 95); font-weight:400;">false</span>) <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> {error : <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Not connected&quot;</span>}
+
+           <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> response = <span style="color:rgb(178, 148, 187); font-weight:400;">await</span> <span class="hljs-title function_">fetch</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">`<span style="color:rgb(181, 189, 104); font-weight:400;">${api}</span>works`</span>,
+           {
+               <span style="color:rgb(197, 200, 198); font-weight:400;">method</span>: <span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;POST&#x27;</span>,
+               <span style="color:rgb(197, 200, 198); font-weight:400;">headers</span>: {
+                   <span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;Authorization&#x27;</span>: <span style="color:rgb(181, 189, 104); font-weight:400;">`Bearer <span style="color:rgb(181, 189, 104); font-weight:400;">${token}</span>`</span>
+               },
+               <span style="color:rgb(197, 200, 198); font-weight:400;">body</span>: formData     
+           })
+
+           <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(response)
+
+           <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> response.<span style="color:rgb(197, 200, 198); font-weight:400;">ok</span> ? <span style="color:rgb(222, 147, 95); font-weight:400;">true</span> : {error : <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Can&#x27;t upload your work&quot;</span>}
+       }
+       <span style="color:rgb(178, 148, 187); font-weight:400;">catch</span>(e)
+       {
+           <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> {error : <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Fetch error&quot;</span>}
+       }
+   }
+
+   <span style="color:rgb(150, 152, 150); font-weight:400;">// *** LOGIN ATTEMPT</span>
+   <span style="color:rgb(178, 148, 187); font-weight:400;">static</span> <span style="color:rgb(178, 148, 187); font-weight:400;">async</span> attemptLog (logs)
+   {
+       <span style="color:rgb(178, 148, 187); font-weight:400;">try</span>{
+           <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> response = <span style="color:rgb(178, 148, 187); font-weight:400;">await</span> <span class="hljs-title function_">fetch</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">`<span style="color:rgb(181, 189, 104); font-weight:400;">${api}</span>users/login`</span>,
+           {
+               <span style="color:rgb(197, 200, 198); font-weight:400;">method</span>: <span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;POST&#x27;</span>,
+               <span style="color:rgb(197, 200, 198); font-weight:400;">headers</span>: {
+                   <span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;Content-Type&#x27;</span>: <span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;application/json&#x27;</span>
+               },
+               <span style="color:rgb(197, 200, 198); font-weight:400;">body</span>: <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(logs)      
+           })
+
+           <span style="color:rgb(178, 148, 187); font-weight:400;">if</span>(response.<span style="color:rgb(197, 200, 198); font-weight:400;">ok</span>)
+           {
+               <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> userDatas = <span style="color:rgb(178, 148, 187); font-weight:400;">await</span> response.<span class="hljs-title function_">json</span>()
+               <span class="hljs-variable language_">document</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">cookie</span> = <span style="color:rgb(181, 189, 104); font-weight:400;">`id=<span style="color:rgb(181, 189, 104); font-weight:400;">${userDatas.userId}</span>; Secure`</span>
+               <span class="hljs-variable language_">document</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">cookie</span> = <span style="color:rgb(181, 189, 104); font-weight:400;">`token=<span style="color:rgb(181, 189, 104); font-weight:400;">${userDatas.token}</span>; Secure`</span>
+               <span class="hljs-variable language_">window</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">location</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">href</span> = <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;index.html&quot;</span>
+           }
+           <span style="color:rgb(178, 148, 187); font-weight:400;">else</span>
+           {
+               <span style="color:rgb(178, 148, 187); font-weight:400;">switch</span>(response.<span style="color:rgb(197, 200, 198); font-weight:400;">status</span>)
+               {
+                   <span style="color:rgb(178, 148, 187); font-weight:400;">case</span> <span style="color:rgb(222, 147, 95); font-weight:400;">404</span>:
+                       <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(response.<span style="color:rgb(197, 200, 198); font-weight:400;">statusText</span>)
+                       <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> {error : <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;User not found.&quot;</span>}
+                   <span style="color:rgb(178, 148, 187); font-weight:400;">break</span>;
+                   <span style="color:rgb(178, 148, 187); font-weight:400;">case</span> <span style="color:rgb(222, 147, 95); font-weight:400;">401</span>:
+                       <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(response.<span style="color:rgb(197, 200, 198); font-weight:400;">statusText</span>)
+                       <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> {error : response.<span style="color:rgb(197, 200, 198); font-weight:400;">statusText</span>}
+                   <span style="color:rgb(178, 148, 187); font-weight:400;">break</span>;
+                   <span style="color:rgb(197, 200, 198); font-weight:400;">default</span>:
+                       <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(response.<span style="color:rgb(197, 200, 198); font-weight:400;">statusText</span>)
+                       <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> {error : response.<span style="color:rgb(197, 200, 198); font-weight:400;">statusText</span>}
+               }
+           }
+       }
+       <span style="color:rgb(178, 148, 187); font-weight:400;">catch</span>
+       {
+           <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> {error : <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Service Unavailable. Retry Later.&quot;</span>}
+       }
+   }
+
+   <span style="color:rgb(150, 152, 150); font-weight:400;">// *** GET ALL EXISTING CATEGORIES</span>
+   <span style="color:rgb(178, 148, 187); font-weight:400;">static</span> <span style="color:rgb(178, 148, 187); font-weight:400;">async</span> <span class="hljs-title function_">getCategories</span>(<span style="color:rgb(222, 147, 95); font-weight:400;"></span>){
+       <span style="color:rgb(178, 148, 187); font-weight:400;">try</span>
+       {
+           <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> response = <span style="color:rgb(178, 148, 187); font-weight:400;">await</span> <span class="hljs-title function_">fetch</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">`<span style="color:rgb(181, 189, 104); font-weight:400;">${api}</span>categories`</span>)
+           <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> response.<span style="color:rgb(197, 200, 198); font-weight:400;">ok</span> ? response.<span class="hljs-title function_">json</span>() : {error : <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Fetch error&quot;</span>}
+       }
+       <span style="color:rgb(178, 148, 187); font-weight:400;">catch</span>(e)
+       {
+           <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> {error : <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Fetch error&quot;</span>}
+       }
+   }
+
+   <span style="color:rgb(150, 152, 150); font-weight:400;">// *** EXTRACT CATEGORIES OUT OF WORKS &amp; GET RID OF ANY DUPLICATE</span>
+   <span style="color:rgb(178, 148, 187); font-weight:400;">static</span> <span class="hljs-title function_">parseCategories</span>(<span style="color:rgb(222, 147, 95); font-weight:400;">works</span>)
+   {
+       <span style="color:rgb(178, 148, 187); font-weight:400;">let</span> pushedIds = []
+       <span style="color:rgb(178, 148, 187); font-weight:400;">let</span> categories = []
+
+       works.<span class="hljs-title function_">forEach</span>( <span style="color:rgb(197, 200, 198); font-weight:400;"><span style="color:rgb(222, 147, 95); font-weight:400;">el</span> =&gt;</span> {
+           <span style="color:rgb(178, 148, 187); font-weight:400;">if</span>(pushedIds.<span class="hljs-title function_">includes</span>(el.<span style="color:rgb(197, 200, 198); font-weight:400;">category</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">id</span>) === <span style="color:rgb(222, 147, 95); font-weight:400;">false</span>)
+           {
+               categories.<span class="hljs-title function_">push</span>(el.<span style="color:rgb(197, 200, 198); font-weight:400;">category</span>)
+               pushedIds.<span class="hljs-title function_">push</span>(el.<span style="color:rgb(197, 200, 198); font-weight:400;">category</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">id</span>)
+           }
+       })
+
+       <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> categories
+   }
+
+   <span style="color:rgb(150, 152, 150); font-weight:400;">// *** GET ALL WORKS</span>
+   <span style="color:rgb(178, 148, 187); font-weight:400;">static</span> <span style="color:rgb(178, 148, 187); font-weight:400;">async</span> <span class="hljs-title function_">getWorks</span>(<span style="color:rgb(222, 147, 95); font-weight:400;"></span>)
+   {
+       <span style="color:rgb(178, 148, 187); font-weight:400;">try</span>{
+           <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> response = <span style="color:rgb(178, 148, 187); font-weight:400;">await</span> <span class="hljs-title function_">fetch</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">`<span style="color:rgb(181, 189, 104); font-weight:400;">${api}</span>works`</span>)
+           <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> response.<span style="color:rgb(197, 200, 198); font-weight:400;">ok</span> ? response.<span class="hljs-title function_">json</span>() : {error : <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Fetch error.&quot;</span>}
+       }
+
+       <span style="color:rgb(178, 148, 187); font-weight:400;">catch</span>(e){
+           <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> {error : <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Fetch error.&quot;</span>}
+       }
+   }
+
+   <span style="color:rgb(150, 152, 150); font-weight:400;">// *** DELETE SOME WORK WITH A SPECIFIC ID</span>
+   <span style="color:rgb(178, 148, 187); font-weight:400;">static</span> <span style="color:rgb(178, 148, 187); font-weight:400;">async</span> <span class="hljs-title function_">deleteWork</span>(<span style="color:rgb(222, 147, 95); font-weight:400;">workId</span>)
+   {
+       <span style="color:rgb(178, 148, 187); font-weight:400;">try</span>
+       {
+           <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> token = <span class="hljs-title class_">Auth</span>.<span class="hljs-title function_">getToken</span>()
+
+           <span style="color:rgb(178, 148, 187); font-weight:400;">if</span>(token === <span style="color:rgb(222, 147, 95); font-weight:400;">false</span>) <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>({error : <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Not connected&quot;</span>})
+
+           <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> response = <span style="color:rgb(178, 148, 187); font-weight:400;">await</span> <span class="hljs-title function_">fetch</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">`<span style="color:rgb(181, 189, 104); font-weight:400;">${api}</span>works/<span style="color:rgb(181, 189, 104); font-weight:400;">${workId}</span>`</span>,
+           {
+               <span style="color:rgb(197, 200, 198); font-weight:400;">method</span>: <span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;DELETE&#x27;</span>,
+               <span style="color:rgb(197, 200, 198); font-weight:400;">headers</span>: {
+                   <span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;Authorization&#x27;</span>: <span style="color:rgb(181, 189, 104); font-weight:400;">`Bearer <span style="color:rgb(181, 189, 104); font-weight:400;">${token}</span>`</span>
+               }   
+           })
+
+           <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> response.<span style="color:rgb(197, 200, 198); font-weight:400;">ok</span> ? <span style="color:rgb(222, 147, 95); font-weight:400;">false</span> : {error : response.<span style="color:rgb(197, 200, 198); font-weight:400;">statusText</span>}
+       }
+       <span style="color:rgb(178, 148, 187); font-weight:400;">catch</span>(e)
+       {
+           <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> {error : <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Can&#x27;t reach the API.&quot;</span>}
+       }
+   }
+}</code></pre>

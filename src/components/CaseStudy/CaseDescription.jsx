@@ -19,7 +19,7 @@ return(
 {/*         <div className='greenTag'>Javascript ES6</div>
         <div className='greenTag'>HTML + SASS</div>
         <div className='greenTag'>Figma</div> */}
-        {props.summaryTags.map(tag => (<div className='greenTag'>{tag}</div>))}
+        {props.summaryTags.map(tag => (<div key={tag} className='greenTag'>{tag}</div>))}
     </div>
     <div className='genericCode'>
         <button>Github</button>
