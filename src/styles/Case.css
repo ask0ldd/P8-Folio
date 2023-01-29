@@ -7,16 +7,19 @@
 .case {
   display: flex;
   flex-direction: column;
-  /*background: url("/statuenwoods4.png"),
-    linear-gradient(0deg, rgba(58, 86, 118, 0.2), rgba(58, 86, 118, 0.2)),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%),
-    linear-gradient(254.12deg, #4e686c 0%, #5f7973 100%);*/
-  background: url("/statuenwoods4.webp"),
+  /*background: url("/statuenwoods4.webp"),
     linear-gradient(0deg, rgba(58, 86, 118, 0.2), rgba(58, 86, 118, 0.2)),
     linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%),
     linear-gradient(254.12deg, #4e686c 0%, #5f7973 100%);
   background-blend-mode: hard-light;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;*/
+  background: linear-gradient(
+      0deg,
+      rgba(58, 86, 118, 0.2),
+      rgba(58, 86, 118, 0.2)
+    ),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%),
+    linear-gradient(254.12deg, #4e686c 0%, #5f7973 100%);
   padding-top: 0.7rem;
 }
 
@@ -221,7 +224,7 @@
   /*max-width: 1568px;*/
   background: url("/darkstatuewoods.webp"),
     linear-gradient(180deg, #29373b 0%, #202a2c 100%);
-  background-blend-mode: hard-light;
+  background-blend-mode: soft-light;
   background-repeat: no-repeat;
   margin: 0 auto;
   padding: 6rem 4rem 6rem 4rem;
