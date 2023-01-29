@@ -6,6 +6,7 @@ import CaseDescription from '../components/CaseStudy/CaseDescription'
 import MenuCodeCase from '../components/MenuCodeCase'
 import { useEffect, useState } from 'react'
 import { useHTMLFetch } from '../hooks/FetchHTMLHook'
+import { useJSONFetch } from '../hooks/FetchCaseHook'
 import { useParams } from 'react-router-dom'
 
 function Case(props) {
@@ -22,40 +23,19 @@ function Case(props) {
 
   const [activeCode, setActiveCode] = useState(0)
   const [isLoading, fetchedData, setFetchedData, isfetchError] = useHTMLFetch(window.location.origin + subDir + '/code/codeapi.html')
+  const [isJSONLoading, JSONObject, setJSONObject, isJSONError] = useJSONFetch(window.location.origin + subDir + '/cases/case'+id+'.json')
+  JSONObject ? console.log(JSONObject) : undefined
 
   return (
     <div className="case">
       <Header mode='backonly' items={[['ENG / FR', '/#'], ['Design Work', '/#works'], ['Dev Case Studies', '/#caseStudies'], ['Contact Me', '/#works']]} />
       <section className='sectionSummary'>
         <CaseDescription captureUrl={links[id - 1][0]} />
-{/*         <div className='summaryContainer'>
-          <div role="img" aria-label="Sophie Bluel website capture screen" style={{backgroundImage:`url(${links[id - 1][0]})`}} className='mainSiteCapture' />
-          <div className='halfSummaryContainer'>
-            <CaseTitle title="BRIEF KEYPOINTS" />
-            <div className='bulletPointsContainer'>
-              <ul>
-                <li>Coding the <b>responsive front-end</b> of an already designed portfolio.</li>
-                <li>Implementing the <b>back-office</b> which allows to add new pictures.</li>
-                <li>Implementing the login form & dealing with the <b>sessions persistence</b>.</li>
-                <li>All this had to be done in <b>pure Javascript</b>, with the use of no library.</li>
-              </ul>
-            </div>
-            <div className="greenTagsContainer">
-              <div className='greenTag'>Javascript ES6</div>
-              <div className='greenTag'>HTML + SASS</div>
-              <div className='greenTag'>Figma</div>
-            </div>
-            <div className='genericCode'>
-              <button>Github</button>
-            </div>
-          </div>
-        </div> */}
       </section>
-
       <section style={{ marginTop: "4rem" }} className='sectionCode'>
         <div className='codenDescContainer'>
-          <div style={{ overflowY: "scroll" }} className='codeContainer' dangerouslySetInnerHTML={{ __html: fetchedData }}>
-          </div>
+          {fetchedData && <div style={{ overflowY: "scroll" }} className='codeContainer' dangerouslySetInnerHTML={{ __html: fetchedData }}>
+          </div>}
           <div className='descContainer' >
             <div className='description'>
               <div className='descTitleContainer'>
