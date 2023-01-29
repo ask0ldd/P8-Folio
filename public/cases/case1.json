@@ -1,6 +1,7 @@
 {
     "id": 1,
     "title":"ARCHITECT PORTFOLIO / FRONTEND",
+    "screenshot":"/bluel/bluel1.webp",
     "bulletpoints": ["Coding the responsive front-end of an already designed portfolio.", 
     "Implementing the back-office which allows to add new pictures.", 
     "Implementing the login form & dealing with the sessions persistence.",

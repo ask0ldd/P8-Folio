@@ -2,6 +2,7 @@ import '../App.css'
 import '../styles/Case.css'
 import Header from '../components/Header'
 import CaseTitle from '../components/CaseStudy/CaseTitle'
+import CaseDescription from '../components/CaseStudy/CaseDescription'
 import MenuCodeCase from '../components/MenuCodeCase'
 import { useEffect, useState } from 'react'
 import { useHTMLFetch } from '../hooks/FetchHTMLHook'
@@ -26,7 +27,8 @@ function Case(props) {
     <div className="case">
       <Header mode='backonly' items={[['ENG / FR', '/#'], ['Design Work', '/#works'], ['Dev Case Studies', '/#caseStudies'], ['Contact Me', '/#works']]} />
       <section className='sectionSummary'>
-        <div className='summaryContainer'>
+        <CaseDescription captureUrl={links[id - 1][0]} />
+{/*         <div className='summaryContainer'>
           <div role="img" aria-label="Sophie Bluel website capture screen" style={{backgroundImage:`url(${links[id - 1][0]})`}} className='mainSiteCapture' />
           <div className='halfSummaryContainer'>
             <CaseTitle title="BRIEF KEYPOINTS" />
@@ -47,7 +49,7 @@ function Case(props) {
               <button>Github</button>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
 
       <section style={{ marginTop: "4rem" }} className='sectionCode'>
