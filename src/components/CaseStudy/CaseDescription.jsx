@@ -9,17 +9,11 @@ return(
     <CaseTitle title="BRIEF KEYPOINTS" />
     <div className='bulletPointsContainer'>
         <ul>
-        <li>Coding the <b>responsive front-end</b> of an already designed portfolio.</li>
-        <li>Implementing the <b>back-office</b> which allows to add new pictures.</li>
-        <li>Implementing the login form & dealing with the <b>sessions persistence</b>.</li>
-        <li>All this had to be done in <b>pure Javascript</b>, with the use of no library.</li>
+            {props.bulletPoints.map(bp => (<li key={bp} dangerouslySetInnerHTML={{ __html: bp }}></li>))}
         </ul>
     </div>
     <div className="greenTagsContainer">
-{/*         <div className='greenTag'>Javascript ES6</div>
-        <div className='greenTag'>HTML + SASS</div>
-        <div className='greenTag'>Figma</div> */}
-        {props.summaryTags.map(tag => (<div key={tag} className='greenTag'>{tag}</div>))}
+        {props.summaryTags.map((tag, index) => (<div key={'tagsum' + index} className='greenTag'>{tag}</div>))}
     </div>
     <div className='genericCode'>
         <button>Github</button>

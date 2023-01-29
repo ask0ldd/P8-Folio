@@ -63,7 +63,7 @@ function Case(props) {
     <div className="case">
       <Header mode='backonly' items={[['ENG / FR', '/#'], ['Design Work', '/#works'], ['Dev Case Studies', '/#caseStudies'], ['Contact Me', '/#works']]} />
       <section className='sectionSummary'>
-      {JSONObject && <CaseDescription summaryTags={JSONObject.tags} captureUrl={subDir + JSONObject.screenshot} />}
+      {JSONObject && <CaseDescription summaryTags={JSONObject.tags} captureUrl={subDir + JSONObject.screenshot} bulletPoints={JSONObject.bulletpoints}/>}
       </section>
       <section style={{ marginTop: "4rem" }} className='sectionCode'>
         <div className='codenDescContainer'>
