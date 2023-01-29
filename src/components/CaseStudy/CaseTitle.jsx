@@ -1,4 +1,4 @@
-import '../styles/CaseTitle.css'
+import '../../styles/CaseTitle.css'
 
 const CaseTitle = (props) => {
 return(

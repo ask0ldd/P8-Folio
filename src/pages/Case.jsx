@@ -1,7 +1,7 @@
 import '../App.css'
 import '../styles/Case.css'
 import Header from '../components/Header'
-import CaseTitle from '../components/CaseTitle'
+import CaseTitle from '../components/CaseStudy/CaseTitle'
 import MenuCodeCase from '../components/MenuCodeCase'
 import { useEffect, useState } from 'react'
 import { useHTMLFetch } from '../hooks/FetchHTMLHook'
