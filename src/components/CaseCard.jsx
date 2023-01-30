@@ -2,7 +2,7 @@ import '../styles/CaseCard.css'
 import arrow from '/icons/arrow.svg'
 import Tag from './Tag'
 
-import { NavLink, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const CaseCard = ({caseInfos}) => {
 return(
@@ -23,13 +23,3 @@ return(
 </div>)}
 
 export default CaseCard
-
-/* 
-button title long
-aria-label
-button title round
-digit
-casetitle
-bulletpoints
-tags
-*/

@@ -30,7 +30,7 @@ function App() {
     'title':'BOOKS RATING WEBSITE / BACKEND',
     'digit':'II',
     'bulletpoints':
-      ["Développer un front-end responsive à partir d'une API et de designs fournis.",
+      ["Mise en oeuvre d'opérations CRUD de manière sécurisée.",
       "Implémenter un back-office permettant l'upload de nouveaux travaux.",
       'Implémenter un formulaire de connexion et gérer la persistance de la session.'],
     'tags':
