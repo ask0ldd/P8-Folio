@@ -57,8 +57,6 @@ function Case(props) {
     }
   }
 
-  
-
   return (
     <div className="case">
       <Header mode='backonly' items={[['ENG / FR', '/#'], ['Design Work', '/#works'], ['Dev Case Studies', '/#caseStudies'], ['Contact Me', '/#works']]} />
