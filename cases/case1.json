@@ -34,7 +34,7 @@
     {
         "title" : "AUTHENTIFICATION",
         "file" : "/cases/bluel/code/codelog.html",
-        "description" : "Helper proposant des méthodes liées à l'authentification. getToken permet de parcourir les cookies et d'en extraire un token d'authentification si existant. Une méthode de validation supplémentaire a été implémentée côté client, de manière à vérifier la cohérence des informations saisies au sein du formulaire de login et ce, avant toute transmission de données à l'API.",
+        "description" : "Helper proposant des méthodes liées à l'authentification. getToken permet, notamment, de parcourir les cookies et d'extraire un token d'authentification si existant. Une méthode de validation supplémentaire a été implémentée côté client, de manière à vérifier la cohérence des informations saisies au sein du formulaire de login et ce, avant toute transmission de données à l'API.",
         "tags" : ["form validation",
         "tokens",
         "cookies",
