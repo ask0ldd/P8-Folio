@@ -24,7 +24,7 @@
     {
         "title" : "GALLERY",
         "file" : "/cases/bluel/code/codegallery.html",
-        "description" : "Lorem ipsum dolor sit amet consectetur. Feugiat morbi id at venenatis aliquam congue cursus. Tellus nunc in ultricies risus hendrerit. Amet erat libero sit diam. Accumsan pellentesque diam cras semper diam enim sit. Ante malesuada a ut bibendum habitant lacus dictum quis turpis. Mattis et nascetur congue in et. Odio malesuada dolor at nunc amet odio.",
+        "description" : "2Lorem ipsum dolor sit amet consectetur. Feugiat morbi id at venenatis aliquam congue cursus. Tellus nunc in ultricies risus hendrerit. Amet erat libero sit diam. Accumsan pellentesque diam cras semper diam enim sit. Ante malesuada a ut bibendum habitant lacus dictum quis turpis. Mattis et nascetur congue in et. Odio malesuada dolor at nunc amet odio.",
         "tags" : ["fetch",
         "tokens",
         "async / await",
@@ -35,7 +35,7 @@
     {
         "title" : "LOG",
         "file" : "/cases/bluel/code/codelog.html",
-        "description" : "Lorem ipsum dolor sit amet consectetur. Feugiat morbi id at venenatis aliquam congue cursus. Tellus nunc in ultricies risus hendrerit. Amet erat libero sit diam. Accumsan pellentesque diam cras semper diam enim sit. Ante malesuada a ut bibendum habitant lacus dictum quis turpis. Mattis et nascetur congue in et. Odio malesuada dolor at nunc amet odio.",
+        "description" : "3Lorem ipsum dolor sit amet consectetur. Feugiat morbi id at venenatis aliquam congue cursus. Tellus nunc in ultricies risus hendrerit. Amet erat libero sit diam. Accumsan pellentesque diam cras semper diam enim sit. Ante malesuada a ut bibendum habitant lacus dictum quis turpis. Mattis et nascetur congue in et. Odio malesuada dolor at nunc amet odio.",
         "tags" : ["fetch",
         "tokens",
         "async / await",

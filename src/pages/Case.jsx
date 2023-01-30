@@ -9,6 +9,8 @@ import { useParams } from 'react-router-dom'
 
 function Case(props) {
 
+  //const [fetchedData, setFetchedData] = useState()
+
   let subDir = window.location.origin === "https://ask0ldd.github.io" ? "/P8-Folio" : ""
 
   useEffect(() => {
