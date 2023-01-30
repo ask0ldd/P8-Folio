@@ -13,34 +13,32 @@
     "highlights" : [{
         "title" : "API WRAPPER",
         "file" : "/cases/bluel/code/codeapi.html",
-        "description" : "Lorem ipsum dolor sit amet consectetur. Feugiat morbi id at venenatis aliquam congue cursus. Tellus nunc in ultricies risus hendrerit. Amet erat libero sit diam. Accumsan pellentesque diam cras semper diam enim sit. Ante malesuada a ut bibendum habitant lacus dictum quis turpis. Mattis et nascetur congue in et. Odio malesuada dolor at nunc amet odio.",
+        "description" : "Surcouche permettant d'intéragir aisément avec les différents endpoints de l'API fournie. Une attention particulière a été portée à la gestion des erreurs, avec une standardisation des messages renvoyés. L'utilisation de la paire async / await a été privilégiée au détriment de .then / .catch pour des raisons évidentes de lisibilité.",
         "tags" : ["fetch",
+        "API",
         "tokens",
+        "formData",
         "async / await",
-        "cookies",
         "request headers",
-        "formData"]
+        "cookies"]
     },
     {
-        "title" : "GALLERY",
+        "title" : "GALERIE",
         "file" : "/cases/bluel/code/codegallery.html",
-        "description" : "2Lorem ipsum dolor sit amet consectetur. Feugiat morbi id at venenatis aliquam congue cursus. Tellus nunc in ultricies risus hendrerit. Amet erat libero sit diam. Accumsan pellentesque diam cras semper diam enim sit. Ante malesuada a ut bibendum habitant lacus dictum quis turpis. Mattis et nascetur congue in et. Odio malesuada dolor at nunc amet odio.",
-        "tags" : ["fetch",
-        "tokens",
-        "async / await",
-        "cookies",
-        "request headers",
-        "formData"]
+        "description" : "Objet représentant la gallerie principale. Via une requête auprès de l'API et une manipulation du DOM, Les travaux uploadés par la photographe sont peuplés dynamiquement. Il en va de même pour les filtres utiles. Un message d'erreur s'affiche lorsque le endpoint dédié est inaccessible. L'attribut crossorigin des éléments images est renseigné de manière à ne pas déclencher d'erreur.",
+        "tags" : ["dynamic gallery",
+        "filtering",
+        "DOM insertions",
+        "cors"]
     },
     {
-        "title" : "LOG",
+        "title" : "AUTHENTIFICATION",
         "file" : "/cases/bluel/code/codelog.html",
-        "description" : "3Lorem ipsum dolor sit amet consectetur. Feugiat morbi id at venenatis aliquam congue cursus. Tellus nunc in ultricies risus hendrerit. Amet erat libero sit diam. Accumsan pellentesque diam cras semper diam enim sit. Ante malesuada a ut bibendum habitant lacus dictum quis turpis. Mattis et nascetur congue in et. Odio malesuada dolor at nunc amet odio.",
-        "tags" : ["fetch",
+        "description" : "Helper proposant des méthodes liées à l'authentification. getToken permet de parcourir les cookies et d'en extraire un token d'authentification si existant. Une méthode de validation supplémentaire a été implémentée côté client, de manière à vérifier la cohérence des informations saisies au sein du formulaire de login et ce, avant toute transmission de données à l'API.",
+        "tags" : ["form validation",
         "tokens",
-        "async / await",
         "cookies",
-        "request headers",
+        "admin mode",
         "formData"]
     }]
 }
