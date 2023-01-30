@@ -21,7 +21,7 @@ function Case(props) {
 
   // PASSING A CALLBACK TO ALLOW THE HOOK TO UPDATE THE STATE WHICH WILL TRIGGER A NEW HOOK
   const [isJSONLoading, JSONObject, setJSONObject, isJSONError] = useJSONFetch(window.location.origin + subDir + '/cases/case'+id+'.json', setUrl)
-  const [isLoading, fetchedData, setFetchedData, isfetchError] = useHTMLFetch(subDir + url)
+  const [isLoading, fetchedData, setFetchedData, isfetchError] = useHTMLFetch(window.location.origin + subDir + url)
   
   const next = async () => {
     try{
@@ -33,7 +33,7 @@ function Case(props) {
           current = currentCode+1
           setcurrentCode(current)
         }
-        setUrl(window.location.origin + subDir + JSONObject.highlights[current].file)
+        setUrl(JSONObject.highlights[current].file)
         document.querySelector('.codeContainer').scrollTo(0, 0)
     }catch(error){
         console.error(error)
@@ -50,7 +50,7 @@ function Case(props) {
           current = currentCode-1
           setcurrentCode(current)
         }
-        setUrl(window.location.origin + subDir + JSONObject.highlights[current].file)
+        setUrl(JSONObject.highlights[current].file)
         document.querySelector('.codeContainer').scrollTo(0, 0)
     }catch(error){
         console.error(error)
