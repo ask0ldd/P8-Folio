@@ -8,7 +8,8 @@ export function useHTMLFetch(url, dependancy) {
 
     useEffect(() => {
 
-        if (!url) return
+        // CHECK IF THE POST SUBDIR PART OF THE URL DOESN'T CONTAIN UNDEFINED : url = window.location.origin + subDir + url
+        if (!url || url.indexOf("undefined")!==-1) return
 
         async function fetchData() {
             setError(false)

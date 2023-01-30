@@ -21,7 +21,7 @@ function Case(props) {
 
   // PASSING A CALLBACK TO ALLOW THE HOOK TO UPDATE THE STATE WHICH WILL TRIGGER A NEW HOOK
   const [isJSONLoading, JSONObject, setJSONObject, isJSONError] = useJSONFetch(window.location.origin + subDir + '/cases/case'+id+'.json', setUrl)
-  const [isLoading, fetchedData, setFetchedData, isfetchError] = useHTMLFetch(window.location.origin + subDir + url)
+  const [isLoading, fetchedData, setFetchedData, isfetchError] = useHTMLFetch(subDir + url)
   
   const next = async () => {
     try{
