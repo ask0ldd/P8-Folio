@@ -6,7 +6,7 @@ return(
 <div className='summaryContainer'>
     <div role="img" aria-label="Sophie Bluel website capture screen" style={{backgroundImage:`url(${props.captureUrl})`}} className='mainSiteCapture' />
     <div className='halfSummaryContainer'>
-    <CaseTitle title="BRIEF KEYPOINTS" />
+    <CaseTitle title="NATURE DU BRIEF" />
     <div className='bulletPointsContainer'>
         <ul>
             {props.bulletPoints.map(bp => (<li key={bp} dangerouslySetInnerHTML={{ __html: bp }}></li>))}

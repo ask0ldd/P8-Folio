@@ -1,18 +1,45 @@
 import { useState, useLayoutEffect } from 'react'
-import { NavLink, Link } from 'react-router-dom'
 import './App.css'
 
 import Header from './components/Header'
-import Tag from './components/Tag'
 import Resume from './components/Resume'
 import Gallery from './components/Gallery'
+import CaseCard from './components/CaseCard'
 
-import arrow from '/icons/arrow.svg'
 import ellipse from '/ellipse0.svg'
 import statue from '/statue.webp'
 import buste from '/buste.webp'
 
 function App() {
+  
+  const case1 = {
+    'title':'ARCHITECT PORTFOLIO / FRONTEND',
+    'digit':'I',
+    'bulletpoints':
+      ["Développer un front-end responsive à partir d'une API et de designs fournis.",
+      "Implémenter un back-office permettant l'upload de nouveaux travaux.",
+      'Implémenter un formulaire de connexion et gérer la persistance de la session.'],
+    'tags':
+      ['Javascript ES6',
+      'HTML + SASS',
+      'Figma'],
+    'url':'/case/1'
+  }
+
+  const case2 = {
+    'title':'BOOKS RATING WEBSITE / BACKEND',
+    'digit':'II',
+    'bulletpoints':
+      ["Développer un front-end responsive à partir d'une API et de designs fournis.",
+      "Implémenter un back-office permettant l'upload de nouveaux travaux.",
+      'Implémenter un formulaire de connexion et gérer la persistance de la session.'],
+    'tags':
+      ['Node.js',
+      'Express',
+      'MongoDB'],
+    'url':'/case/2'
+  }
+
   const [count, setCount] = useState(0)
   
   useLayoutEffect(() => {
@@ -32,7 +59,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header mode='fullmenu' items={[['ENG / FR', '/#'], ['Design Work','/P8-Folio/#works'], ['Dev Case Studies','/P8-Folio/#caseStudies']]} />
+      <Header mode='fullmenu' items={[['ENG / FR', '/#'], ['Design','/P8-Folio/#works'], ['Coding','/P8-Folio/#caseStudies'], ['Parcours','/P8-Folio/#works']]} />
       <section className='sectionHero'>
         <img className='ellipse' alt="ellipse" src={ellipse}/>
         <img className='statue' alt="statue" src={statue}/>
@@ -47,46 +74,14 @@ function App() {
         </div>
       </section>
       <section className='sectionResume'>
-        <button className='dropResume' title="drop the resume">RESUME</button>
+        <button className='dropResume' title="drop the resume">PARCOURS</button>
         <Resume/>
       </section>
       <Gallery />
       <section id="caseStudies" className='sectionCaseStudies'>
         <div className='caseStudiesBody'>
-          <div className="caseContainer">
-          <button className='viewCaseButton' title="go to case 1 backup"><img alt="arrow" src={arrow}/></button>
-          <Link aria-label='Look at Sophie Bluel case study' to="/case/1"><button className='viewCaseButtonGlass' title="go to case 1"></button></Link>
-            <span className='digit'>I</span>
-            <span className='caseTitle'>ARCHITECT PORTFOLIO / FRONTEND</span>
-            <ul>
-              <li>Coding the responsive front-end of an already designed portfolio.</li>
-              <li>Implementing the front-end of the back-office allowing to add new pictures.</li>
-              <li>Everything had to be done in pure Javascript, with the use of no library.</li>
-            </ul>
-            <div className='tagContainer'>
-              <Tag text="Javascript ES6" />
-              <Tag text="HTML + SASS" />
-              <Tag text="Figma" />
-            </div>
-            <Link aria-label='Look at Casa case study' to="/case/2"><div className='textViewCaseButton'>Check out this project</div></Link>
-          </div>
-          <div className="caseContainer">
-            <button className='viewCaseButton' title="go to case 2 backup"><img alt="arrow" src={arrow}/></button>
-            <Link aria-label='Look at Casa case study' to="/case/2"><button className='viewCaseButtonGlass' title="go to case 2"></button></Link>
-            <span className='digit'>II</span>
-            <span className='caseTitle'>BOOKS RATING WEBSITE / BACKEND</span>
-            <ul>
-              <li>Coding the responsive front-end of an already designed portfolio.</li>
-              <li>Implementing the front-end of the back-office allowing to add new pictures.</li>
-              <li>Everything had to be done in pure Javascript, with the use of no library.</li>
-            </ul>
-            <div className='tagContainer'>
-              <Tag text="Node.js" />
-              <Tag text="Express" />
-              <Tag text="MongoDB" />
-            </div>
-            <Link aria-label='Look at Casa case study' to="/case/2"><div className='textViewCaseButton'>Check out this project</div></Link>
-          </div>
+          <CaseCard caseInfos={case1} />
+          <CaseCard caseInfos={case2} />
         </div>
       </section>
     </div>

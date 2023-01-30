@@ -72,10 +72,10 @@ function Case(props) {
               <div className='descTitleContainer'>
                 <span className='descTitle'>{JSONObject && JSONObject.highlights[currentCode].title}</span>
                 <div className='arrowsContainer'>
-                  <button className='arrowLeft' onClick={prev}></button>
+                  <button className='arrowLeft' title="previous code snippet" onClick={prev}></button>
                   <div className='arrowsContainer_lightsep'></div>
                   <div className='arrowsContainer_darksep'></div>
-                  <button className='arrowRight' onClick={next}></button>
+                  <button className='arrowRight' title="next code snippet" onClick={next}></button>
                 </div>
               </div>
               <div className='descBody'>{JSONObject && JSONObject.highlights[currentCode].description}</div>

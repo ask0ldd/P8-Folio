@@ -11,7 +11,7 @@ return(
       <li className='resumeLines'>
         <div className='yearResume oddShadows'>2022</div>
         <div className='jobResume'>
-          Web Developer RNCP 5 title (bac+2 eq.)<br/>
+          Web Developer Titre RNCP 5 (bac+2)<br/>
           <span>OC / Paris</span>
         </div>
       </li>
