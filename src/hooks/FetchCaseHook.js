@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export function useJSONFetch(url) {
+export function useJSONFetch(url, setCodeUrl) {
 
     const [JSONObject, setJSONObject] = useState()
     const [isJSONLoading, setLoading] = useState(true)
@@ -18,6 +18,7 @@ export function useJSONFetch(url) {
                 const response = await fetch(url)
                 const obj = await response.json()
                 setJSONObject(obj)
+                setCodeUrl(obj.highlights[0].file)
             }catch(error){
                 console.log(error)
                 setError(true)

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export function useHTMLFetch(url) {
+export function useHTMLFetch(url, dependancy) {
 
     const [fetchedData, setFetchedData] = useState()
     const [isLoading, setLoading] = useState(true)

@@ -9,8 +9,6 @@ import { useParams } from 'react-router-dom'
 
 function Case(props) {
 
-  //const [fetchedData, setFetchedData] = useState()
-
   let subDir = window.location.origin === "https://ask0ldd.github.io" ? "/P8-Folio" : ""
 
   useEffect(() => {
@@ -19,9 +17,11 @@ function Case(props) {
 
   const { id } = useParams();
   const [currentCode, setcurrentCode] = useState(0)
+  const [url, setUrl] = useState()
 
-  const [isJSONLoading, JSONObject, setJSONObject, isJSONError] = useJSONFetch(window.location.origin + subDir + '/cases/case'+id+'.json')
-  const [isLoading, fetchedData, setFetchedData, isfetchError] = useHTMLFetch(window.location.origin + subDir + '/cases/bluel/code/codeapi.html')
+  // PASSING A CALLBACK TO ALLOW THE HOOK TO UPDATE THE STATE WHICH WILL TRIGGER A NEW HOOK
+  const [isJSONLoading, JSONObject, setJSONObject, isJSONError] = useJSONFetch(window.location.origin + subDir + '/cases/case'+id+'.json', setUrl)
+  const [isLoading, fetchedData, setFetchedData, isfetchError] = useHTMLFetch(url)
   
   const next = async () => {
     try{
@@ -33,9 +33,7 @@ function Case(props) {
           current = currentCode+1
           setcurrentCode(current)
         }
-        const response = await fetch(window.location.origin + subDir + JSONObject.highlights[current].file)
-        const data = await response.text()
-        setFetchedData(data)
+        setUrl(window.location.origin + subDir + JSONObject.highlights[current].file)
         document.querySelector('.codeContainer').scrollTo(0, 0)
     }catch(error){
         console.error(error)
@@ -52,14 +50,14 @@ function Case(props) {
           current = currentCode-1
           setcurrentCode(current)
         }
-        const response = await fetch(window.location.origin + subDir + JSONObject.highlights[current].file)
-        const data = await response.text()
-        setFetchedData(data)
+        setUrl(window.location.origin + subDir + JSONObject.highlights[current].file)
         document.querySelector('.codeContainer').scrollTo(0, 0)
     }catch(error){
         console.error(error)
     }
   }
+
+  
 
   return (
     <div className="case">
