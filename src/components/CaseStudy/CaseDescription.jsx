@@ -1,5 +1,6 @@
 import '../../styles/CaseDescription.css'
 import CaseTitle from './CaseTitle'
+import github from '/icons/github.svg'
 
 const CaseDescription = (props) => {
 return(
@@ -16,7 +17,7 @@ return(
         {props.summaryTags.map((tag, index) => (<div key={'tagsum' + index} className='greenTag'>{tag}</div>))}
     </div>
     <div className='genericCode'>
-        <button>Consulter sur Github</button>
+        <button><span>Consulter sur Github</span><img src={github}/></button>
     </div>
     </div>
 </div>

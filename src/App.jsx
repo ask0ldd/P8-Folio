@@ -18,7 +18,7 @@ function App() {
     'bulletpoints':
       ["Développer un front-end responsive à partir d'une API et de designs fournis.",
       "Implémenter un back-office permettant l'upload de nouveaux travaux.",
-      'Implémenter un formulaire de connexion et gérer la persistance de la session.'],
+      'Implémenter un formulaire de connexion & gérer la persistance de la session.'],
     'tags':
       ['Javascript ES6',
       'HTML + SASS',
@@ -31,8 +31,8 @@ function App() {
     'digit':'II',
     'bulletpoints':
       ["Mise en oeuvre d'opérations CRUD de manière sécurisée.",
-      "Implémenter un back-office permettant l'upload de nouveaux travaux.",
-      'Implémenter un formulaire de connexion et gérer la persistance de la session.'],
+      "Implémenter un modèle de données avec Mongoose & définir ses validators.",
+      "Stocker des fichiers transmis par l'utilisateur via un formulaire dédié."],
     'tags':
       ['Node.js',
       'Express',
@@ -67,8 +67,8 @@ function App() {
         <div className='heroContainer'>
           <p className='fonction'>UI Design & Front End Dev. Paris. France.</p>
           <p className='identite'>Cédric ASkldd</p>
-          <p className='text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue velit integer viverra dignissim proin quam vitae suspendisse. 
-          Ullamcorper dictum eget non pretium molestie eu. Tortor odio sit a convallis nam. Amet, quisque quis ridiculus dolor ipsum, donec id.</p>
+          <p className='text'>Après avoir multiplié les prestations modestes ces dernières années (design, front-end, full stack, 3D), j'ai décidé, en 2022, de mettre un terme à ma carrière
+en tant que musicien professionnel, de manière à mieux me focaliser sur développement. Je poursuis actuellement un cursus dans l'espoir d'obtenir, à terme, le titre d'ingénieur / concepteur logiciel.</p>
           <a href="#works"><button className='recentWork'>Recent Work</button></a>
           <blockquote>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue velit integer viverra dignissim proin.” ― Arthur Schopenhauer</blockquote>
         </div>
@@ -89,3 +89,10 @@ function App() {
 }
 
 export default App
+
+/*
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue velit integer viverra dignissim proin quam vitae suspendisse. 
+          Ullamcorper dictum eget non pretium molestie eu. Tortor odio sit a convallis nam. Amet, quisque quis ridiculus dolor ipsum, donec id.
+
+*/

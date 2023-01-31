@@ -175,6 +175,9 @@
 }
 
 .genericCode button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(
       89.89deg,
       rgba(70, 76, 87, 0.6) 0.08%,
@@ -183,7 +186,7 @@
     #4f5d62;
   box-shadow: 0px 8px 16px rgba(22, 23, 23, 0.47);
   border-radius: 6px;
-  padding: 2px 3ch 5px 3ch;
+  padding: 3px 1.5rem 6px 1.5rem;
   height: 50px;
   position: absolute;
   bottom: 1.5rem;
@@ -194,6 +197,12 @@
   font-size: 18px;
   color: #dee2e6;
   border: 2px solid #dee2e6;
+  gap: 16px;
+}
+
+.genericCode button img {
+  height: 24px;
+  opacity: 0.8;
 }
 
 /*.genericCode button {
