@@ -1,10 +1,10 @@
 {
     "id": 2,
-    "title":"ARCHITECT PORTFOLIO / FRONTEND",
+    "title":"BOOKS RATING WEBSITE / BACKEND",
     "screenshot":"/cases/grimoire/grimoire1.webp",
-    "bulletpoints": ["Coding the responsive front-end of an already designed portfolio.", 
-    "Implementing the back-office which allows to add new pictures.", 
-    "Implementing the login form & dealing with the sessions persistence.",
+    "bulletpoints": ["Mise en oeuvre d'opérations CRUD de manière sécurisée.", 
+    "Implémenter un modèle de données avec Mongoose & définir ses validators.", 
+    "Stocker des fichiers transmis par l'utilisateur via un formulaire dédié.",
     "All this had to be done in pure Javascript, with the use of no library."],
     "tags" : ["Node.js",
                 "Express",
@@ -12,7 +12,7 @@
     "github" : "https://github.com/ask0ldd/P3-OC-JS-Frontend",
     "highlights" : [{
         "title" : "BOOK MODEL",
-        "file" : "/cases/grimoire/code/codeapi.html",
+        "file" : "/cases/grimoire/code/codebookmodel.html",
         "description" : "Lorem ipsum dolor sit amet consectetur. Feugiat morbi id at venenatis aliquam congue cursus. Tellus nunc in ultricies risus hendrerit. Amet erat libero sit diam. Accumsan pellentesque diam cras semper diam enim sit. Ante malesuada a ut bibendum habitant lacus dictum quis turpis. Mattis et nascetur congue in et. Odio malesuada dolor at nunc amet odio.",
         "tags" : ["mongoose",
         "models",
@@ -22,8 +22,8 @@
         "regex"]
     },
     {
-        "title" : "GALLERY",
-        "file" : "/cases/grimoire/code/codegallery.html",
+        "title" : "BOOK CONTROLLER",
+        "file" : "/cases/grimoire/code/codebookcontroller.html",
         "description" : "Lorem ipsum dolor sit amet consectetur. Feugiat morbi id at venenatis aliquam congue cursus. Tellus nunc in ultricies risus hendrerit. Amet erat libero sit diam. Accumsan pellentesque diam cras semper diam enim sit. Ante malesuada a ut bibendum habitant lacus dictum quis turpis. Mattis et nascetur congue in et. Odio malesuada dolor at nunc amet odio.",
         "tags" : ["mongoose",
         "jsonwebtokens",
@@ -31,5 +31,6 @@
         "middlewares",
         "request headers",
         "bcrypt"]
-    }]
+    }],
+    "banner" : "/cases/grimoire/case2bg.webp"
 }
