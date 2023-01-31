@@ -13,7 +13,7 @@
     "highlights" : [{
         "title" : "BOOK MODEL",
         "file" : "/cases/grimoire/code/codebookmodel.html",
-        "description" : "Lorem ipsum dolor sit amet consectetur. Feugiat morbi id at venenatis aliquam congue cursus. Tellus nunc in ultricies risus hendrerit. Amet erat libero sit diam. Accumsan pellentesque diam cras semper diam enim sit. Ante malesuada a ut bibendum habitant lacus dictum quis turpis. Mattis et nascetur congue in et. Odio malesuada dolor at nunc amet odio.",
+        "description" : "Schema mongoose définissant la forme des documents composant la collection Book. Différents validators sont implémentés, notamment pour protéger la base de données contre les injections NoSQL usuelles. Un middleware, préalable à toute mise à jour de document, est défini pour que la validation ne soit pas uniquement effective lors des opérations de création.",
         "tags" : ["mongoose",
         "models",
         "validator",
