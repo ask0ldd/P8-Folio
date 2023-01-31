@@ -32,7 +32,7 @@ function App() {
     'bulletpoints':
       ["Mise en oeuvre d'opérations CRUD de manière sécurisée.",
       "Implémenter un modèle de données avec Mongoose & définir ses validators.",
-      "Stocker des fichiers transmis par l'utilisateur via un formulaire dédié."],
+      "Stocker des fichiers transmis par les utilisateurs via un formulaire dédié."],
     'tags':
       ['Node.js',
       'Express',
