@@ -65,7 +65,7 @@ function App() {
         <img className='statue' alt="statue" src={statue}/>
         <img className='buste' alt="buste" src={buste}/>
         <div className='heroContainer'>
-          <p className='fonction'>UI Design & Front End Dev. Paris. France.</p>
+          <p className='fonction'>UI Design & Frontend Dev. Paris. France.</p>
           <p className='identite'>Cédric ASkldd</p>
           <p className='text'>Après avoir multiplié les prestations modestes ces dernières années - design, front-end, full stack, 3D -, j'ai décidé, en 2022, de mettre un terme à ma carrière
 de musicien professionnel, de manière à mieux me focaliser sur développement. Je poursuis actuellement un cursus dans l'espoir d'obtenir, à terme, le titre d'ingénieur / concepteur logiciel.</p>

@@ -5,11 +5,11 @@
     "bulletpoints": ["Mise en oeuvre d'<b>opérations CRUD</b> de manière sécurisée.", 
     "Implémenter un <b>modèle de données avec Mongoose</b> & définir ses validators.", 
     "<b>Stocker des fichiers</b> transmis par les utilisateurs via un formulaire dédié.",
-    "Gestion de l'<b>authentification</b>. Sécurisation via <b>hashing</>."],
+    "Gestion de l'<b>authentification</b>. Sécurisation du mot de passe via <b>hashing</>."],
     "tags" : ["Node.js",
                 "Express",
                 "MongoDB"],
-    "github" : "https://github.com/ask0ldd/P3-OC-JS-Frontend",
+    "github" : "https://github.com/ask0ldd/P7-Node-Express-Mongo",
     "highlights" : [{
         "title" : "BOOK MODEL",
         "file" : "/cases/grimoire/code/codebookmodel.html",

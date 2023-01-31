@@ -198,6 +198,7 @@
   color: #dee2e6;
   border: 2px solid #dee2e6;
   gap: 16px;
+  cursor: pointer;
 }
 
 .genericCode button img {
