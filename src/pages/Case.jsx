@@ -87,7 +87,7 @@ function Case(props) {
         </div>
       </section>
       <section className='caseBg'>
-        <img src={JSONObject && window.location.origin + subDir + JSONObject.banner}/>
+        <img alt="decorative banner" src={JSONObject && window.location.origin + subDir + JSONObject.banner}/>
       </section>
       <footer></footer>
     </div>

@@ -17,7 +17,7 @@ return(
         {props.summaryTags.map((tag, index) => (<div key={'tagsum' + index} className='greenTag'>{tag}</div>))}
     </div>
     <div className='genericCode'>
-        <a title="github link to this project" href={props.github}><button><span>Consulter sur Github</span><img src={github}/></button></a>
+        <a title="github link to this project" href={props.github}><button><span>Consulter sur Github</span><img alt='github icon' src={github}/></button></a>
     </div>
     </div>
 </div>
