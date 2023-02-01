@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header mode='fullmenu' items={[['ENG / FR', '/#'], ['Design','/P8-Folio/#works'], ['Coding','/P8-Folio/#caseStudies'], ['Parcours','/P8-Folio/#parcours']]} />
+      <Header mode='fullmenu' items={[['FR', '/#'], ['Design','/P8-Folio/#works'], ['Coding','/P8-Folio/#caseStudies'], ['Parcours','/P8-Folio/#parcours']]} />
       <section className='sectionHero'>
         <img className='ellipse' alt="ellipse" src={ellipse}/>
         <img className='statue' alt="statue" src={statue}/>
