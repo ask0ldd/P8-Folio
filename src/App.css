@@ -80,12 +80,12 @@
   margin-top: 48px;
   transform: translateY(200px);
   opacity: 0;
-  animation: 0.4s ease-out 0.8s forwards text;
+  animation: 0.5s ease-out 0.75s forwards text;
 }
 
 @keyframes text {
   0% {
-    transform: translateX(200px);
+    transform: translateX(400px);
     opacity: 0;
   }
   100% {
@@ -112,7 +112,7 @@
   margin-top: 72px;
   cursor: pointer;
   opacity: 0;
-  animation: 0.4s ease-out 1.2s forwards recentbutton;
+  animation: 0.4s ease-out 1.1s forwards recentbutton;
 }
 
 @keyframes recentbutton {
@@ -163,6 +163,20 @@
   left: 5%;
   right: 0;
   bottom: 10%;
+  animation: 0.3s linear 1.55s forwards buste;
+  transform: rotate3d(0, 1, 0, -90deg) scale(0.4);
+  opacity: 0;
+}
+
+@keyframes buste {
+  0% {
+    transform: rotate3d(0, 1, 1, -90deg) scale(0.4);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate3d(0, 1, 1, 0deg) scale(1);
+    opacity: 1;
+  }
 }
 
 .ellipse {
