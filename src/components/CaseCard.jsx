@@ -4,7 +4,7 @@ import Tag from './Tag'
 
 import { Link } from 'react-router-dom'
 
-const CaseCard = ({caseInfos}) => {
+const CaseCard = ({caseInfos, nCases}) => {
 return(
 <div className="caseContainer">
     <button className='viewCaseButton' title="decorative button"><img alt="arrow" src={arrow}/></button>
@@ -19,7 +19,7 @@ return(
         <Tag text={caseInfos.tags[1]} />
         <Tag text={caseInfos.tags[2]} />
     </div>
-    <Link aria-label='Link to the full case study' to={caseInfos.url}><div className='textViewCaseButton'>Check out this project</div></Link>
+    <Link aria-label='Link to the full case study' to={caseInfos.url} state={{ nCases: nCases }}><div className='textViewCaseButton'>Check out this project</div></Link>
 </div>)}
 
 export default CaseCard

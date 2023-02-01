@@ -10,7 +10,7 @@ return(
     <CaseTitle title="NATURE DU BRIEF" />
     <div className='bulletPointsContainer'>
         <ul>
-            {props.bulletPoints.map(bp => (<li key={bp} dangerouslySetInnerHTML={{ __html: bp }}></li>))}
+            {props.bulletPoints.map((bp, index) => (<li key={'bp' + index} dangerouslySetInnerHTML={{ __html: bp }}></li>))}
         </ul>
     </div>
     <div className="greenTagsContainer">

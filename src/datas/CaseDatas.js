@@ -1,5 +1,5 @@
 export const case1 = {
-    'title':'ARCHITECT PORTFOLIO / FRONTEND',
+    'title':"PORTFOLIO SOPHIE BLUEL / FRONTEND",
     'digit':'I',
     'bulletpoints':
       ["Développer un front-end responsive à partir d'une API et de designs fournis.",
@@ -13,7 +13,7 @@ export const case1 = {
   }
 
 export const case2 = {
-    'title':'BOOKS RATING WEBSITE / BACKEND',
+    'title':'NOTATION DE LIVRES / BACKEND',
     'digit':'II',
     'bulletpoints':
       ["Mise en oeuvre d'opérations CRUD de manière sécurisée.",
@@ -25,3 +25,5 @@ export const case2 = {
       'MongoDB'],
     'url':'/case/2'
   }
+
+export const nCases = 2

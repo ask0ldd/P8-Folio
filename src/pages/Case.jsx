@@ -2,10 +2,12 @@ import '../App.css'
 import '../styles/Case.css'
 import Header from '../components/Header'
 import CaseDescription from '../components/CaseStudy/CaseDescription'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { useHTMLFetch } from '../hooks/FetchHTMLHook'
 import { useJSONFetch } from '../hooks/FetchCaseHook'
-import { useParams } from 'react-router-dom'
+import { useParams, Navigate } from 'react-router-dom'
+
+import { nCases } from '../datas/CaseDatas'
 
 function Case(props) {
 
@@ -18,6 +20,8 @@ function Case(props) {
   const { id } = useParams();
   const [currentCode, setcurrentCode] = useState(0)
   const [url, setUrl] = useState()
+
+  if((id > nCases)||(id < 1)) return (<Navigate to={subDir + "/"} replace={true} />)
 
   // PASSING A CALLBACK TO ALLOW THE HOOK TO UPDATE THE STATE WHICH WILL TRIGGER A NEW HOOK
   const [isJSONLoading, JSONObject, setJSONObject, isJSONError] = useJSONFetch(window.location.origin + subDir + '/cases/case'+id+'.json', setUrl)
