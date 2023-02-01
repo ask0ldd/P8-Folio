@@ -49,7 +49,7 @@ function App() {
       </section>
       <section className='sectionResume'>
         <button id="parcours" className='dropResume' title="drop the resume">PARCOURS</button>
-        <img className='resumeArrow' src={miniArrow}/>
+        <img className='resumeArrow' alt="droparrow" src={miniArrow}/>
         <Resume/>
       </section>
       <Gallery />
