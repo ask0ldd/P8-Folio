@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect,createContext } from 'react'
+import { useState, useLayoutEffect } from 'react'
 import './App.css'
 
 import Header from './components/Header'
@@ -9,6 +9,7 @@ import CaseCard from './components/CaseCard'
 import ellipse from '/ellipse0.svg'
 import statue from '/statue.webp'
 import buste from '/buste.webp'
+import miniArrow from '/icons/miniarrowdrop2.svg'
 
 import { case1, case2 } from './datas/CaseDatas'
 
@@ -48,6 +49,7 @@ function App() {
       </section>
       <section className='sectionResume'>
         <button id="parcours" className='dropResume' title="drop the resume">PARCOURS</button>
+        <img className='resumeArrow' src={miniArrow}/>
         <Resume/>
       </section>
       <Gallery />

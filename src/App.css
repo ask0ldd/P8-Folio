@@ -18,11 +18,9 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  /*height: 900px;*/
   width: 100%;
   overflow: hidden;
   padding: 0 4rem 4rem 4rem;
-  /*padding: 0 64px;*/
 }
 
 .heroContainer {
@@ -37,6 +35,20 @@
   font-size: 32px;
   line-height: 100%;
   margin-top: 96px;
+  transform: translateY(-100px);
+  opacity: 0;
+  animation: 0.4s ease-out 0.4s forwards fonction;
+}
+
+@keyframes fonction {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
 .heroContainer .identite {
@@ -46,6 +58,17 @@
   line-height: 100%;
   margin-top: 48px;
   margin-left: -5px;
+  animation: 0.6s ease-out forwards identite;
+  transform: translateX(-1000px);
+}
+
+@keyframes identite {
+  0% {
+    transform: translateX(-1000px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
 
 .heroContainer .text {
@@ -55,6 +78,20 @@
   line-height: 200%;
   width: 40%;
   margin-top: 48px;
+  transform: translateY(200px);
+  opacity: 0;
+  animation: 0.4s ease-out 0.8s forwards text;
+}
+
+@keyframes text {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
 
 .heroContainer .recentWork {
@@ -64,30 +101,29 @@
   padding: 16px 80px;
   gap: 6px;
   background: #dfe4ec;
-  /*background: linear-gradient(
-      105.56deg,
-      rgba(255, 255, 255, 0) 6.12%,
-      rgba(255, 255, 255, 0.7) 50.59%,
-      rgba(255, 255, 255, 0) 93.25%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(142, 163, 194, 0.6) 100%
-    ),
-    #d1d8e3;*/
   font-family: "Oswald";
   font-weight: 400;
   font-size: 24px;
-  /*color: #485a56;*/
   color: #80724e;
   border-radius: 10px;
-  /*border: 6px solid #86979a;*/
   border: 6px solid #8a7c58;
   box-shadow: rgba(50, 50, 93, 0.35) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.4) 0px 30px 60px -30px;
   margin-top: 72px;
   cursor: pointer;
+  opacity: 0;
+  animation: 0.4s ease-out 1.2s forwards recentbutton;
+}
+
+@keyframes recentbutton {
+  0% {
+    transform: translateX(-600px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
 .heroContainer blockquote {
@@ -203,6 +239,12 @@
   flex-shrink: 0;
   padding-bottom: 4px;
   outline: 2px solid #749393;
+}
+
+.resumeArrow {
+  margin: 0 auto;
+  width: 20px;
+  margin-top: 6px;
 }
 
 .sectionCaseStudies {
@@ -346,16 +388,6 @@
     width: 100%;
   }
 
-  /*.heroContainer .recentWork {
-    margin-top: 3rem;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }*/
-
   .buste {
     height: 40%;
     bottom: 30%;
@@ -391,7 +423,7 @@
 
   .sectionResume {
     padding: 0;
-    max-height: 5rem;
+    max-height: 6rem;
   }
 
   .dropResume {
