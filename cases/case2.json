@@ -24,7 +24,7 @@
     {
         "title" : "BOOK CONTROLLER",
         "file" : "/cases/grimoire/code/codebookcontroller.html",
-        "description" : "Lorem ipsum dolor sit amet consectetur. Feugiat morbi id at venenatis aliquam congue cursus. Tellus nunc in ultricies risus hendrerit. Amet erat libero sit diam. Accumsan pellentesque diam cras semper diam enim sit. Ante malesuada a ut bibendum habitant lacus dictum quis turpis. Mattis et nascetur congue in et. Odio malesuada dolor at nunc amet odio.",
+        "description" : "Controller permettant notamment de créer, de modifier ou d'effacer des documents au sein de la collection Book. Multer intervenant avant l'étape de validation du Schéma, il était nécessaire, en cas de rejet ou d'indisponibilité de la base de données, d'effacer le fichier stocké sur le serveur et ne pouvant être alors affilié à aucun document. Une attention particulière a été portée à la gestion des erreurs et aux réponses afférentes.",
         "tags" : ["mongoose",
         "jsonwebtokens",
         "multer",
