@@ -79,7 +79,7 @@ function Case(props) {
           <div className='descContainer' >
             <div className='description'>
               <div className='descTitleContainer'>
-                <span className='descTitle'>{JSONObject && JSONObject.highlights[currentCode].title}</span>
+                <h3 className='descTitle'>{JSONObject && JSONObject.highlights[currentCode].title}</h3>
                 <div className='arrowsContainer'>
                   <button className='arrowLeft' title="previous code snippet" onClick={prev}></button>
                   <div className='arrowsContainer_lightsep'></div>
@@ -97,6 +97,9 @@ function Case(props) {
       </section>
       <section className='caseBg'>
         <img alt="decorative banner" src={JSONObject && window.location.origin + subDir + JSONObject.banner}/>
+      </section>
+      <section className='sectionVerbose'>
+        {JSONObject && <p className='verboseContainer' dangerouslySetInnerHTML={{ __html: JSONObject.verbose }}></p>}
       </section>
       <footer></footer>
     </div>

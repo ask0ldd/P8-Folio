@@ -2,7 +2,7 @@ import '../../styles/CaseTitle.css'
 
 const CaseTitle = (props) => {
 return(
-    <div className="CaseTitle"><span>{props.title}</span></div>
+    <h2 className="CaseTitle"><span>{props.title}</span></h2>
 )
 }
 

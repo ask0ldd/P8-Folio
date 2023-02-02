@@ -43,5 +43,6 @@
         "middlewares",
         "bcrypt"]
     }],
-    "banner" : "/cases/grimoire/case2bg.webp"
+    "banner" : "/cases/grimoire/case2bg.webp",
+    "verbose" : "Ce projet consistait en l'implémentation du backend d'un site visant à offrir la possibilité à des utilisateurs de noter les ouvrages de leur choix.<br/><br/>La solution devait reposer sur la stack MERN et en conséquence, j'ai fait le choix de m'orienter vers la quadrade mongoose, express, node.js et mongodb.<br/><br/>Conditionnant toute action utilisateur, un système de création de compte et d'identification devait être mis en place. La librairie bcrypt a ainsi été utilisée pour hasher tout mot de passe avant intégration en base de données. Côté login, un json webtoken est délivré au frontend de manière à ce que l'utilisateur puisse certifier son identité et ainsi accéder à certaines actions sécurisées.<br/><br/>A noter que le frontend n'était pas pleinement fonctionnel lors de mon arrivée sur le projet et qu'il m'a fallu le débugger préalablement à l'initiation de ma mission.<br/><br/>Pour finir, il convient de noter qu'un soucis particulier a été porté à la validation des données via l'utilisation de regex solides, de manière à prévenir toute injection noSQL."
 }
