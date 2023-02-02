@@ -19,6 +19,7 @@ function App() {
   
   useLayoutEffect(() => {
     window.scrollTo(0, 0)
+    // WAIT FOR THE DOM TO BE RENDERED BEFORE ADDING A LISTENER
     const dropButton = document.querySelector('.dropResume')
     dropButton.addEventListener('click', ()=>{
       document.querySelector('.sectionResume').classList.add("sectionResumeFull");

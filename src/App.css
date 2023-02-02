@@ -255,6 +255,7 @@
   flex-shrink: 0;
   padding-bottom: 4px;
   outline: 2px solid #749393;
+  cursor: pointer;
 }
 
 .resumeArrow {
