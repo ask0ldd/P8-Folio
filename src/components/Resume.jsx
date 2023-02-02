@@ -69,7 +69,7 @@ return(
     </div>
     <div className='skillsContainer'>
       <article className='skillColumn'>
-        <div className='skillHead url1'>FRONTEND</div>
+        <div className='skillHead url3'>FRONTEND</div>
         <ul className='skillList'>
           <li>JAVASCRIPT ES6</li>
           <li>REACT JS</li>

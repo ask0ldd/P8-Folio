@@ -165,6 +165,10 @@
   background: url("/skillhead2.webp");
 }
 
+.url3 {
+  background: url("/skillhead3.webp");
+}
+
 .skillList {
   background: linear-gradient(180deg, #627c80 0%, rgba(98, 124, 128, 0) 100%),
     #4c6569;
