@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 const CaseCard = ({caseInfos, nCases}) => {
 return(
-<div className="caseContainer">
+<article className="caseContainer">
     <button className='viewCaseButton' title="decorative button"><img alt="arrow" src={arrow}/></button>
     <Link aria-label='Link to the full case study' to={caseInfos.url}><button className='viewCaseButtonGlass' title='go to case study'></button></Link>
     <span className='digit'>{caseInfos.digit}</span>
@@ -20,6 +20,6 @@ return(
         <Tag text={caseInfos.tags[2]} />
     </div>
     <Link aria-label='Link to the full case study' to={caseInfos.url} state={{ nCases: nCases }}><div className='textViewCaseButton'>Check out this project</div></Link>
-</div>)}
+</article>)}
 
 export default CaseCard

@@ -14,14 +14,13 @@ import miniArrow from '/icons/miniarrowdrop2.svg'
 import { case1, case2 } from './datas/CaseDatas'
 
 function App() {
-  
+
   const [count, setCount] = useState(0)
   
   useLayoutEffect(() => {
     window.scrollTo(0, 0)
     const dropButton = document.querySelector('.dropResume')
     dropButton.addEventListener('click', ()=>{
-      //document.querySelector('.sectionResume').style.height = "fit-content";
       document.querySelector('.sectionResume').classList.add("sectionResumeFull");
       document.querySelectorAll('.jobResume').forEach(el => {
         el.style.animation="0.4s ease-out 0.2s forwards jobresume"
@@ -40,7 +39,7 @@ function App() {
         <img className='statue' alt="statue" src={statue}/>
         <img className='buste' alt="buste" src={buste}/>
         <div className='heroContainer'>
-          <p className='fonction'>UI Design & Frontend Dev. Paris. France.</p>
+          <h1 className='fonction'>UI Design & Frontend Dev. Paris. France.</h1>
           <p className='identite'>Cédric ASkldd</p>
           <p className='text'>Après avoir multiplié les prestations modestes ces dernières années - design, front-end, full stack, 3D -, j'ai décidé, en 2022, de mettre un terme à ma carrière de musicien professionnel, de manière à mieux me focaliser sur développement. Je poursuis actuellement un cursus dans l'espoir d'obtenir, à terme, le titre d'ingénieur / concepteur logiciel.</p>
           <a href="#works"><button className='recentWork'>Recent Work</button></a>
@@ -55,8 +54,8 @@ function App() {
       <Gallery />
       <section id="caseStudies" className='sectionCaseStudies'>
         <div className='caseStudiesBody'>
-          <CaseCard caseInfos={case1}/>
-          <CaseCard caseInfos={case2}/>
+          {case1 && <CaseCard caseInfos={case1}/>}
+          {case2 && <CaseCard caseInfos={case2}/>}
         </div>
       </section>
     </div>
@@ -64,10 +63,3 @@ function App() {
 }
 
 export default App
-
-/*
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue velit integer viverra dignissim proin quam vitae suspendisse. 
-          Ullamcorper dictum eget non pretium molestie eu. Tortor odio sit a convallis nam. Amet, quisque quis ridiculus dolor ipsum, donec id.
-
-*/
