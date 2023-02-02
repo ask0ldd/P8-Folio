@@ -41,7 +41,7 @@ function App() {
         <div className='heroContainer'>
           <h1 className='fonction'>UI Design & Frontend Dev. Paris. France.</h1>
           <p className='identite'>Cédric ASkldd</p>
-          <p className='text'>Après avoir multiplié les prestations modestes ces dernières années - design, front-end, full stack, 3D -, j'ai décidé, en 2022, de mettre un terme à ma carrière de musicien professionnel, de manière à mieux me focaliser sur développement. Je poursuis actuellement un cursus dans l'espoir d'obtenir, à terme, le titre d'ingénieur / concepteur logiciel.</p>
+          <p className='text'>Apres avoir considéré, durant des années, le développement web & le design comme des activités professionnelles secondaires; j'ai décidé en 2022 de m'engager dans un virage professionnel radical et de devenir ingénieur / concepteur logiciel. Première marche vers cet objectif, mon titre de développeur web est présentement en cours de validation.</p>
           <a href="#works"><button className='recentWork'>Recent Work</button></a>
           <blockquote>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue velit integer viverra dignissim proin.” ― Arthur Schopenhauer</blockquote>
         </div>
