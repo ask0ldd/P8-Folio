@@ -76,6 +76,10 @@ nav ul {
     display: none;
   }
 
+  nav ul .forceArrow:first-child {
+    display: block;
+  }
+
   /*.menuItem {
     display: block;
   }
