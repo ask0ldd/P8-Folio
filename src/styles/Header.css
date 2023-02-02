@@ -46,4 +46,8 @@ header {
   .socialItems {
     column-gap: 1.5rem;
   }
+
+  .linkedin {
+    display: none;
+  }
 }

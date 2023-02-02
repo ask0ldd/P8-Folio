@@ -12,7 +12,7 @@ return(
             <ul className='socialItems'>
                 <li><a title="dribbble link" href='https://dribbble.com/C_DeSoriac'><img src={dribbble} alt="dribbble icon"/></a></li>
                 <li><a title="github link" href='https://github.com/ask0ldd'><img src={github} alt="github icon"/></a></li>
-                <li><img src={linkedin} alt="linkedin icon"/></li>
+                <li className="linkedin"><img src={linkedin} alt="linkedin icon"/></li>
             </ul>
         </div>
     </header>

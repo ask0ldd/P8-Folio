@@ -8,6 +8,30 @@ nav {
   height: 3.5rem;
   display: flex;
   align-items: flex-end;
+  position: relative;
+}
+
+.verticalMenu {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  opacity: 1;
+  z-index: 5;
+}
+
+.verticalMenu span {
+  height: 48px;
+  background-color: black;
+  width: 100%;
+  padding: 0 2ch;
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  z-index: 6;
+  position: relative;
 }
 
 nav a:any-link {
@@ -48,11 +72,15 @@ nav ul {
     font-size: 14px;
   }
 
-  .menuItem {
+  nav ul li:first-child {
+    display: none;
+  }
+
+  /*.menuItem {
     display: block;
   }
 
   .textMenuItems {
     display: none;
-  }
+  }*/
 }
