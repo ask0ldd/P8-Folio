@@ -29,7 +29,18 @@
         "jsonwebtokens",
         "multer",
         "middlewares",
-        "request headers",
+        "formdata/multipart",
+        "fs.unlink"]
+    },
+    {
+        "title" : "USER CONTROLLER",
+        "file" : "/cases/grimoire/code/codeusercontroller.html",
+        "description" : "Méthodes permettant l'inscription puis l'authentification d'un utilisateur. Pour assurer la sécurisation du mot de passe saisi à l'inscription, celui-ci est encrypté à l'aide de la méthode hash de la librairie bcrypt, avant d'être inséré en base de données. Ultérieurement, lors d'une tentative de connexion, bcrypt est cette fois capable de déterminer si un mot de passe saisi par un utilisateur correspond bien à un hash présent en bdd.",
+        "tags" : ["mongoose",
+        "jsonwebtokens",
+        "hashing",
+        "authentification",
+        "middlewares",
         "bcrypt"]
     }],
     "banner" : "/cases/grimoire/case2bg.webp"
