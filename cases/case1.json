@@ -41,5 +41,6 @@
         "admin mode",
         "formData"]
     }],
-    "banner" : "/cases/bluel/case1bg.webp"
+    "banner" : "/cases/bluel/case1bg.webp",
+    "verbose" : "Ce projet consistait en l'implémentation du frontend d'un site devant permettre à une architecte d'intérieur, Sophie Bluel, d'uploader ses différents travaux et de les exposer à ses futurs visiteurs.<br/><br/>Une galerie dynamique devait ainsi être codée, satisfaisant une maquette présente sur figma; et puisant ses données auprès d'une API existante.<br/><br/>Cette galerie devait de plus présenter un système de filtres eux aussi dynamiques.<br/><br/>Pour permettre à l'architecte d'administrer le site, un système d'authentification devait être implémenté, incluant une mémorisation de l'identité de l'administrateur via cookie. Cookie étant ensuite analysé pour permettre un accès aux opérations CUD.<br/><br/>L'administration de la galerie devait prendre place dans une modale qui devait être codée en javascript pur, sans utilisation de librairie.<br/><br/>Et une attention particulière devait être portée à la responsivité du site."
 }
