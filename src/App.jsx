@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from 'react'
+import { useState, useLayoutEffect, useRef, useEffect } from 'react'
 import './App.css'
 
 import Header from './components/Header'
@@ -11,14 +11,37 @@ import statue from '/statue.webp'
 import buste from '/buste.webp'
 import miniArrow from '/icons/miniarrowdrop2.svg'
 
-import { case1, case2 } from './datas/CaseDatas'
+import { case1, case2, nCases } from './datas/CaseDatas'
 
 function App() {
 
-  const [count, setCount] = useState(0)
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0)
+  }
+
+  const [animation, setAnimation]  = useState()
+
+  const observerCallback = (entries, observer) => {
+    entries.forEach(entry => {if(entry.isIntersecting) {
+      setAnimation({title : 'caseTitleAnim', bps : 'caseBpsAnim', tags : 'caseTagsAnim'})
+      observer.unobserve(entry.target)
+    }
+    })
+  }
+  let observer = new IntersectionObserver(observerCallback, { threshold: 0.6 })
+
   
   useLayoutEffect(() => {
-    window.scrollTo(0, 0)
+    /*if(nRender.current === 0) {
+      window.scrollTo(0, 0)
+      nRender.current = 1
+    }*/
+  });
+
+  useEffect(() => {
+    // OBSERVE #caseStudies WHEN DOM RENDERED
+    observer.observe(document.querySelector('#caseStudies'))
+
     // WAIT FOR THE DOM TO BE RENDERED BEFORE ADDING A LISTENER
     const dropButton = document.querySelector('.dropResume')
     dropButton.addEventListener('click', ()=>{
@@ -29,8 +52,8 @@ function App() {
       document.querySelectorAll('.yearResume').forEach((el, i) => {
         el.style.animation="0.4s ease-out "+(0.6)+"s forwards yearresume"
       })
-    })  
-  });
+    })
+  },[])
 
   return (
     <div className="App">
@@ -55,8 +78,8 @@ function App() {
       <Gallery />
       <section id="caseStudies" className='sectionCaseStudies'>
         <div className='caseStudiesBody'>
-          {case1 && <CaseCard caseInfos={case1}/>}
-          {case2 && <CaseCard caseInfos={case2}/>}
+          {case1 && <CaseCard caseInfos={case1} animation={animation}/>}
+          {case2 && <CaseCard caseInfos={case2} animation={animation} />}
         </div>
       </section>
     </div>
