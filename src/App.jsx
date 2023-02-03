@@ -23,12 +23,12 @@ function App() {
 
   const observerCallback = (entries, observer) => {
     entries.forEach(entry => {if(entry.isIntersecting) {
-      //setAnimation({title : 'caseTitleAnim', bps : 'caseBpsAnim', tags : 'caseTagsAnim'})
+      setAnimation({title : 'caseTitleAnim', bps : 'caseBpsAnim', tags : 'caseTagsAnim', btnHL : 'btnHLAnim'})
       observer.unobserve(entry.target)
     }
     })
   }
-  let observer = new IntersectionObserver(observerCallback, { threshold: 0.6 })
+  let observer = new IntersectionObserver(observerCallback, { threshold: 0.3 })
 
   
   useLayoutEffect(() => {
@@ -39,8 +39,8 @@ function App() {
   });
 
   useEffect(() => {
-    // OBSERVE #caseStudies WHEN DOM RENDERED
-    observer.observe(document.querySelector('#caseStudies'))
+    // OBSERVE .caseStudiesBody WHEN DOM RENDERED
+    observer.observe(document.querySelector('.caseStudiesBody'))
 
     // WAIT FOR THE DOM TO BE RENDERED BEFORE ADDING A LISTENER
     const dropButton = document.querySelector('.dropResume')
