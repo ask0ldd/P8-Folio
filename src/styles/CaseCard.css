@@ -186,7 +186,7 @@ textViewCaseButton
   margin-top: 2rem;
   transform: translateX(200px);
   opacity: 0;
-  width: fit-content;
+  width: 80%;
 }
 
 .caseTagsAnim {
@@ -218,6 +218,14 @@ textViewCaseButton
 
   .textViewCaseButton {
     display: flex;
+  }
+
+  .tagContainer {
+    width: 100%;
+  }
+
+  .tagContainer div {
+    width: 100%;
   }
 }
 
