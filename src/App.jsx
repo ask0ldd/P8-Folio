@@ -23,7 +23,7 @@ function App() {
 
   const observerCallback = (entries, observer) => {
     entries.forEach(entry => {if(entry.isIntersecting) {
-      setAnimation({title : 'caseTitleAnim', bps : 'caseBpsAnim', tags : 'caseTagsAnim'})
+      //setAnimation({title : 'caseTitleAnim', bps : 'caseBpsAnim', tags : 'caseTagsAnim'})
       observer.unobserve(entry.target)
     }
     })
