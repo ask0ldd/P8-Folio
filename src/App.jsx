@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect, useRef, useEffect } from 'react'
+import { useState, useLayoutEffect, useEffect } from 'react'
 import './App.css'
 
 import Header from './components/Header'
@@ -11,25 +11,39 @@ import statue from '/statue.webp'
 import buste from '/buste.webp'
 import miniArrow from '/icons/miniarrowdrop2.svg'
 
-import { case1, case2, nCases } from './datas/CaseDatas'
+import { case1, case2 } from './datas/CaseDatas'
 
 function App() {
 
-  window.onbeforeunload = function () {
+  window.onbeforeunload = () => {
     window.scrollTo(0, 0)
   }
 
   const [animation, setAnimation]  = useState()
 
   const observerCallback = (entries, observer) => {
-    entries.forEach(entry => {if(entry.isIntersecting) {
-      setAnimation({title : 'caseTitleAnim', bps : 'caseBpsAnim', tags : 'caseTagsAnim', btnHL : 'btnHLAnim'})
-      observer.unobserve(entry.target)
-    }
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        if (entry.target.id === 'caseStudiesBody') {
+          setAnimation({title : 'caseTitleAnim', bps : 'caseBpsAnim', tags : 'caseTagsAnim', btnHL : 'btnHLAnim'})
+          console.log(entry.target)
+          observer.unobserve(entry.target)}
+        if (entry.target.id === 'parcours') {
+          console.log(entry.target)
+          document.querySelector('.sectionResume').classList.add("sectionResumeFull");
+          document.querySelectorAll('.jobResume').forEach(el => {
+            el.style.animation="0.4s ease-out 0.2s forwards jobresume"
+          })
+          document.querySelectorAll('.yearResume').forEach((el, i) => {
+            el.style.animation="0.4s ease-out "+(0.6)+"s forwards yearresume"
+          })
+          observer.unobserve(entry.target)}
+      }
     })
   }
-  let observer = new IntersectionObserver(observerCallback, { threshold: 0.3 })
 
+  let observer = new IntersectionObserver(observerCallback, { threshold: 0.3 })
+  let observerResume = new IntersectionObserver(observerCallback, { root: null, threshold: 0.3, rootMargin: "-400px 0px" })
   
   useLayoutEffect(() => {
     /*if(nRender.current === 0) {
@@ -41,6 +55,7 @@ function App() {
   useEffect(() => {
     // OBSERVE .caseStudiesBody WHEN DOM RENDERED
     observer.observe(document.querySelector('.caseStudiesBody'))
+    observerResume.observe(document.querySelector('#parcours'))
 
     // WAIT FOR THE DOM TO BE RENDERED BEFORE ADDING A LISTENER
     const dropButton = document.querySelector('.dropResume')
@@ -76,8 +91,8 @@ function App() {
         <Resume/>
       </section>
       <Gallery />
-      <section id="caseStudies" className='sectionCaseStudies'>
-        <div className='caseStudiesBody'>
+      <section id='caseStudies' className='sectionCaseStudies'>
+        <div id='caseStudiesBody' className='caseStudiesBody'>
           {case1 && <CaseCard caseInfos={case1} animation={animation}/>}
           {case2 && <CaseCard caseInfos={case2} animation={animation} />}
         </div>
