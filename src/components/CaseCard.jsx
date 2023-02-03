@@ -10,11 +10,11 @@ return(
     <button className='viewCaseButton' title="decorative button"><img alt="arrow" src={arrow}/></button>
     <Link aria-label='Link to the full case study' to={caseInfos?.url}><button className='viewCaseButtonGlass' title='go to case study'></button></Link>
     <span className='digit'>{caseInfos?.digit}</span>
-    <h3 className={`caseTitle ${animation?.title}`}>{caseInfos?.title}</h3>
-    <ul className={animation?.bps}>
-        {caseInfos.bulletpoints.map((bp, index) => <li key={'bp'+index+caseInfos?.digit}>{bp}</li>)}
+    <h3 className={`caseTitle`}>{caseInfos?.title}</h3>
+    <ul>
+        {caseInfos.bulletpoints.map((bp, index) => <li key={'bp' + index+caseInfos?.digit}>{bp}</li>)}
     </ul>
-    <div className={`tagContainer ${animation?.tags}`}>
+    <div className={`tagContainer`}>
         <Tag text={caseInfos.tags[0]} />
         <Tag text={caseInfos.tags[1]} />
         <Tag text={caseInfos.tags[2]} />
