@@ -36,6 +36,8 @@
   border-radius: 10px;
   object-fit: cover;
   object-position: 0 0;
+  /*object-position: center;*/
+  background-position: top center;
   transform: translateX(-800px);
   animation: 0.4s ease-out forwards mainSiteCapture;
   opacity: 0.95;

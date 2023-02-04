@@ -1,0 +1,48 @@
+{
+    "id": 2,
+    "title":"ACCOMODATION BOOKING / REACT",
+    "screenshot":"/cases/kasa/kasa3.webp",
+    "bulletpoints": ["Mise en oeuvre d'<b>opérations CRUD</b> de manière sécurisée.", 
+    "Implémenter un <b>modèle de données avec Mongoose</b> & définir ses validators.", 
+    "<b>Stocker des fichiers</b> transmis par les utilisateurs via un formulaire dédié.",
+    "Gestion de l'<b>authentification</b>. Sécurisation du mot de passe via <b>hashing</>."],
+    "tags" : ["Node.js",
+                "Express",
+                "MongoDB"],
+    "github" : "https://github.com/ask0ldd/P6-React",
+    "highlights" : [{
+        "title" : "BOOK MODEL",
+        "file" : "/cases/kasa/code/codebookmodel.html",
+        "description" : "Schema mongoose définissant la forme des documents composant la collection Book. Différents validators sont implémentés, notamment pour protéger la base de données contre les injections NoSQL usuelles. Un middleware, préalable à toute mise à jour de document, est défini pour que la validation ne soit pas uniquement effective lors des opérations de création.",
+        "tags" : ["mongoose",
+        "models",
+        "validator",
+        "virtuals",
+        "mongodb",
+        "regex"]
+    },
+    {
+        "title" : "BOOK CONTROLLER",
+        "file" : "/cases/kasa/code/codebookcontroller.html",
+        "description" : "Controller permettant notamment de créer, de modifier ou d'effacer des documents au sein de la collection Book. Multer intervenant avant l'étape de validation du Schéma, il était nécessaire, en cas de rejet ou d'indisponibilité de la base de données, d'effacer le fichier stocké sur le serveur et ne pouvant être alors affilié à aucun document. Une attention particulière a été portée à la gestion des erreurs et aux réponses afférentes.",
+        "tags" : ["mongoose",
+        "jsonwebtokens",
+        "multer",
+        "middlewares",
+        "formdata/multipart",
+        "fs.unlink"]
+    },
+    {
+        "title" : "USER CONTROLLER",
+        "file" : "/cases/kasa/code/codeusercontroller.html",
+        "description" : "Méthodes permettant l'inscription puis l'authentification d'un utilisateur. Pour assurer la sécurisation du mot de passe saisi à l'inscription, celui-ci est encrypté à l'aide de la méthode hash de la librairie bcrypt, avant d'être inséré en base de données. Ultérieurement, lors d'une tentative de connexion, bcrypt est cette fois capable de déterminer si un mot de passe saisi par un utilisateur correspond bien à un hash présent en bdd.",
+        "tags" : ["mongoose",
+        "jsonwebtokens",
+        "hashing",
+        "authentification",
+        "middlewares",
+        "bcrypt"]
+    }],
+    "banner" : "/cases/kasa/case3bg.webp",
+    "verbose" : "Ce projet consistait en l'implémentation du backend d'un site visant à offrir la possibilité à des utilisateurs de noter les ouvrages de leur choix.<br/><br/>La solution devait reposer sur la stack MERN et en conséquence, j'ai fait le choix de m'orienter vers la quadrade mongoose, express, node.js et mongodb.<br/><br/>Conditionnant toute action utilisateur, un système de création de compte et d'identification devait être mis en place. La librairie bcrypt a ainsi été utilisée pour hasher tout mot de passe avant intégration en base de données. Côté login, un json webtoken est délivré au frontend de manière à ce que l'utilisateur puisse certifier son identité et ainsi accéder à certaines actions sécurisées.<br/><br/>A relever que le frontend n'était pas pleinement fonctionnel lors de mon arrivée sur le projet et qu'il m'a fallu le débugger préalablement à l'initiation de ma mission.<br/><br/>Pour finir, il convient de noter qu'un soucis particulier a été porté à la validation des données via l'utilisation de regex solides, de manière à prévenir toute injection noSQL."
+}

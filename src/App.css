@@ -225,7 +225,7 @@
 .sectionResumeFull {
   /*max-height: 200vh;*/
   /*animation: 0.8s ease-out forwards dropResume;*/
-  animation: 2s ease-out forwards dropResume;
+  animation: 1.4s ease-out forwards dropResume;
 }
 
 @keyframes dropResume {

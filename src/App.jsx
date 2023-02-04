@@ -11,7 +11,7 @@ import statue from '/statue.webp'
 import buste from '/buste.webp'
 import miniArrow from '/icons/miniarrowdrop2.svg'
 
-import { case1, case2 } from './datas/CaseDatas'
+import { case1, case2, case3 } from './datas/CaseDatas'
 
 function App() {
 
@@ -95,6 +95,7 @@ function App() {
         <div id='caseStudiesBody' className='caseStudiesBody'>
           {case1 && <CaseCard caseInfos={case1} animation={animation}/>}
           {case2 && <CaseCard caseInfos={case2} animation={animation} />}
+          {case3 && <CaseCard caseInfos={case3} animation={animation} />}
         </div>
       </section>
     </div>
