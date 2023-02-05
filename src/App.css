@@ -387,8 +387,9 @@
 
 @media screen and (max-width: 750px) {
   .dropResume {
-    width: 160px;
+    width: 200px;
     border-radius: 0 0 20px 20px;
+    font-size: 24px;
   }
 }
 
@@ -450,9 +451,5 @@
   .sectionResume {
     padding: 0;
     max-height: 6rem;
-  }
-
-  .dropResume {
-    font-size: 24px;
   }
 }

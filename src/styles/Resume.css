@@ -1,17 +1,17 @@
 .resumeContainer {
   width: 100%;
-  background: #e5e5e6;
-  box-shadow: 0px 4px 8px rgba(58, 67, 68, 0.6),
+  /*background: #e5e5e6;*/
+  /*box-shadow: 0px 4px 8px rgba(58, 67, 68, 0.6),
     0px 8px 16px rgba(59, 73, 75, 0.6), 0px 16px 32px rgba(62, 84, 89, 0.8);
-  border-radius: 20px;
-  padding: 2.5rem 0 4rem 0;
-  border: 9px solid #8a7c58;
+  border-radius: 20px;*/
+  /*padding: 2.5rem 0 4rem 0;*/
+  /*border: 9px solid #8a7c58;*/
   max-width: 1568px;
-  margin: 3rem auto 5rem auto;
+  margin: 4rem auto 5rem auto;
   display: flex;
   flex-direction: row;
   /*justify-content: space-between;*/
-  color: #5a5f6a;
+  /*color: #5a5f6a;*/
   font-weight: 600;
   font-size: 20px;
   /*overflow: hidden;*/
@@ -20,14 +20,23 @@
 .resumeContainer ul {
   display: flex;
   flex-direction: column;
-  gap: 2rem 3rem;
+  column-gap: 3rem;
   width: 50%;
+  background: #5f797d;
+  border: 3px solid #6d878a;
+  box-shadow: 0px 16px 32px #4a6668;
+  border-radius: 20px;
+  overflow: hidden;
+  height: fit-content;
+}
+
+.translateRightUl {
+  transform: translateY(3.5rem);
 }
 
 .titleLines {
   display: flex;
   flex-direction: row;
-  color: #343b47;
   padding: 1rem 0;
   gap: 3rem 0;
   align-items: center;
@@ -35,33 +44,26 @@
   font-family: "Oswald";
   font-style: normal;
   font-weight: 700;
-  font-size: 36px;
-  opacity: 0.9;
+  font-size: 32px;
   margin-left: -4px;
+  background: linear-gradient(270deg, #2e4e53 0%, #454b56 100%);
+  color: #ebf5f5;
+  height: 7.2rem;
 }
 
 .resumeLines {
   display: flex;
   flex-direction: row;
-  background: linear-gradient(
-    89.89deg,
-    #464c57 0.08%,
-    rgba(34, 70, 75, 0.72) 99.91%
-  );
+  background: linear-gradient(270deg, #2e4e53 0%, #454b56 100%);
   color: #ebf5f5;
-  padding: 1rem 0;
-  gap: 3rem 0;
+  padding: 1.5rem 0;
+  /*height: 7.5rem;*/
   align-items: center;
   overflow: hidden;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25), 0px 4px 8px rgba(0, 0, 0, 0.25);
 }
 
 .odd {
-  background: linear-gradient(
-    89.89deg,
-    #648f9d 0.08%,
-    rgba(94, 117, 124, 0.72) 99.91%
-  );
+  background: none;
 }
 
 .yearResume,
@@ -126,7 +128,7 @@
   width: 100%;
   padding: 2.5rem 0 4rem 0;
   max-width: 1568px;
-  margin: 0 auto 5rem auto;
+  margin: 3rem auto 5rem auto;
   display: flex;
   flex-direction: row;
   gap: 0 90px;
@@ -216,11 +218,12 @@
 
   .resumeContainer {
     flex-direction: column;
-    row-gap: 6rem;
+    row-gap: 4rem;
   }
 
   .resumeContainer ul {
     width: 100%;
+    transform: translateY(0);
   }
 
   .skillsContainer {
@@ -283,12 +286,8 @@
   }
 
   .resumeContainer ul {
-    gap: 1.25rem 0rem;
-  }
-
-  .resumeContainer li {
-    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
+    gap: 0;
+    border-radius: 9px;
   }
 
   .titleLines {
@@ -300,6 +299,7 @@
     font-size: 24px;
     width: 100%;
     margin: 0;
+    height: 4rem;
   }
 
   .titleBlank {
