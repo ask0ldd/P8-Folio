@@ -99,22 +99,65 @@
 .heroContainer .recentWork {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  padding: 16px 80px;
+  padding: 16px 80px 19px 80px;
   gap: 6px;
-  background: #dfe4ec;
   font-family: "Oswald";
   font-weight: 400;
   font-size: 24px;
-  color: #80724e;
+  color: #fff;
+  text-shadow: 1px 2px 2px #5aa77e;
   border-radius: 10px;
-  border: 6px solid #8a7c58;
-  box-shadow: rgba(50, 50, 93, 0.35) 0px 50px 100px -20px,
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15), 0px 16px 32px rgba(0, 0, 0, 0.15),
+    rgba(50, 50, 93, 0.35) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.4) 0px 30px 60px -30px;
   margin-top: 72px;
   cursor: pointer;
   opacity: 0;
   animation: 0.4s ease-out 1.1s forwards recentbutton;
+  position: relative;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #99cdb0 0%, #478c66 100%);
+  border: 0;
+}
+
+.recentWork:before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 2px;
+  bottom: 3px;
+  left: 2px;
+  z-index: -1;
+  border-radius: 9px;
+  background: linear-gradient(
+      180deg,
+      rgba(78, 255, 155, 0.088) 17.71%,
+      rgba(95, 235, 156, 0.7) 54.69%,
+      rgba(95, 235, 156, 0) 100%
+    ),
+    radial-gradient(
+        28.65% 100% at 64.33% 0%,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    linear-gradient(0deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.14)),
+    radial-gradient(
+        66.29% 231.37% at 58.71% 49.02%,
+        rgba(94, 230, 148, 0.36) 0%,
+        rgba(105, 228, 139, 0) 100%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    linear-gradient(
+      180deg,
+      #7cb59a 2.08%,
+      #46755e 15.62%,
+      #2a5c41 42.71%,
+      #336952 61.98%,
+      #477b62 77.08%,
+      #6e9a85 91.15%,
+      #a9bab3 100%
+    );
 }
 
 @keyframes recentbutton {
@@ -241,28 +284,68 @@
 }
 
 .dropResume {
-  width: 400px;
-  /*width: 300px;*/
-  height: 3.5rem;
-  background: #567070;
-  /*background-color: #e5e5e5;*/
-  box-shadow: inset 0px -8px 16px rgba(62, 85, 85, 0.84);
-  border-radius: 0px 0px 40px 40px;
+  width: 340px;
+  height: 4rem;
+  border-radius: 0px 0px 19px 19px;
   border: 0;
   font-family: "Oswald";
-  font-weight: 700;
-  font-size: 32px;
-  color: #e5e5e5;
-  /*color: #749393;*/
-  /*color: #80724e;*/
-  text-shadow: 0px 4px 8px #3b5353;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  font-size: 24px;
+  color: #fff;
+  text-shadow: 1px 2px 2px #5aa77e;
   margin: 0 auto;
   flex-shrink: 0;
   padding-bottom: 4px;
-  /*outline: 2px solid #749393;*/
-  outline: 6px solid #e5e5e5;
-  /*outline: 6px solid #80724e;*/
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15), 0px 16px 32px rgba(0, 0, 0, 0.15),
+    rgba(50, 50, 93, 0.35) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.4) 0px 30px 60px -30px;
   cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #99cdb0 0%, #478c66 100%);
+  border: 0;
+  z-index: 2;
+}
+
+.dropResume:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 2px;
+  bottom: 3px;
+  left: 2px;
+  z-index: -1;
+  border-radius: 0px 0px 19px 19px;
+  background: linear-gradient(
+      180deg,
+      rgba(78, 255, 155, 0.088) 17.71%,
+      rgba(95, 235, 156, 0.7) 54.69%,
+      rgba(95, 235, 156, 0) 100%
+    ),
+    radial-gradient(
+        28.65% 100% at 64.33% 0%,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    linear-gradient(0deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.14)),
+    radial-gradient(
+        66.29% 231.37% at 58.71% 49.02%,
+        rgba(94, 230, 148, 0.36) 0%,
+        rgba(105, 228, 139, 0) 100%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    linear-gradient(
+      180deg,
+      #7cb59a 2.08%,
+      #46755e 15.62%,
+      #2a5c41 42.71%,
+      #336952 61.98%,
+      #477b62 77.08%,
+      #6e9a85 91.15%,
+      #a9bab3 100%
+    );
 }
 
 .resumeArrow {

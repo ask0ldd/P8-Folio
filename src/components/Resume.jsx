@@ -67,6 +67,7 @@ return(
         </li>
       </ul>
     </div>
+    <div className='decorativeSeparator'></div>
     <div className='skillsContainer'>
       <article className='skillColumn'>
         <div className='skillHead url3'>FRONTEND</div>
