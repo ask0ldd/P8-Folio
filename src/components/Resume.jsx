@@ -19,7 +19,7 @@ return(
         <li className='resumeLines odd'>
           <div className='yearResume'>2007</div>
           <div className='jobResume'>
-            Basic Media Certification<br/>
+            Media Certification<br/>
             <span>MiddleSex University / UK</span>
           </div>
         </li>
@@ -40,7 +40,7 @@ return(
         <li className='resumeLines'>
           <div className='yearResume oddShadows'>2015</div>
           <div className='jobResume'>
-            UI Designer - Freelancing<br/>
+            UI Designer / Freelancing<br/>
             <span>Fitness Boutique, Hybrid Factor & Big Block</span>
           </div>
         </li>

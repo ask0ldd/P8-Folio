@@ -27,16 +27,16 @@ export const case2 = {
   }
 
 export const case3 = {
-  'title':'NOTATION DE LIVRES / BACKEND',
+  'title':'LOCATIONS SAISONNIERES / REACT ',
   'digit':'III',
   'bulletpoints':
-    ["Mise en oeuvre d'opérations CRUD de manière sécurisée.",
-    "Implémenter un modèle de données avec Mongoose & définir ses validators.",
-    "Stocker des fichiers transmis par les utilisateurs via un formulaire dédié."],
+    ["Développer le frontend d'un site de réservation à l'aide de React.",
+    "Procéder à une refonte visuelle du design système existant.",
+    "Gérer la navigation de l'application via React Router."],
   'tags':
-    ['Node.js',
-    'Express',
-    'MongoDB'],
+    ['React',
+    'Figma',
+    'Vite'],
   'url':'/case/3'
 }
 
