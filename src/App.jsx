@@ -24,10 +24,10 @@ function App() {
   const observerCallback = (entries, observer) => {
     entries.forEach(entry => {
       if(entry.isIntersecting){
-        if (entry.target.id === 'caseStudiesBody') {
+        /*if (entry.target.id === 'caseStudiesBody') {
           setAnimation({title : 'caseTitleAnim', bps : 'caseBpsAnim', tags : 'caseTagsAnim', btnHL : 'btnHLAnim'})
           console.log(entry.target)
-          observer.unobserve(entry.target)}
+          observer.unobserve(entry.target)}*/
         if (entry.target.id === 'parcours') {
           console.log(entry.target)
           document.querySelector('.sectionResume').classList.add("sectionResumeFull");

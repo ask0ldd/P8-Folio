@@ -47,8 +47,8 @@ textViewCaseButton
   font-weight: 700;
   font-size: 32px;
   line-height: 160%;
-  transform: translateY(-50px);
-  opacity: 0;
+  /*transform: translateY(-50px);
+  opacity: 0;*/
 }
 
 .caseTitleAnim {
@@ -178,7 +178,7 @@ textViewCaseButton
   font-size: 16px;
   line-height: 200%;
   opacity: 0.9;
-  transform: translateX(-800px);
+  /*transform: translateX(-800px);*/
 }
 
 .caseBpsAnim {
@@ -207,8 +207,8 @@ textViewCaseButton
   font-weight: 700;
   font-size: 20px;
   margin-top: 2rem;
-  transform: translateX(200px);
-  opacity: 0;
+  /*transform: translateX(200px);
+  opacity: 0;*/
   width: 80%;
 }
 
