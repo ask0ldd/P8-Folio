@@ -1,0 +1,36 @@
+<pre>
+<code id="htmlViewer" style="color:rgb(197, 200, 198); font-weight:400;background-color:rgb(29, 31, 33);background:rgb(29, 31, 33);display:block;padding: .5em;"><span style="color:rgb(178, 148, 187); font-weight:400;">import</span> { useState, useEffect } <span style="color:rgb(178, 148, 187); font-weight:400;">from</span> <span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;react&#x27;</span>
+
+<span style="color:rgb(178, 148, 187); font-weight:400;">export</span> <span style="color:rgb(178, 148, 187); font-weight:400;">function</span> <span class="hljs-title function_">useFetch</span>(<span style="color:rgb(222, 147, 95); font-weight:400;">url</span>) {
+
+    <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> [fetchedData, setFetchedData] = <span class="hljs-title function_">useState</span>()
+    <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> [isLoading, setLoading] = <span class="hljs-title function_">useState</span>(<span style="color:rgb(222, 147, 95); font-weight:400;">true</span>)
+    <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> [isError, setError] = <span class="hljs-title function_">useState</span>(<span style="color:rgb(222, 147, 95); font-weight:400;">false</span>)
+
+    <span class="hljs-title function_">useEffect</span>(<span style="color:rgb(197, 200, 198); font-weight:400;">() =&gt;</span> {
+
+        <span style="color:rgb(178, 148, 187); font-weight:400;">if</span> (!url) <span style="color:rgb(178, 148, 187); font-weight:400;">return</span>
+
+        <span style="color:rgb(178, 148, 187); font-weight:400;">async</span> <span style="color:rgb(178, 148, 187); font-weight:400;">function</span> <span class="hljs-title function_">fetchData</span>(<span style="color:rgb(222, 147, 95); font-weight:400;"></span>) {
+            <span class="hljs-title function_">setError</span>(<span style="color:rgb(222, 147, 95); font-weight:400;">false</span>)
+            <span class="hljs-title function_">setLoading</span>(<span style="color:rgb(222, 147, 95); font-weight:400;">true</span>)
+
+            <span style="color:rgb(178, 148, 187); font-weight:400;">try</span>{
+                <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> response = <span style="color:rgb(178, 148, 187); font-weight:400;">await</span> <span class="hljs-title function_">fetch</span>(url)
+                <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> data = <span style="color:rgb(178, 148, 187); font-weight:400;">await</span> response.<span class="hljs-title function_">json</span>()
+                <span class="hljs-title function_">setFetchedData</span>(data)
+            }<span style="color:rgb(178, 148, 187); font-weight:400;">catch</span>(error){
+                <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(error)
+                <span class="hljs-title function_">setError</span>(<span style="color:rgb(222, 147, 95); font-weight:400;">true</span>)
+            }<span style="color:rgb(178, 148, 187); font-weight:400;">finally</span>{
+                <span class="hljs-title function_">setLoading</span>(<span style="color:rgb(222, 147, 95); font-weight:400;">false</span>)
+            }
+
+        }
+            
+        <span class="hljs-title function_">fetchData</span>()
+
+    }, [url]) <span style="color:rgb(150, 152, 150); font-weight:400;">// url to avoid infinite loop triggered by useState uses.</span>
+
+<span style="color:rgb(178, 148, 187); font-weight:400;">return</span> [isLoading, fetchedData, isError]
+}</code></pre>

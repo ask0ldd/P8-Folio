@@ -1,20 +1,11 @@
 .resumeContainer {
   width: 100%;
-  /*background: #e5e5e6;*/
-  /*box-shadow: 0px 4px 8px rgba(58, 67, 68, 0.6),
-    0px 8px 16px rgba(59, 73, 75, 0.6), 0px 16px 32px rgba(62, 84, 89, 0.8);
-  border-radius: 20px;*/
-  /*padding: 2.5rem 0 4rem 0;*/
-  /*border: 9px solid #8a7c58;*/
   max-width: 1568px;
   margin: 4rem auto 5rem auto;
   display: flex;
   flex-direction: row;
-  /*justify-content: space-between;*/
-  /*color: #5a5f6a;*/
   font-weight: 600;
   font-size: 20px;
-  /*overflow: hidden;*/
   z-index: 2;
 }
 
@@ -38,7 +29,7 @@
 .titleLines {
   display: flex;
   flex-direction: row;
-  padding: 1rem 0;
+  /*padding: 1rem 0;*/
   gap: 3rem 0;
   align-items: center;
   overflow: hidden;
@@ -49,7 +40,7 @@
   margin-left: -4px;
   background: linear-gradient(270deg, #2e4e53 0%, #454b56 100%);
   color: #ebf5f5;
-  height: 7.2rem;
+  height: 6.8rem;
 }
 
 .resumeLines {
@@ -135,7 +126,7 @@
 
 .skillsContainer {
   width: 100%;
-  padding: 2.5rem 0 4rem 0;
+  padding: 3.5rem 0 4rem 0;
   max-width: 1568px;
   margin: 3rem auto 5rem auto;
   display: flex;
@@ -238,6 +229,8 @@
   .skillsContainer {
     flex-direction: column;
     gap: 48px;
+    padding: 2rem 0 4rem 0;
+    margin: 0rem auto 5rem auto;
   }
 
   .skillColumn {
@@ -246,6 +239,10 @@
 
   .skillList {
     height: fit-content;
+  }
+
+  .decorativeSeparator {
+    display: none;
   }
 }
 
@@ -313,6 +310,10 @@
 
   .titleBlank {
     display: none;
+  }
+
+  .resumeLines {
+    padding: 1rem 0;
   }
 
   .separatorResume {

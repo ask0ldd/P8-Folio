@@ -11,15 +11,15 @@
                 "Vite"],
     "github" : "https://github.com/ask0ldd/P6-React",
     "highlights" : [{
-        "title" : "BOOK MODEL",
-        "file" : "/cases/kasa/code/codebookmodel.html",
-        "description" : "Schema mongoose définissant la forme des documents composant la collection Book. Différents validators sont implémentés, notamment pour protéger la base de données contre les injections NoSQL usuelles. Un middleware, préalable à toute mise à jour de document, est défini pour que la validation ne soit pas uniquement effective lors des opérations de création.",
-        "tags" : ["mongoose",
-        "models",
-        "validator",
-        "virtuals",
-        "mongodb",
-        "regex"]
+        "title" : "CUSTOM HOOK",
+        "file" : "/cases/kasa/code/codecustomhook.html",
+        "description" : "Custom Hook servant à rapatrier certaines données de manière asynchrone. useEffect n'acceptant pas les promesses en paramêtre, fetchData() doit être exécutée au sein de la fonction passée. Deux states permettent de suivre l'état de la requête. [url] est passé en paramêtre pour que la fonction associée à useEffect ne soit pas exécutée après chaque mise à jour du DOM.",
+        "tags" : ["react",
+        "fetch",
+        "useEffect",
+        "useState",
+        "json",
+        "async/await"]
     },
     {
         "title" : "BOOK CONTROLLER",

@@ -136,18 +136,16 @@
       rgba(95, 235, 156, 0) 100%
     ),
     radial-gradient(
-        28.65% 100% at 64.33% 0%,
-        rgba(255, 255, 255, 0.3) 0%,
-        rgba(255, 255, 255, 0) 100%
-      )
-      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+      28.65% 100% at 64.33% 0%,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
     linear-gradient(0deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.14)),
     radial-gradient(
-        66.29% 231.37% at 58.71% 49.02%,
-        rgba(94, 230, 148, 0.36) 0%,
-        rgba(105, 228, 139, 0) 100%
-      )
-      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+      66.29% 231.37% at 58.71% 49.02%,
+      rgba(94, 230, 148, 0.36) 0%,
+      rgba(105, 228, 139, 0) 100%
+    ),
     linear-gradient(
       180deg,
       #7cb59a 2.08%,

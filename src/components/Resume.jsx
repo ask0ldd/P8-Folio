@@ -75,8 +75,11 @@ return(
           <li>JAVASCRIPT ES6</li>
           <li>REACT JS</li>
           <li>GSAP</li>
-          <li>THREE.JS</li>
           <li>SASS</li>
+          <li>SEO</li>
+          <li>ACCESSIBILITY</li>
+          <li>COPYWRITING</li>
+          <li>THREE.JS</li>
         </ul>
       </article>
       <article className='skillColumn'>
