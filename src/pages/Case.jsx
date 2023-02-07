@@ -62,7 +62,7 @@ function Case(props) {
   }
 
   if(!JSONObject) return(
-    <div className="case">
+    <div className="case" style={{height:"100vh"}}>
       <Header mode='backonly' items={[['ENG / FR', '/#'], ['Design Work', '/#works'], ['Dev Case Studies', '/#caseStudies'], ['Contact Me', '/#works']]} />
     </div>)
 
