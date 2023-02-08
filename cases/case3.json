@@ -1,7 +1,7 @@
 {
     "id": 3,
     "title":"LOCATIONS SAISONNIERES / REACT",
-    "screenshot":"/cases/kasa/kasa3-2.webp",
+    "screenshot":"/cases/kasa/kasa3-3.webp",
     "bulletpoints": ["Développer le <b>frontend</b> d'un site de réservation à l'aide de <b>React</b>.", 
     "Procéder à une <b>refonte visuelle du design système</b> existant.", 
     "Gérer la navigation de l'application via <b>React Router</b>.",
