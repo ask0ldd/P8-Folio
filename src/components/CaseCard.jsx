@@ -7,8 +7,7 @@ import { Link } from 'react-router-dom'
 const CaseCard = ({caseInfos, animation}) => {
 return(
 <article className="caseContainer">
-    <button className='viewCaseButton' title="decorative button"><img alt="arrow" src={arrow}/><div className={`btnHL ${animation?.btnHL}`}></div></button>
-    <Link aria-label='Link to the full case study' to={caseInfos?.url}><button className='viewCaseButtonGlass' title='go to case study'></button></Link>
+    <Link aria-label='Link to the full case study' to={caseInfos?.url}><button className='viewCaseButton' title='go to case study'></button></Link>
     <span className='digit'>{caseInfos?.digit}</span>
     <h3 className={`caseTitle ${animation?.title}`}>{caseInfos?.title}</h3>
     <ul className={animation?.bps}>

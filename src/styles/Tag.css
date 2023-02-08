@@ -1,12 +1,16 @@
 .tag {
   width: 200px;
   height: 56px;
-  background: #eff2f6;
-  box-shadow: 0px 2px 4px #a4b7d5, 0px 8px 16px #b3bbc7;
+  /*background: #eff2f6;
+  box-shadow: 0px 2px 4px #a4b7d5, 0px 8px 16px #b3bbc7;*/
+  background: linear-gradient(180deg, #e1e5ed 0%, #d6dfed 100%);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 2px solid #fff;
+  border-width: 2px 1px 1px 1px;
 }
 
 .tagGreen {
@@ -25,11 +29,11 @@
     width: 160px;
     height: 48px;
     font-size: 1rem;
-    background: #eff2f6;
+    /*background: #eff2f6;
     box-shadow: 0px 2px 4px #a4b7d5, 0px 8px 16px #b3bbc7;
     border-radius: 6px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;*/
   }
 }
