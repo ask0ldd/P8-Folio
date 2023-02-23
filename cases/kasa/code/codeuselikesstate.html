@@ -1,0 +1,30 @@
+<pre><code id="htmlViewer" style="color:rgb(197, 200, 198); font-weight:400;background-color:rgb(29, 31, 33);background:rgb(29, 31, 33);display:block;padding: .5em;"><span style="color:rgb(178, 148, 187); font-weight:400;">import</span> { useState } <span style="color:rgb(178, 148, 187); font-weight:400;">from</span> <span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;react&#x27;</span>
+   
+   <span style="color:rgb(178, 148, 187); font-weight:400;">export</span> <span style="color:rgb(178, 148, 187); font-weight:400;">function</span> <span class="hljs-title function_">useLikesState</span>(<span style="color:rgb(222, 147, 95); font-weight:400;"></span>){
+   
+       <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> [likesList, setLikes] = <span class="hljs-title function_">useState</span>([])
+   
+       <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> <span class="hljs-title function_">addLike</span> = (<span style="color:rgb(222, 147, 95); font-weight:400;">rentalId</span>) =&gt; {
+           <span style="color:rgb(178, 148, 187); font-weight:400;">let</span> likesListCopy = [...likesList]
+           likesListCopy.<span class="hljs-title function_">push</span>(rentalId)
+           <span class="hljs-title function_">setLikes</span>(likesListCopy)
+           <span class="hljs-variable language_">window</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">localStorage</span>.<span class="hljs-title function_">setItem</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;likes&#x27;</span>, <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(likesListCopy))
+       }
+   
+       <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> <span class="hljs-title function_">storagetoLikesList</span> = (<span style="color:rgb(222, 147, 95); font-weight:400;"></span>) =&gt; {
+           <span class="hljs-title function_">setLikes</span>(<span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-variable language_">window</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">localStorage</span>.<span class="hljs-title function_">getItem</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;likes&#x27;</span>)))
+       }
+       
+       <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> <span class="hljs-title function_">removeLike</span> = (<span style="color:rgb(222, 147, 95); font-weight:400;">rentalId</span>) =&gt; {
+           <span style="color:rgb(178, 148, 187); font-weight:400;">if</span>(likesList.<span style="color:rgb(197, 200, 198); font-weight:400;">length</span> === <span style="color:rgb(222, 147, 95); font-weight:400;">1</span>){
+               <span class="hljs-title function_">setLikes</span>([])
+               <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> <span class="hljs-variable language_">window</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">localStorage</span>.<span class="hljs-title function_">removeItem</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;likes&#x27;</span>)
+           }
+           <span style="color:rgb(178, 148, 187); font-weight:400;">let</span> likesListCopy = [...likesList]
+           likesListCopy.<span class="hljs-title function_">splice</span>(likesListCopy.<span class="hljs-title function_">indexOf</span>(rentalId), <span style="color:rgb(222, 147, 95); font-weight:400;">1</span>)
+           <span class="hljs-title function_">setLikes</span>(likesListCopy)
+           <span class="hljs-variable language_">window</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">localStorage</span>.<span class="hljs-title function_">setItem</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;likes&#x27;</span>, <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(likesListCopy))
+       }
+   
+       <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> [addLike, storagetoLikesList, removeLike, likesList]
+   }</code></pre>
