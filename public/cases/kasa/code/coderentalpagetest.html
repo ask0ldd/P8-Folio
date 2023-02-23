@@ -1,0 +1,196 @@
+<pre><code id="htmlViewer" style="color:rgb(197, 200, 198); font-weight:400;background-color:rgb(29, 31, 33);background:rgb(29, 31, 33);display:block;padding: .5em;"><span style="color:rgb(150, 152, 150); font-weight:400;">// !!! JSX FILE EXT NEEDED</span>
+   <span style="color:rgb(178, 148, 187); font-weight:400;">import</span> { render, screen, renderHook, act, waitFor } <span style="color:rgb(178, 148, 187); font-weight:400;">from</span> <span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;@testing-library/react&#x27;</span>
+   <span style="color:rgb(178, 148, 187); font-weight:400;">import</span> userEvent <span style="color:rgb(178, 148, 187); font-weight:400;">from</span> <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;@testing-library/user-event&quot;</span>
+   <span style="color:rgb(178, 148, 187); font-weight:400;">import</span> matchers <span style="color:rgb(178, 148, 187); font-weight:400;">from</span> <span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;@testing-library/jest-dom/matchers&#x27;</span>
+   <span style="color:rgb(178, 148, 187); font-weight:400;">import</span> <span class="hljs-title class_">Rental</span> <span style="color:rgb(178, 148, 187); font-weight:400;">from</span> <span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;../pages/Rental.jsx&#x27;</span>
+   <span style="color:rgb(178, 148, 187); font-weight:400;">import</span> <span class="hljs-title class_">Page404</span> <span style="color:rgb(178, 148, 187); font-weight:400;">from</span> <span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;../pages/Page404.jsx&#x27;</span>
+   <span style="color:rgb(178, 148, 187); font-weight:400;">import</span> { <span class="hljs-title class_">BrowserRouter</span>, <span class="hljs-title class_">Route</span>, <span class="hljs-title class_">Routes</span> } <span style="color:rgb(178, 148, 187); font-weight:400;">from</span> <span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;react-router-dom&#x27;</span>
+   <span style="color:rgb(178, 148, 187); font-weight:400;">import</span> { expect, vi } <span style="color:rgb(178, 148, 187); font-weight:400;">from</span> <span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;vitest&#x27;</span>
+   <span style="color:rgb(178, 148, 187); font-weight:400;">import</span> mockedDatas <span style="color:rgb(178, 148, 187); font-weight:400;">from</span> <span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;./mockRentalDatas&#x27;</span>
+   <span style="color:rgb(178, 148, 187); font-weight:400;">import</span> <span class="hljs-title class_">React</span> <span style="color:rgb(178, 148, 187); font-weight:400;">from</span> <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;react&quot;</span>;
+   
+   <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> firstRental = {
+     <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;id&quot;</span>: <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;c67ab8a7&quot;</span>,
+     <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;title&quot;</span>: <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Appartement cosy&quot;</span>,
+     <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;cover&quot;</span>: <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;locs/loc1.jpg&quot;</span>,
+     <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;pictures&quot;</span>: [
+       <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;../locs/loc1.jpg&quot;</span>,
+       <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;../locs/loc9.jpg&quot;</span>,
+       <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;../locs/loc14.jpg&quot;</span>,
+       <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;../locs/loc16.jpg&quot;</span>
+     ],
+     <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;description&quot;</span>: <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Votre maison loin de chez vous. Que vous veniez de l&#x27;autre bout du monde, ou juste de quelques stations de RER, vous vous sentirez chez vous dans notre appartement.&quot;</span>,
+     <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;host&quot;</span>: {
+       <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;name&quot;</span>: <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Nathalie Jean&quot;</span>,
+       <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;picture&quot;</span>: <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-12.jpg&quot;</span>
+     },
+     <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;rating&quot;</span>: <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;5&quot;</span>,
+     <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;location&quot;</span>: <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Ile de France - Paris 17e&quot;</span>,
+     <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;equipments&quot;</span>: [
+       <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Équipements de base&quot;</span>,
+       <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Micro-Ondes&quot;</span>,
+       <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Douche italienne&quot;</span>,
+       <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Frigo&quot;</span>,
+       <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;WIFI&quot;</span>
+     ],
+     <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;tags&quot;</span>: [
+       <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Batignolle&quot;</span>,
+       <span style="color:rgb(181, 189, 104); font-weight:400;">&quot;Montmartre&quot;</span>
+     ]
+   }
+   
+   expect.<span class="hljs-title function_">extend</span>(matchers)
+   
+   <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> fs = <span style="color:rgb(222, 147, 95); font-weight:400;">require</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;fs&#x27;</span>)
+   <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> <span class="hljs-title function_">bodytoTestFile</span> = (<span style="color:rgb(222, 147, 95); font-weight:400;"></span>) =&gt; {
+     fs.<span class="hljs-title function_">writeFile</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;../test.txt&#x27;</span>, <span class="hljs-variable language_">document</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">body</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">innerHTML</span>, <span style="color:rgb(197, 200, 198); font-weight:400;"><span style="color:rgb(222, 147, 95); font-weight:400;">err</span> =&gt;</span> { <span style="color:rgb(178, 148, 187); font-weight:400;">if</span> (err) { <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err) } })
+   }
+   
+   <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> <span class="hljs-title function_">getFilenameFromUrl</span> = (<span style="color:rgb(222, 147, 95); font-weight:400;">url</span>) =&gt; {
+     <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> segments = url.<span class="hljs-title function_">split</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;/&#x27;</span>)
+     <span style="color:rgb(178, 148, 187); font-weight:400;">return</span> segments[segments.<span style="color:rgb(197, 200, 198); font-weight:400;">length</span>-<span style="color:rgb(222, 147, 95); font-weight:400;">1</span>]
+   }
+   
+   <span style="color:rgb(150, 152, 150); font-weight:400;">// can&#x27;t render Home by itself cause useLocation / Links</span>
+   <span style="color:rgb(150, 152, 150); font-weight:400;">// needs to be rendered into a router</span>
+   <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> <span class="hljs-title function_">MockedRouter</span> = (<span style="color:rgb(222, 147, 95); font-weight:400;"></span>) =&gt; { 
+     <span style="color:rgb(178, 148, 187); font-weight:400;">return</span>(
+       <span style="color:rgb(197, 200, 198); font-weight:400;"><span style="color:rgb(204, 102, 102); font-weight:400;">&lt;<span class="hljs-name">BrowserRouter</span>&gt;</span>
+         <span style="color:rgb(204, 102, 102); font-weight:400;">&lt;<span class="hljs-name">Rental</span> <span style="color:rgb(197, 200, 198); font-weight:400;">id</span>=<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;c67ab8a7&#x27;</span>/&gt;</span>
+       <span style="color:rgb(204, 102, 102); font-weight:400;">&lt;/<span class="hljs-name">BrowserRouter</span>&gt;</span></span>
+     )
+   }
+   
+   <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> <span class="hljs-title function_">MockedRouterWithWrongId</span> = (<span style="color:rgb(222, 147, 95); font-weight:400;"></span>) =&gt; { 
+     <span style="color:rgb(178, 148, 187); font-weight:400;">return</span>(
+       <span style="color:rgb(197, 200, 198); font-weight:400;"><span style="color:rgb(204, 102, 102); font-weight:400;">&lt;<span class="hljs-name">BrowserRouter</span>&gt;</span>
+         <span style="color:rgb(204, 102, 102); font-weight:400;">&lt;<span class="hljs-name">Routes</span>&gt;</span>
+             <span style="color:rgb(204, 102, 102); font-weight:400;">&lt;<span class="hljs-name">Route</span> <span style="color:rgb(197, 200, 198); font-weight:400;">path</span>=<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;/404&#x27;</span> <span style="color:rgb(197, 200, 198); font-weight:400;">element</span>=<span style="color:rgb(181, 189, 104); font-weight:400;">{</span>&lt;<span style="color:rgb(197, 200, 198); font-weight:400;">Page404</span> /&gt;</span>} /&gt;
+             <span style="color:rgb(204, 102, 102); font-weight:400;">&lt;<span class="hljs-name">Route</span> <span style="color:rgb(197, 200, 198); font-weight:400;">path</span>=<span style="color:rgb(181, 189, 104); font-weight:400;">&quot;*&quot;</span> <span style="color:rgb(197, 200, 198); font-weight:400;">element</span>=<span style="color:rgb(181, 189, 104); font-weight:400;">{</span>&lt;<span style="color:rgb(197, 200, 198); font-weight:400;">Rental</span> <span style="color:rgb(197, 200, 198); font-weight:400;">id</span>=<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;xxxxxx&#x27;</span>/&gt;</span>} /&gt;
+         <span style="color:rgb(204, 102, 102); font-weight:400;">&lt;/<span class="hljs-name">Routes</span>&gt;</span>
+       <span style="color:rgb(204, 102, 102); font-weight:400;">&lt;/<span class="hljs-name">BrowserRouter</span>&gt;</span></span>
+     )
+   }
+   
+   <span class="hljs-title function_">describe</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;Given I am on the rental page&#x27;</span>, <span style="color:rgb(178, 148, 187); font-weight:400;">async</span> () =&gt; {
+   
+     <span class="hljs-title function_">beforeEach</span>(<span style="color:rgb(178, 148, 187); font-weight:400;">async</span> () =&gt; {
+       <span style="color:rgb(150, 152, 150); font-weight:400;">// recreate two successive promises to mock fetch behavior</span>
+       <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> mockedJsonPromise = <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">resolve</span>(mockedDatas)
+       <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> mockedFetchPromise = <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">resolve</span>({ <span style="color:rgb(197, 200, 198); font-weight:400;">json</span>: <span style="color:rgb(197, 200, 198); font-weight:400;">() =&gt;</span> mockedJsonPromise })
+       <span class="hljs-variable language_">window</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">fetch</span> = vi.<span class="hljs-title function_">fn</span>().<span class="hljs-title function_">mockImplementation</span>(<span style="color:rgb(197, 200, 198); font-weight:400;">() =&gt;</span> mockedFetchPromise)
+   
+       <span class="hljs-title function_">act</span>(<span style="color:rgb(197, 200, 198); font-weight:400;">() =&gt;</span> {
+         <span class="hljs-title function_">render</span>(<span style="color:rgb(197, 200, 198); font-weight:400;"><span style="color:rgb(204, 102, 102); font-weight:400;">&lt;<span class="hljs-name">MockedRouter</span> /&gt;</span></span>)
+       })
+       <span style="color:rgb(178, 148, 187); font-weight:400;">await</span> <span class="hljs-title function_">waitFor</span>( <span style="color:rgb(197, 200, 198); font-weight:400;">() =&gt;</span> <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;rentalDetails&#x27;</span>)).<span class="hljs-title function_">toBeInTheDocument</span>())
+     })
+   
+     <span class="hljs-title function_">afterEach</span>(<span style="color:rgb(197, 200, 198); font-weight:400;">() =&gt;</span> {
+       vi.<span class="hljs-title function_">clearAllMocks</span>()
+     })
+   
+     test (<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;When an Id is passed to the page component, all the right datas should be rendered&#x27;</span>, <span style="color:rgb(178, 148, 187); font-weight:400;">async</span> () =&gt; {
+       
+       <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByText</span>(<span style="color:rgb(204, 102, 102); font-weight:400;">/Appartement cosy/i</span>)).<span class="hljs-title function_">toBeInTheDocument</span>()
+       <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByText</span>(<span style="color:rgb(204, 102, 102); font-weight:400;">/Batignolle/i</span>)).<span class="hljs-title function_">toBeInTheDocument</span>()
+       <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByText</span>(<span style="color:rgb(204, 102, 102); font-weight:400;">/Montmartre/i</span>)).<span class="hljs-title function_">toBeInTheDocument</span>()
+       <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByText</span>(<span style="color:rgb(204, 102, 102); font-weight:400;">/Nathalie/i</span>)).<span class="hljs-title function_">toBeInTheDocument</span>()
+       <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByText</span>(<span style="color:rgb(204, 102, 102); font-weight:400;">/Jean/i</span>)).<span class="hljs-title function_">toBeInTheDocument</span>()
+       <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getAllByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;fullstar&#x27;</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">length</span>).<span class="hljs-title function_">toBeGreaterThanOrEqual</span>(<span style="color:rgb(222, 147, 95); font-weight:400;">1</span>)
+       <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByText</span>(<span style="color:rgb(204, 102, 102); font-weight:400;">/Description/i</span>)).<span class="hljs-title function_">toBeInTheDocument</span>()
+       <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByText</span>(<span style="color:rgb(204, 102, 102); font-weight:400;">/Equipements/i</span>)).<span class="hljs-title function_">toBeInTheDocument</span>()
+       <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">queryByText</span>(<span style="color:rgb(204, 102, 102); font-weight:400;">/Votre maison loin de chez vous/i</span>)).<span style="color:rgb(197, 200, 198); font-weight:400;">not</span>.<span class="hljs-title function_">toBeInTheDocument</span>()
+     })
+   
+     test (<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;when i click on description, the collapse should open itself and show the right datas&#x27;</span>, <span style="color:rgb(178, 148, 187); font-weight:400;">async</span> () =&gt; {
+       <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">queryByText</span>(<span style="color:rgb(204, 102, 102); font-weight:400;">/Votre maison loin de chez vous/i</span>)).<span style="color:rgb(197, 200, 198); font-weight:400;">not</span>.<span class="hljs-title function_">toBeInTheDocument</span>()
+       <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> descCollapse = screen.<span class="hljs-title function_">queryByText</span>(<span style="color:rgb(204, 102, 102); font-weight:400;">/Description/i</span>)
+   
+       userEvent.<span class="hljs-title function_">click</span>(descCollapse)
+       <span style="color:rgb(178, 148, 187); font-weight:400;">await</span> <span class="hljs-title function_">waitFor</span>( <span style="color:rgb(197, 200, 198); font-weight:400;">() =&gt;</span> <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">queryByText</span>(<span style="color:rgb(204, 102, 102); font-weight:400;">/Votre maison loin de chez vous/i</span>)).<span class="hljs-title function_">toBeInTheDocument</span>())
+     })
+   
+     test (<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;when i click on equipements, the collapse should open itself and show the right datas&#x27;</span>, <span style="color:rgb(178, 148, 187); font-weight:400;">async</span> () =&gt; {
+       <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">queryByText</span>(<span style="color:rgb(204, 102, 102); font-weight:400;">/Équipements de base/i</span>)).<span style="color:rgb(197, 200, 198); font-weight:400;">not</span>.<span class="hljs-title function_">toBeInTheDocument</span>()
+   
+       <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> descCollapse = screen.<span class="hljs-title function_">queryByText</span>(<span style="color:rgb(204, 102, 102); font-weight:400;">/Equipements/i</span>)
+       userEvent.<span class="hljs-title function_">click</span>(descCollapse)
+       <span style="color:rgb(178, 148, 187); font-weight:400;">await</span> <span class="hljs-title function_">waitFor</span>( <span style="color:rgb(197, 200, 198); font-weight:400;">() =&gt;</span> <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">queryByText</span>(<span style="color:rgb(204, 102, 102); font-weight:400;">/Équipements de base/i</span>)).<span class="hljs-title function_">toBeInTheDocument</span>())
+     })
+   
+     test (<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;when i click on the right arrow and the current image isnt the last one, the next image should be displayed&#x27;</span>, <span style="color:rgb(178, 148, 187); font-weight:400;">async</span> () =&gt; {
+       <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> currentImgSrc = screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowImg&#x27;</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">src</span>
+       <span class="hljs-title function_">expect</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;loc1.jpg&#x27;</span> === <span class="hljs-title function_">getFilenameFromUrl</span>(currentImgSrc)).<span class="hljs-title function_">toBeTruthy</span>()
+   
+       <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> rightArrow = screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowRightArrow&#x27;</span>)
+       userEvent.<span class="hljs-title function_">click</span>(rightArrow)
+       <span style="color:rgb(178, 148, 187); font-weight:400;">await</span> <span class="hljs-title function_">waitFor</span>( <span style="color:rgb(197, 200, 198); font-weight:400;">() =&gt;</span> <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowImg&#x27;</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">src</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">not</span>.<span class="hljs-title function_">toBe</span>(currentImgSrc))
+   
+       <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> newImgSrc = screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowImg&#x27;</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">src</span>
+       <span class="hljs-title function_">expect</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;loc9.jpg&#x27;</span> === <span class="hljs-title function_">getFilenameFromUrl</span>(newImgSrc)).<span class="hljs-title function_">toBeTruthy</span>()
+     })
+   
+     test (<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;when i click on the left arrow and the current image isnt the first one, the previous image should be displayed&#x27;</span>, <span style="color:rgb(178, 148, 187); font-weight:400;">async</span> () =&gt; {
+       <span style="color:rgb(178, 148, 187); font-weight:400;">let</span> currentImgSrc = screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowImg&#x27;</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">src</span>
+       <span class="hljs-title function_">expect</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;loc1.jpg&#x27;</span> === <span class="hljs-title function_">getFilenameFromUrl</span>(currentImgSrc)).<span class="hljs-title function_">toBeTruthy</span>()
+   
+       <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> rightArrow = screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowRightArrow&#x27;</span>)
+       <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> leftArrow = screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowLeftArrow&#x27;</span>)
+       userEvent.<span class="hljs-title function_">click</span>(rightArrow)
+       <span style="color:rgb(178, 148, 187); font-weight:400;">await</span> <span class="hljs-title function_">waitFor</span>( <span style="color:rgb(197, 200, 198); font-weight:400;">() =&gt;</span> <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowImg&#x27;</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">src</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">not</span>.<span class="hljs-title function_">toBe</span>(currentImgSrc))
+   
+       <span style="color:rgb(178, 148, 187); font-weight:400;">let</span> newImgSrc = screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowImg&#x27;</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">src</span>
+       <span class="hljs-title function_">expect</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;loc9.jpg&#x27;</span> === <span class="hljs-title function_">getFilenameFromUrl</span>(newImgSrc)).<span class="hljs-title function_">toBeTruthy</span>()
+       currentImgSrc = newImgSrc
+   
+       userEvent.<span class="hljs-title function_">click</span>(leftArrow)
+       <span style="color:rgb(178, 148, 187); font-weight:400;">await</span> <span class="hljs-title function_">waitFor</span>( <span style="color:rgb(197, 200, 198); font-weight:400;">() =&gt;</span> <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowImg&#x27;</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">src</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">not</span>.<span class="hljs-title function_">toBe</span>(currentImgSrc))
+   
+       newImgSrc = screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowImg&#x27;</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">src</span>
+       <span class="hljs-title function_">expect</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;loc1.jpg&#x27;</span> === <span class="hljs-title function_">getFilenameFromUrl</span>(newImgSrc)).<span class="hljs-title function_">toBeTruthy</span>()
+     })
+   
+     test (<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;when i click on the left arrow and the current image is the first one, the last image should be displayed&#x27;</span>, <span style="color:rgb(178, 148, 187); font-weight:400;">async</span> () =&gt; {
+       <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> currentImgSrc = screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowImg&#x27;</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">src</span>
+       <span class="hljs-title function_">expect</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;loc1.jpg&#x27;</span> === <span class="hljs-title function_">getFilenameFromUrl</span>(currentImgSrc)).<span class="hljs-title function_">toBeTruthy</span>()
+   
+       <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> leftArrow = screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowLeftArrow&#x27;</span>)
+       userEvent.<span class="hljs-title function_">click</span>(leftArrow)
+       <span style="color:rgb(178, 148, 187); font-weight:400;">await</span> <span class="hljs-title function_">waitFor</span>( <span style="color:rgb(197, 200, 198); font-weight:400;">() =&gt;</span> <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowImg&#x27;</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">src</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">not</span>.<span class="hljs-title function_">toBe</span>(currentImgSrc))
+   
+       <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> newImgSrc = screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowImg&#x27;</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">src</span>
+       <span class="hljs-title function_">expect</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;loc16.jpg&#x27;</span> === <span class="hljs-title function_">getFilenameFromUrl</span>(newImgSrc)).<span class="hljs-title function_">toBeTruthy</span>()
+     })
+   
+     test (<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;when i click on the right arrow and the current image is the last one, the first image should be displayed&#x27;</span>, <span style="color:rgb(178, 148, 187); font-weight:400;">async</span> () =&gt; {
+       <span style="color:rgb(178, 148, 187); font-weight:400;">let</span> currentImgSrc = screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowImg&#x27;</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">src</span>
+       <span class="hljs-title function_">expect</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;loc1.jpg&#x27;</span> === <span class="hljs-title function_">getFilenameFromUrl</span>(currentImgSrc)).<span class="hljs-title function_">toBeTruthy</span>()
+   
+       <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> leftArrow = screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowLeftArrow&#x27;</span>)
+       <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> rightArrow = screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowRightArrow&#x27;</span>)
+       userEvent.<span class="hljs-title function_">click</span>(leftArrow)
+       <span style="color:rgb(178, 148, 187); font-weight:400;">await</span> <span class="hljs-title function_">waitFor</span>( <span style="color:rgb(197, 200, 198); font-weight:400;">() =&gt;</span> <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowImg&#x27;</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">src</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">not</span>.<span class="hljs-title function_">toBe</span>(currentImgSrc))
+       
+       <span style="color:rgb(178, 148, 187); font-weight:400;">let</span> newImgSrc = screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowImg&#x27;</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">src</span>
+       <span class="hljs-title function_">expect</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;loc16.jpg&#x27;</span> === <span class="hljs-title function_">getFilenameFromUrl</span>(newImgSrc)).<span class="hljs-title function_">toBeTruthy</span>()
+       currentImgSrc = screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowImg&#x27;</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">src</span>
+   
+       userEvent.<span class="hljs-title function_">click</span>(rightArrow)
+       <span style="color:rgb(178, 148, 187); font-weight:400;">await</span> <span class="hljs-title function_">waitFor</span>( <span style="color:rgb(197, 200, 198); font-weight:400;">() =&gt;</span> <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowImg&#x27;</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">src</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">not</span>.<span class="hljs-title function_">toBe</span>(currentImgSrc))
+       newImgSrc = screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;slideshowImg&#x27;</span>).<span style="color:rgb(197, 200, 198); font-weight:400;">src</span>
+       <span class="hljs-title function_">expect</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;loc1.jpg&#x27;</span> === <span class="hljs-title function_">getFilenameFromUrl</span>(newImgSrc)).<span class="hljs-title function_">toBeTruthy</span>()
+     })
+   
+   })
+   
+   test (<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;When a non existing Id is passed to the rental page, page 404 should be rendered&#x27;</span>, <span style="color:rgb(178, 148, 187); font-weight:400;">async</span> () =&gt; {
+     <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> mockedJsonPromise = <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">resolve</span>(mockedDatas)
+     <span style="color:rgb(178, 148, 187); font-weight:400;">const</span> mockedFetchPromise = <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">resolve</span>({ <span style="color:rgb(197, 200, 198); font-weight:400;">json</span>: <span style="color:rgb(197, 200, 198); font-weight:400;">() =&gt;</span> mockedJsonPromise })
+     <span class="hljs-variable language_">window</span>.<span style="color:rgb(197, 200, 198); font-weight:400;">fetch</span> = vi.<span class="hljs-title function_">fn</span>().<span class="hljs-title function_">mockImplementation</span>(<span style="color:rgb(197, 200, 198); font-weight:400;">() =&gt;</span> mockedFetchPromise)
+     <span class="hljs-title function_">act</span>(<span style="color:rgb(197, 200, 198); font-weight:400;">() =&gt;</span> {
+       <span class="hljs-title function_">render</span>(<span style="color:rgb(197, 200, 198); font-weight:400;"><span style="color:rgb(204, 102, 102); font-weight:400;">&lt;<span class="hljs-name">MockedRouterWithWrongId</span> /&gt;</span></span>)
+     })
+     <span style="color:rgb(178, 148, 187); font-weight:400;">await</span> <span class="hljs-title function_">waitFor</span>( <span style="color:rgb(197, 200, 198); font-weight:400;">() =&gt;</span> <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByTestId</span>(<span style="color:rgb(181, 189, 104); font-weight:400;">&#x27;main404&#x27;</span>)).<span class="hljs-title function_">toBeInTheDocument</span>())
+     <span class="hljs-title function_">bodytoTestFile</span>()
+   })</code></pre>

@@ -22,26 +22,24 @@
         "async/await"]
     },
     {
-        "title" : "BOOK CONTROLLER",
-        "file" : "/cases/kasa/code/codebookcontroller.html",
-        "description" : "Controller permettant notamment de créer, de modifier ou d'effacer des documents au sein de la collection Book. Multer intervenant avant l'étape de validation du Schéma, il était nécessaire, en cas de rejet ou d'indisponibilité de la base de données, d'effacer le fichier stocké sur le serveur et ne pouvant être alors affilié à aucun document. Une attention particulière a été portée à la gestion des erreurs et aux réponses afférentes.",
-        "tags" : ["mongoose",
-        "jsonwebtokens",
-        "multer",
-        "middlewares",
-        "formdata/multipart",
-        "fs.unlink"]
+        "title" : "RENTAL PAGE TESTING",
+        "file" : "/cases/kasa/code/coderentalpagetest.html",
+        "description" : "Implémentation des tests unitaires garantissant le bon fonctionnement des différents composants liés. Le défilement des images de la gallerie, l'ouverture et la fermeture des collapses ainsi que la réaction des composants au passage d'un id invalide sont ainsi testés.",
+        "tags" : ["react",
+	    "unit testing",
+        "vitest",
+        "expect",
+        "userevent"]
     },
     {
-        "title" : "USER CONTROLLER",
-        "file" : "/cases/kasa/code/codeusercontroller.html",
-        "description" : "Méthodes permettant l'inscription puis l'authentification d'un utilisateur. Pour assurer la sécurisation du mot de passe saisi à l'inscription, celui-ci est encrypté à l'aide de la méthode hash de la librairie bcrypt, avant d'être inséré en base de données. Ultérieurement, lors d'une tentative de connexion, bcrypt est cette fois capable de déterminer si un mot de passe saisi par un utilisateur correspond bien à un hash présent en bdd.",
-        "tags" : ["mongoose",
-        "jsonwebtokens",
-        "hashing",
-        "authentification",
-        "middlewares",
-        "bcrypt"]
+        "title" : "CUSTOM LIKES HOOK",
+        "file" : "/cases/kasa/code/codeuselikesstate.html",
+        "description" : "Hook permettant le suivi des biens likées par l'utilisateur. Pour rendre cette information persistante d'une page à l'autre et même après refresh, useState et les méthodes liées au local storage du browser sont exploitées.",
+        "tags" : ["react",
+        "useState",
+        "localStorage",
+        "array methods",
+        "spread operator"]
     }],
     "banner" : "/cases/kasa/case3bg.webp",
     "verbose" : "Il était attendu de moi que je développe le frontend d'un service de mise à disposition d'hébergements temporaires. Une maquette fournie devait être rendue fonctionnelle et naviguable, principalement pour des besoins de testing utilisateurs. L'utilisation de React ainsi que de React Router faisaient partie des impératifs imposés. A noter de plus que, du fait d'un backend non finalisé, un jeu de données au format json m'avait été fourni pour peupler de manière crédible et dynamique mes différentes pages.<br/><br/>Les captures présentées présentées ici ne représentent pas la version livrée du site. Puisque non satisfait par la maquette fournie, j'ai procédé à une refonte intégrale de la charte graphique avant intégration du projet à mon portfolio.<br/><br/>Ci dessous, vous pourrez apprécier la nature du redesign entrepris."
