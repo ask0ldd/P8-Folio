@@ -69,38 +69,40 @@ function Case(props) {
   return (
     <div className="case">
       <Header mode='backonly' items={[['ENG / FR', '/#'], ['Design Work', '/#works'], ['Dev Case Studies', '/#caseStudies'], ['Contact Me', '/#works']]} />
-      <section className='sectionSummary'>
-      {JSONObject && <CaseDescription summaryTags={JSONObject.tags} captureUrl={subDir + JSONObject.screenshot} bulletPoints={JSONObject.bulletpoints} github={JSONObject.github} />}
-      </section>
-      <section style={{ marginTop: "4rem" }} className='sectionCode'>
-        <div className='codenDescContainer'>
-          {fetchedData && <div style={{ overflowY: "scroll" }} className='codeContainer' dangerouslySetInnerHTML={{ __html: fetchedData }}>
-          </div>}
-          <div className='descContainer' >
-            <div className='description'>
-              <div className='descTitleContainer'>
-                <h3 className='descTitle'>{JSONObject && JSONObject.highlights[currentCode].title}</h3>
-                <div className='arrowsContainer'>
-                  <button className='arrowLeft' title="previous code snippet" onClick={prev}></button>
-                  <div className='arrowsContainer_lightsep'></div>
-                  <div className='arrowsContainer_darksep'></div>
-                  <button className='arrowRight' title="next code snippet" onClick={next}></button>
+      <main>
+        <section className='sectionSummary'>
+        {JSONObject && <CaseDescription summaryTags={JSONObject.tags} captureUrl={subDir + JSONObject.screenshot} bulletPoints={JSONObject.bulletpoints} github={JSONObject.github} />}
+        </section>
+        <section style={{ marginTop: "4rem" }} className='sectionCode'>
+          <div className='codenDescContainer'>
+            {fetchedData && <div style={{ overflowY: "scroll" }} className='codeContainer' dangerouslySetInnerHTML={{ __html: fetchedData }}>
+            </div>}
+            <div className='descContainer' >
+              <div className='description'>
+                <div className='descTitleContainer'>
+                  <h3 className='descTitle'>{JSONObject && JSONObject.highlights[currentCode].title}</h3>
+                  <div className='arrowsContainer'>
+                    <button className='arrowLeft' title="previous code snippet" onClick={prev}></button>
+                    <div className='arrowsContainer_lightsep'></div>
+                    <div className='arrowsContainer_darksep'></div>
+                    <button className='arrowRight' title="next code snippet" onClick={next}></button>
+                  </div>
                 </div>
+                <div className='descBody'>{JSONObject && JSONObject.highlights[currentCode].description}</div>
               </div>
-              <div className='descBody'>{JSONObject && JSONObject.highlights[currentCode].description}</div>
-            </div>
-            <div className='descTagsContainer'>
-              {JSONObject && JSONObject.highlights[currentCode].tags.map(tag => (<div key={tag} className='descTags'>{tag}</div>))}
+              <div className='descTagsContainer'>
+                {JSONObject && JSONObject.highlights[currentCode].tags.map(tag => (<div key={tag} className='descTags'>{tag}</div>))}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section className='caseBg'>
-        <img alt="decorative banner" src={JSONObject && window.location.origin + subDir + JSONObject.banner}/>
-      </section>
-      <section className='sectionVerbose'>
-        {JSONObject && <p className='verboseContainer' dangerouslySetInnerHTML={{ __html: JSONObject.verbose }}></p>}
-      </section>
+        </section>
+        <section className='caseBg'>
+          <img alt="decorative banner" src={JSONObject && window.location.origin + subDir + JSONObject.banner}/>
+        </section>
+        <section className='sectionVerbose'>
+          {JSONObject && <p className='verboseContainer' dangerouslySetInnerHTML={{ __html: JSONObject.verbose }}></p>}
+        </section>
+      </main>
       <footer></footer>
     </div>
   )
